@@ -1,0 +1,190 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL; 
+USE ieee.std_logic_unsigned.ALL;
+
+ENTITY lights IS
+   PORT (
+      CLOCK_50 : IN STD_LOGIC;
+      KEY : IN STD_LOGIC_VECTOR (3 DOWNTO 0); 
+      SW : IN STD_LOGIC_VECTOR (17 DOWNTO 0); 
+      LEDG : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+		LEDR : out std_logic_vector(17 downto 0);
+		
+		DRAM_ADDR : out std_logic_vector(11 downto 0);
+		DRAM_BA_0 : buffer std_logic;
+		DRAM_BA_1 : buffer std_logic;
+		DRAM_CAS_N : out std_logic;
+		DRAM_CKE : out std_logic;
+		DRAM_CLK : out std_logic;
+		DRAM_CS_N : out std_logic;
+		DRAM_DQ : inout std_logic_vector(15 downto 0);
+		DRAM_LDQM : buffer std_logic;
+		DRAM_UDQM : buffer std_logic;
+		DRAM_RAS_N : out std_logic;
+		DRAM_WE_N : out std_logic;
+		
+		SRAM_ADDR : out std_logic_vector(17 downto 0);
+		SRAM_DQ : inout std_logic_vector(15 downto 0);
+		SRAM_WE_N : out std_logic;
+		SRAM_OE_N : out std_logic;
+		SRAM_CE_N : out std_logic;
+		SRAM_UB_N : out std_logic;
+		SRAM_LB_N : out std_logic;
+		
+		VGA_R : out std_logic_vector(9 downto 0);
+		VGA_G : out std_logic_vector(9 downto 0);
+		VGA_B : out std_logic_vector(9 downto 0);
+		VGA_BLANK : out std_logic;
+		VGA_SYNC : out std_logic;
+		VGA_VS : out std_logic;
+		VGA_HS : out std_logic;
+		VGA_CLK : out std_logic;
+		
+		LCD_RW : out std_logic;
+		LCD_EN : out std_logic;
+		LCD_RS : out std_logic;
+		LCD_ON : out std_logic;
+		LCD_BLON : out std_logic;
+		LCD_DATA : inout std_logic_vector(7 downto 0);
+		
+		HEX0 : out std_logic_vector(6 downto 0);
+		HEX1 : out std_logic_vector(6 downto 0);
+		HEX2 : out std_logic_vector(6 downto 0);
+		HEX3 : out std_logic_vector(6 downto 0);
+		HEX4 : out std_logic_vector(6 downto 0);
+		HEX5 : out std_logic_vector(6 downto 0);
+		HEX6 : out std_logic_vector(6 downto 0);
+		HEX7 : out std_logic_vector(6 downto 0)
+		
+--		SD_DAT : inout std_logic;
+--		SD_DAT3 : inout std_logic;
+--		SD_CMD : inout std_logic;
+--		SD_CLK : out std_logic
+--		
+		
+		);
+END lights;
+
+ARCHITECTURE lights_rtl OF lights IS 
+   COMPONENT nios_system
+      PORT (
+         SIGNAL clk_clk: IN STD_LOGIC;
+         SIGNAL reset_reset_n : IN STD_LOGIC;
+         SIGNAL switch_export : IN STD_LOGIC_VECTOR (17 DOWNTO 0); 
+         SIGNAL ledg_export : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+			signal ledr_export : out std_logic_vector (17 downto 0);
+			signal sdram_addr : out std_logic_vector (11 downto 0);
+			signal sdram_ba : buffer std_logic_vector(1 downto 0);
+			signal sdram_cas_n : out std_logic;
+			signal sdram_cke : out std_logic;
+			signal sdram_cs_n : out std_logic;
+			signal sdram_dq : inout std_logic_vector(15 downto 0);
+			signal sdram_dqm : buffer std_logic_vector(1 downto 0);
+			signal sdram_ras_n : out std_logic;
+			signal sdram_we_n : out std_logic;
+			signal sdram_clk_out_clk_clk : out std_logic;
+			
+			signal sram_addr : out std_logic_vector(17 downto 0);
+			signal sram_dq : inout std_logic_vector(15 downto 0);
+			signal sram_lb_n : out std_logic;
+			signal sram_ub_n : out std_logic;
+			signal sram_ce_n : out std_logic;
+			signal sram_oe_n : out std_logic;
+			signal sram_we_n : out std_logic;
+			
+			signal vga_controller_CLK : out std_logic;
+			signal vga_controller_HS : out std_logic;
+			signal vga_controller_VS : out std_logic;
+			signal vga_controller_BLANK : out std_logic;
+			signal vga_controller_SYNC : out std_logic;
+			signal vga_controller_R : out std_logic_vector(9 downto 0);
+			signal vga_controller_G : out std_logic_vector(9 downto 0);
+			signal vga_controller_B : out std_logic_vector(9 downto 0);
+			
+			signal lcd_DATA  : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- DATA
+			signal lcd_ON    : out   std_logic;                                        -- ON
+			signal lcd_BLON  : out   std_logic;                                        -- BLON
+			signal lcd_EN    : out   std_logic;                                        -- EN
+			signal lcd_RS    : out   std_logic;                                        -- RS
+			signal lcd_RW    : out   std_logic;					-- RW
+			
+			signal key_export	: in std_logic_vector(2 downto 0);
+        
+			signal hex7_export           : out   std_logic_vector(6 downto 0);                     -- export
+			signal hex6_export           : out   std_logic_vector(6 downto 0);                     -- export
+			signal hex5_export           : out   std_logic_vector(6 downto 0);                     -- export
+			signal hex4_export           : out   std_logic_vector(6 downto 0);                     -- export
+			signal hex3_export           : out   std_logic_vector(6 downto 0);                     -- export
+			signal hex2_export           : out   std_logic_vector(6 downto 0);                     -- export
+			signal hex1_export           : out   std_logic_vector(6 downto 0);                     -- export
+			signal hex0_export           : out   std_logic_vector(6 downto 0)                     -- export
+			
+--			signal sd_card_b_SD_cmd      : inout std_logic                     := 'X';             -- b_SD_cmd
+--			signal sd_card_b_SD_dat      : inout std_logic                     := 'X';             -- b_SD_dat
+--			signal sd_card_b_SD_dat3     : inout std_logic                     := 'X';             -- b_SD_dat3
+--			signal sd_card_o_SD_clock    : out   std_logic                                         -- o_SD_clock
+--	  
+			);
+   END COMPONENT; 
+
+   BEGIN
+      NiosII : nios_system PORT MAP(
+         clk_clk => CLOCK_50,
+         reset_reset_n => KEY(0), 
+         switch_export => SW, 
+         ledg_export => LEDG,
+			ledr_export => LEDR,
+			
+			sdram_addr => DRAM_ADDR,
+			sdram_ba(0) => DRAM_BA_0,
+			sdram_ba(1) => DRAM_BA_1,
+			sdram_cas_n => DRAM_CAS_N,
+			sdram_cke => DRAM_CKE,
+			sdram_clk_out_clk_clk => DRAM_CLK,
+			sdram_cs_n => DRAM_CS_N,
+			sdram_dq => DRAM_DQ,
+			sdram_dqm(0) => DRAM_LDQM,
+			sdram_dqm(1) => DRAM_UDQM,
+			sdram_ras_n => DRAM_RAS_N,
+			sdram_we_n => DRAM_WE_N,
+			
+			sram_addr => SRAM_ADDR,
+			sram_dq => SRAM_DQ,
+			sraM_CE_N => sram_CE_N,
+			sraM_OE_N => sraM_OE_N,
+			sram_lb_N => sram_lb_N,
+			sram_ub_n =>sram_ub_n,
+			sram_we_n => sram_we_n,
+			
+			vga_controller_CLK => VGA_CLK,
+			vga_controller_HS => VGA_HS,
+			vga_controller_VS => VGA_VS,
+			vga_controller_BLANK => VGA_BLANK,
+			vga_controller_SYNC => VGA_SYNC,
+			vga_controller_R => VGA_R,
+			vga_controller_G => VGA_G,
+			vga_controller_B => VGA_B,
+			
+			lcd_DATA => LCD_DATA,
+			lcd_ON => LCD_ON,
+			lcd_BLON => LCD_BLON,
+			lcd_EN => LCD_EN,
+			lcd_RS => LCD_RS,
+			lcd_RW => LCD_RW,
+			key_export => KEY(3 downto 1),
+			hex7_export           => HEX7,           --              hex7.export
+			hex6_export           => HEX6,           --              hex6.export
+			hex5_export           => HEX5,           --              hex5.export
+			hex4_export           => HEX4,           --              hex4.export
+			hex3_export           => HEX3,           --              hex3.export
+			hex2_export           => HEX2,           --              hex2.export
+			hex1_export           => HEX1,           --              hex1.export
+			hex0_export           => HEX0            --              hex0.export
+		
+--			sd_card_b_SD_cmd      => SD_CMD,      --           sd_card.b_SD_cmd
+--			sd_card_b_SD_dat      => SD_DAT,      --                  .b_SD_dat
+--			sd_card_b_SD_dat3     => SD_DAT3,     --                  .b_SD_dat3
+--			sd_card_o_SD_clock    => SD_CLK     --                  .o_SD_clock
+--	  
+      );
+END lights_rtl;

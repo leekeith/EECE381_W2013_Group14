@@ -1,0 +1,123 @@
+/*
+ * wk_io.c
+ *
+ *  Created on: 2013-09-18
+ *      Author: keithlee
+ */
+
+#include"wk_io.h"
+#include"system.h"
+
+void initHex()
+{
+	int i;
+	Hex[0]=HEX0_ADDR;
+	Hex[1]=HEX1_ADDR;
+	Hex[2]=HEX2_ADDR;
+	Hex[3]=HEX3_ADDR;
+	Hex[4]=HEX4_ADDR;
+	Hex[5]=HEX5_ADDR;
+	Hex[6]=HEX6_ADDR;
+	Hex[7]=HEX7_ADDR;
+	for(i=0;i<8;i++)
+	{
+		*Hex[i]=DIGIT_BLANK;
+	}
+
+}
+
+void hexPrintNum(int num,const int base)
+{
+	int i,digit;
+	if(base>16)
+		return;
+	if(num==0)
+	{
+		*Hex[0]=DIGIT0;
+		for(i=1;i<8;i++)
+		{
+			*Hex[i]=DIGIT_BLANK;
+		}
+	}
+	else
+	{
+		for(i=0;i<8;i++)
+		{
+			if(num!=0)
+			{
+				digit=num%base;
+				switch(digit)
+				{
+				case 0:
+					*Hex[i]=DIGIT0;
+					break;
+				case 1:
+					*Hex[i]=DIGIT1;
+					break;
+				case 2:
+					*Hex[i]=DIGIT2;
+					break;
+				case 3:
+					*Hex[i]=DIGIT3;
+					break;
+				case 4:
+					*Hex[i]=DIGIT4;
+					break;
+				case 5:
+					*Hex[i]=DIGIT5;
+					break;
+				case 6:
+					*Hex[i]=DIGIT6;
+					break;
+				case 7:
+					*Hex[i]=DIGIT7;
+					break;
+				case 8:
+					*Hex[i]=DIGIT8;
+					break;
+				case 9:
+					*Hex[i]=DIGIT9;
+					break;
+				case 10:
+					*Hex[i]=DIGITA;
+					break;
+				case 11:
+					*Hex[i]=DIGITB;
+					break;
+				case 12:
+					*Hex[i]=DIGITC;
+					break;
+				case 13:
+					*Hex[i]=DIGITD;
+					break;
+				case 14:
+					*Hex[i]=DIGITE;
+					break;
+				case 15:
+					*Hex[i]=DIGITF;
+					break;
+				default:
+					*Hex[i]=DIGIT_BLANK;
+					break;
+				}
+				if(digit==0)
+					num=num/base;
+				else
+					num=(num-digit)/base;
+			}
+			else
+				*Hex[i]=DIGIT_BLANK;
+		}
+	}
+}
+
+void clrHex()
+{
+	int i;
+	for(i=0;i<8;i++)
+	{
+		*Hex[i]=DIGIT_BLANK;
+	}
+}
+
+

@@ -1,0 +1,75 @@
+/*
+ * wk_main.c
+ *
+ *  Created on: 2013-09-17
+ *      Author: keithlee
+ */
+#include <system.h>
+#include "wk_video.h"
+#include "wk_io.h"
+#include "wk_lcd.h"
+int main(int argc, char** argv)
+{
+	lcd_t* lcd;
+	unsigned char keyval;
+	unsigned int old_sw, new_sw;
+
+
+	lcd=(lcd_t*)malloc(sizeof(lcd_t));
+
+
+
+	pixel_buffer_t* pBuffer;
+	char_buffer_t* cBuffer;
+	initHex();
+	lcdInit(lcd);
+	pBuffer=pixelInit(pBuffer);
+	cBuffer=charInit(cBuffer);
+	clrScr(pBuffer);
+	clearChars(cBuffer);
+	fillScr(pBuffer,0xf0ff);
+	drawLine(pBuffer,5,40,10,200,0xffff);
+	drawLine(pBuffer,40,200,200,0,0x0);
+	//drawString(cBuffer,"EECE 381 : Exercise 1.4 : Keith Lee",40,40);
+	lcdLineSet(lcd,"Welcome to",0);
+	lcdLineSet(lcd,"Working Test",1);
+	old_sw=*sw;
+
+
+
+	while(1)
+	{
+
+		new_sw=GET_SW;
+		SET_LEDR(new_sw);
+		SET_LEDG(GET_KEYS);
+		if(new_sw%2==1)
+		{
+			if(old_sw!=new_sw)
+			{
+				clearChars(cBuffer);
+				lcdClrScr(lcd);
+			}
+
+			lcdPrint(lcd);
+			hexPrintNum(360*old_sw, 10);
+		}
+		else
+		{
+			if(old_sw!=new_sw)
+			{
+				clearChars(cBuffer);
+				drawString(cBuffer,"EECE 381 : Exercise 1.4 : Keith Lee",new_sw%80,old_sw%60);
+				lcdLineSet(lcd,"Line 1",0);
+				lcdLineSet(lcd,"Line 2",1);
+			}
+			lcdPrint(lcd);
+			hexPrintNum(360*old_sw,16);
+		}
+
+		old_sw=new_sw;
+	}
+	return 0;
+}
+
+
