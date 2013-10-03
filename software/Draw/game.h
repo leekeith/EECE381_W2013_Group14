@@ -13,6 +13,8 @@
 #define PLAYER_UB (6)
 #define PLAYER_BB (VRAM_H-6)
 
+#define MAX_NPC 20
+
 typedef struct coord_s{int x,y;}coord_s;
 typedef enum spriteType{null,player,enemy1}spriteType;
 typedef struct sprite	{	spriteType 	type;

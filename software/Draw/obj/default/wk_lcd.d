@@ -1,42 +1,47 @@
-obj/default/wk_lcd.o: wk_lcd.c ../The_BSP/system.h ../The_BSP/linker.h \
-  ../The_BSP//HAL/inc/nios2.h wk_lcd.h ../The_BSP/system.h \
-  ../The_BSP/drivers/inc/altera_up_avalon_character_lcd.h \
-  ../The_BSP//HAL/inc/sys/alt_dev.h ../The_BSP//HAL/inc/sys/alt_llist.h \
-  ../The_BSP//HAL/inc/alt_types.h \
-  ../The_BSP//HAL/inc/priv/alt_dev_llist.h \
-  ../The_BSP//HAL/inc/sys/alt_llist.h ../The_BSP//HAL/inc/alt_types.h \
-  ../The_BSP//HAL/inc/sys/alt_alarm.h ../The_BSP//HAL/inc/sys/alt_llist.h \
-  ../The_BSP//HAL/inc/priv/alt_alarm.h \
-  ../The_BSP//HAL/inc/sys/alt_warning.h
+obj/default/wk_lcd.o: wk_lcd.c ../../../../workspace2/NewBSP/system.h \
+  ../../../../workspace2/NewBSP/linker.h \
+  ../../../../workspace2/NewBSP/HAL/inc/nios2.h wk_lcd.h \
+  ../../../../workspace2/NewBSP/system.h \
+  ../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_character_lcd.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_dev.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
+  ../../../../workspace2/NewBSP/HAL/inc/alt_types.h \
+  ../../../../workspace2/NewBSP/HAL/inc/priv/alt_dev_llist.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
+  ../../../../workspace2/NewBSP/HAL/inc/alt_types.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_alarm.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
+  ../../../../workspace2/NewBSP/HAL/inc/priv/alt_alarm.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_warning.h
 
-../The_BSP/system.h:
+../../../../workspace2/NewBSP/system.h:
 
-../The_BSP/linker.h:
+../../../../workspace2/NewBSP/linker.h:
 
-../The_BSP//HAL/inc/nios2.h:
+../../../../workspace2/NewBSP/HAL/inc/nios2.h:
 
 wk_lcd.h:
 
-../The_BSP/system.h:
+../../../../workspace2/NewBSP/system.h:
 
-../The_BSP/drivers/inc/altera_up_avalon_character_lcd.h:
+../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_character_lcd.h:
 
-../The_BSP//HAL/inc/sys/alt_dev.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_dev.h:
 
-../The_BSP//HAL/inc/sys/alt_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
 
-../The_BSP//HAL/inc/alt_types.h:
+../../../../workspace2/NewBSP/HAL/inc/alt_types.h:
 
-../The_BSP//HAL/inc/priv/alt_dev_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/priv/alt_dev_llist.h:
 
-../The_BSP//HAL/inc/sys/alt_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
 
-../The_BSP//HAL/inc/alt_types.h:
+../../../../workspace2/NewBSP/HAL/inc/alt_types.h:
 
-../The_BSP//HAL/inc/sys/alt_alarm.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_alarm.h:
 
-../The_BSP//HAL/inc/sys/alt_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
 
-../The_BSP//HAL/inc/priv/alt_alarm.h:
+../../../../workspace2/NewBSP/HAL/inc/priv/alt_alarm.h:
 
-../The_BSP//HAL/inc/sys/alt_warning.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_warning.h:
