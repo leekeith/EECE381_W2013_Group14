@@ -1,64 +1,68 @@
 obj/default/KeyboardMain.o: KeyboardMain.c wkAll.h wk_video.h \
-  ../The_BSP/system.h ../The_BSP/linker.h \
-  ../The_BSP/drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h \
-  ../The_BSP//HAL/inc/alt_types.h ../The_BSP//HAL/inc/sys/alt_dev.h \
-  ../The_BSP//HAL/inc/sys/alt_llist.h \
-  ../The_BSP//HAL/inc/priv/alt_dev_llist.h \
-  ../The_BSP//HAL/inc/sys/alt_llist.h \
-  ../The_BSP/drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h \
-  wk_io.h ../The_BSP//HAL/inc/io.h ../The_BSP//HAL/inc/alt_types.h \
-  ../The_BSP//HAL/inc/nios2.h wk_lcd.h \
-  ../The_BSP/drivers/inc/altera_up_avalon_character_lcd.h \
-  ../The_BSP//HAL/inc/sys/alt_alarm.h ../The_BSP//HAL/inc/sys/alt_llist.h \
-  ../The_BSP//HAL/inc/priv/alt_alarm.h \
-  ../The_BSP//HAL/inc/sys/alt_warning.h wk_kb.h \
-  ../The_BSP//drivers/inc/altera_up_ps2_keyboard.h \
-  ../The_BSP//drivers/inc/altera_up_avalon_ps2.h
+  ../../../../workspace2/NewBSP/system.h \
+  ../../../../workspace2/NewBSP/linker.h \
+  ../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h \
+  ../../../../workspace2/NewBSP/HAL/inc/alt_types.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_dev.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
+  ../../../../workspace2/NewBSP/HAL/inc/priv/alt_dev_llist.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
+  ../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h \
+  wk_io.h ../../../../workspace2/NewBSP/HAL/inc/io.h \
+  ../../../../workspace2/NewBSP/HAL/inc/alt_types.h \
+  ../../../../workspace2/NewBSP/HAL/inc/nios2.h wk_lcd.h \
+  ../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_character_lcd.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_alarm.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
+  ../../../../workspace2/NewBSP/HAL/inc/priv/alt_alarm.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_warning.h wk_kb.h \
+  ../../../../workspace2/NewBSP/drivers/inc/altera_up_ps2_keyboard.h \
+  ../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_ps2.h
 
 wkAll.h:
 
 wk_video.h:
 
-../The_BSP/system.h:
+../../../../workspace2/NewBSP/system.h:
 
-../The_BSP/linker.h:
+../../../../workspace2/NewBSP/linker.h:
 
-../The_BSP/drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h:
+../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h:
 
-../The_BSP//HAL/inc/alt_types.h:
+../../../../workspace2/NewBSP/HAL/inc/alt_types.h:
 
-../The_BSP//HAL/inc/sys/alt_dev.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_dev.h:
 
-../The_BSP//HAL/inc/sys/alt_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
 
-../The_BSP//HAL/inc/priv/alt_dev_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/priv/alt_dev_llist.h:
 
-../The_BSP//HAL/inc/sys/alt_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
 
-../The_BSP/drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h:
+../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h:
 
 wk_io.h:
 
-../The_BSP//HAL/inc/io.h:
+../../../../workspace2/NewBSP/HAL/inc/io.h:
 
-../The_BSP//HAL/inc/alt_types.h:
+../../../../workspace2/NewBSP/HAL/inc/alt_types.h:
 
-../The_BSP//HAL/inc/nios2.h:
+../../../../workspace2/NewBSP/HAL/inc/nios2.h:
 
 wk_lcd.h:
 
-../The_BSP/drivers/inc/altera_up_avalon_character_lcd.h:
+../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_character_lcd.h:
 
-../The_BSP//HAL/inc/sys/alt_alarm.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_alarm.h:
 
-../The_BSP//HAL/inc/sys/alt_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
 
-../The_BSP//HAL/inc/priv/alt_alarm.h:
+../../../../workspace2/NewBSP/HAL/inc/priv/alt_alarm.h:
 
-../The_BSP//HAL/inc/sys/alt_warning.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_warning.h:
 
 wk_kb.h:
 
-../The_BSP//drivers/inc/altera_up_ps2_keyboard.h:
+../../../../workspace2/NewBSP/drivers/inc/altera_up_ps2_keyboard.h:
 
-../The_BSP//drivers/inc/altera_up_avalon_ps2.h:
+../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_ps2.h:

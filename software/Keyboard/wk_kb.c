@@ -4,8 +4,9 @@
  *  Created on: 2013-10-02
  *      Author: Keith
  */
-
+#include"stdlib.h"
 #include"wk_kb.h"
+#include"stdio.h"
 
 kb_t* initKb(void* ISR)
 {
@@ -16,44 +17,54 @@ kb_t* initKb(void* ISR)
 	the_kb->bottom=0;
 	for(i=0;i<8;i++)
 	{
-		the_kb->buffer[i].type=KB_INVALID_CODE;
-		the_kb->buffer[i].val=0;
-		the_kb->buffer[i].buf=0;
+		the_kb->buffer[i].type=(KB_CODE_TYPE*)malloc(sizeof(KB_CODE_TYPE));
+		the_kb->buffer[i].val=(char*)malloc(sizeof(char));
+		the_kb->buffer[i].buf=(alt_u8*)malloc(sizeof(alt_u8));
+		*the_kb->buffer[i].type=KB_INVALID_CODE;
+		*the_kb->buffer[i].val=0;
+		*the_kb->buffer[i].buf=0;
 	}
-	alt_up_ps2_init(&(the_kb->dev));
-	if(the_kb->dev.device_type!=PS2_KEYBOARD)
+	the_kb->dev=alt_up_ps2_open_dev(PS2_NAME);
+	do{
+
+	alt_up_ps2_init(the_kb->dev);
+	reset_keyboard(the_kb->dev);
+	alt_up_ps2_clear_fifo(the_kb->dev);
+	}while(0);	//while(the_kb->dev->device_type==PS2_UNKNOWN);
+	if(0)//the_kb->dev->device_type!=PS2_KEYBOARD)
 	{
-		printf("No Keyboard Found\n");
+		printf("No Keyboard Found\n%d\n",the_kb->dev->device_type);
 		free(the_kb);
 		return 0;
 	}
-	alt_up_ps2_enable_read_interrupt(&(the_kb->dev));
-	set_keyboard_rate(&(the_kb->dev),60);
-	alt_irq_register(the_kb->dev.irq_id,NULL,ISR);
+	else
+		printf("Keyboard Connected\n");
+
+	alt_up_ps2_enable_read_interrupt((the_kb->dev));
+	set_keyboard_rate((the_kb->dev),60);
+	alt_irq_register(the_kb->dev->irq_id,NULL,ISR);
+
 	return the_kb;
 }
 
-key_t getchKb(kb_t* kb)
+key_s getchKb(kb_t* kb)
 {
-	key_t retVal;
-	retVal.type=KB_INVALID_CODE;
-	if(kb->top!=kb->bottom)
-	{
-		retVal.type=kb->buffer[kb->top].type;
-		retVal.val=kb->buffer[kb->top].val;
-		retVal.buf=kb->buffer[kb->top].buf;
-		kb->top=(kb->top+1)%8;
-		if(kb->top==kb->bottom)
-			kb->bottom=(kb->bottom+1)%8;
-	}
+	key_s retVal;
+	retVal.type=(KB_CODE_TYPE*)malloc(sizeof(KB_CODE_TYPE));
+	retVal.val=(char*)malloc(sizeof(char));
+	retVal.buf=(alt_u8*)malloc(sizeof(alt_u8));
+	*retVal.type=KB_INVALID_CODE;
+	*retVal.type=*kb->buffer[kb->top].type;
+	*retVal.val=*kb->buffer[kb->top].val;
+	*retVal.buf=*kb->buffer[kb->top].buf;
+	kb->top=(kb->top+1)%8;
 	return retVal;
 }
 
 void readFromKb(kb_t* kb)
 {
-	if((kb->bottom+1)%8!=kb->top)
-	{
-		kb->bottom=(kb->bottom+1)%8;
-		decode_scancode(&(kb->dev),&(kb->buffer[kb->bottom].type),&(kb->buffer[kb->bottom].buf),&(kb->buffer[kb->bottom].val));
-	}
+		decode_scancode(kb->dev,kb->buffer[kb->bottom].type, kb->buffer[kb->bottom].buf, kb->buffer[kb->bottom].val);
+		if((kb->bottom+1)%8!=kb->top)
+			kb->bottom=(kb->bottom+1)%8;
+
 }

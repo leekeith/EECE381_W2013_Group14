@@ -14,11 +14,14 @@ kb_t* kb;
 
 void kb_ISR(void* context, alt_u32 id)
 {
+
+	//printf("%d\n%d\n",IORD_32DIRECT(PS2_BASE,0),IORD_32DIRECT(PS2_BASE,4));
 	readFromKb(kb);
+	return;
 }
 int main(int argc, char** argv)
 {
-	key_t nextKey;
+	key_s nextKey;
 	kb=initKb((void*)kb_ISR);
 	if(kb==0)
 	{
@@ -31,8 +34,8 @@ int main(int argc, char** argv)
 		while(kb->top!=kb->bottom)
 		{
 			nextKey=getchKb(kb);
-			if(nextKey.type==KB_ASCII_MAKE_CODE)
-				printf("%c",nextKey.val);
+			if(*nextKey.type==KB_ASCII_MAKE_CODE)
+				printf("%c",*nextKey.val);
 		}
 	}
 

@@ -10,20 +10,20 @@
 
 #include"altera_up_ps2_keyboard.h"
 
-typedef struct key_t{	KB_CODE_TYPE type;
-						char val;
-						alt_u8 buf;
-					}key_t;
+typedef struct key_s{	KB_CODE_TYPE* type;
+						char* val;
+						alt_u8* buf;
+					}key_s;
 
-typedef struct kb_t{	alt_up_ps2_dev dev;
-						key_t buffer[8];
+typedef struct kb_t{	alt_up_ps2_dev* dev;
+						key_s buffer[8];
 						short top;
 						short bottom;
 					}kb_t;
 
 kb_t* initKb(void* ISR);
 
-key_t getchKb(kb_t* kb);
+key_s getchKb(kb_t* kb);
 
 void readFromKb(kb_t* kb);
 
