@@ -1,0 +1,9 @@
+*.o
+*.d
+*.rpt
+*.bak
+*.elf
+*.objdump
+*.map
+
+./.metadata
