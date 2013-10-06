@@ -139,10 +139,11 @@ ACDS_VERSION := 12.0sp2
 # Define path to the application ELF. 
 # It may be used by the makefile fragments so is defined before including them. 
 # 
-ELF := SD_card.elf
+ELF := sdcard_migrated.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := sdcard.c
+C_SRCS += hello_world.c
+C_SRCS += sdcard.c
 CXX_SRCS :=
 ASM_SRCS :=
 
@@ -152,7 +153,7 @@ OBJ_ROOT_DIR := obj
 
 # Options to control objdump.
 CREATE_OBJDUMP := 1
-OBJDUMP_INCLUDE_SOURCE := 0
+OBJDUMP_INCLUDE_SOURCE := 1
 OBJDUMP_FULL_CONTENTS := 0
 
 # Options to enable/disable optional files.
@@ -177,7 +178,7 @@ CRT0 :=
 SYS_LIB :=
 
 # Define path to the root of the BSP.
-BSP_ROOT_DIR := ../The_BSP/
+BSP_ROOT_DIR := ../sdcard_migrated_bsp/
 
 # List of application specific include directories, library directories and library names
 APP_INCLUDE_DIRS :=
@@ -188,6 +189,7 @@ APP_LIBRARY_NAMES :=
 BUILD_PRE_PROCESS :=
 BUILD_POST_PROCESS :=
 
+QUARTUS_PROJECT_DIR := ../../
 
 
 #END GENERATED
