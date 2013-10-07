@@ -1,5 +1,5 @@
 Assembler report for CE381HW
-Thu Oct 03 07:28:48 2013
+Sun Oct 06 20:17:15 2013
 Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Oct 03 07:28:48 2013 ;
+; Assembler Status      ; Successful - Sun Oct 06 20:17:15 2013 ;
 ; Revision Name         ; CE381HW                               ;
 ; Top-level Entity Name ; CE381HW                               ;
 ; Family                ; Cyclone II                            ;
@@ -115,7 +115,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Assembler
     Info: Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Oct 03 07:28:44 2013
+    Info: Processing started: Sun Oct 06 20:17:10 2013
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off CE381HW -c CE381HW
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
@@ -123,8 +123,8 @@ Info (115017): Design contains a time-limited core -- only a single, time-limite
 Warning (210042): Can't convert time-limited SOF into POF, HEX File, TTF, or RBF
 Info: Quartus II 32-bit Assembler was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 357 megabytes
-    Info: Processing ended: Thu Oct 03 07:28:48 2013
-    Info: Elapsed time: 00:00:04
+    Info: Processing ended: Sun Oct 06 20:17:15 2013
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:04
 
 

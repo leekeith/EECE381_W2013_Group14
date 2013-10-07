@@ -21,7 +21,10 @@ void kb_ISR(void* context, alt_u32 id)
 }
 int main(int argc, char** argv)
 {
-	key_s nextKey;
+	key_s* nextKey;
+	nextKey->type=(KB_CODE_TYPE*)malloc(sizeof(KB_CODE_TYPE));
+	nextKey->val=(char*)malloc(sizeof(char));
+	nextKey->buf=(alt_u8*)malloc(sizeof(alt_u8));
 	kb=initKb((void*)kb_ISR);
 	if(kb==0)
 	{
@@ -31,11 +34,11 @@ int main(int argc, char** argv)
 	}
 	while(1)
 	{
-		while(kb->top!=kb->bottom)
+		if(kb->top!=kb->bottom)
 		{
-			nextKey=getchKb(kb);
-			if(*nextKey.type==KB_ASCII_MAKE_CODE)
-				printf("%c",*nextKey.val);
+			getchKb(kb, nextKey);
+			if(*nextKey->type==KB_ASCII_MAKE_CODE)
+				printf("%c",*nextKey->val);
 		}
 	}
 

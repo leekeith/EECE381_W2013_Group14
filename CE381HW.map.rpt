@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CE381HW
-Thu Oct 03 07:27:35 2013
+Sun Oct 06 20:16:05 2013
 Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
 
 
@@ -497,7 +497,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 03 07:27:34 2013         ;
+; Analysis & Synthesis Status        ; Successful - Sun Oct 06 20:16:04 2013         ;
 ; Quartus II 32-bit Version          ; 12.0 Build 263 08/02/2012 SP 2 SJ Web Edition ;
 ; Revision Name                      ; CE381HW                                       ;
 ; Top-level Entity Name              ; CE381HW                                       ;
@@ -13959,7 +13959,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:52     ;
+; Top            ; 00:00:54     ;
 ; pzdyqx:nabboc  ; 00:00:00     ;
 +----------------+--------------+
 
@@ -13970,81 +13970,81 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Oct 03 07:23:57 2013
+    Info: Processing started: Sun Oct 06 20:12:42 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CE381HW -c CE381HW
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12248): Elaborating Qsys system entity "nios_system.qsys"
-Info (12250): 2013.10.03.07:24:03 Progress: Loading EECE381_W2013_Group14/nios_system.qsys
-Info (12250): 2013.10.03.07:24:03 Progress: Reading input file
-Info (12250): 2013.10.03.07:24:03 Progress: Adding clk_50 [clock_source 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module clk_50
-Info (12250): 2013.10.03.07:24:04 Progress: Adding nios2_processor [altera_nios2_qsys 12.0]
+Info (12250): 2013.10.06.20:12:47 Progress: Loading EECE381_W2013_Group14/nios_system.qsys
+Info (12250): 2013.10.06.20:12:47 Progress: Reading input file
+Info (12250): 2013.10.06.20:12:47 Progress: Adding clk_50 [clock_source 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module clk_50
+Info (12250): 2013.10.06.20:12:48 Progress: Adding nios2_processor [altera_nios2_qsys 12.0]
 Info (12250): No _hw.tcl package requested, assuming package require -exact sopc 9.0
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module nios2_processor
-Info (12250): 2013.10.03.07:24:04 Progress: Adding clocks [altera_up_clocks 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module clocks
-Info (12250): 2013.10.03.07:24:04 Progress: Adding sdram [altera_avalon_new_sdram_controller 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module sdram
-Info (12250): 2013.10.03.07:24:04 Progress: Adding sdram_clk_out [altera_clock_bridge 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module sdram_clk_out
-Info (12250): 2013.10.03.07:24:04 Progress: Adding sram [altera_up_avalon_sram 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module sram
-Info (12250): 2013.10.03.07:24:04 Progress: Adding jtag_uart [altera_avalon_jtag_uart 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module jtag_uart
-Info (12250): 2013.10.03.07:24:04 Progress: Adding switches [altera_avalon_pio 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module switches
-Info (12250): 2013.10.03.07:24:04 Progress: Adding LEDG [altera_avalon_pio 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module LEDG
-Info (12250): 2013.10.03.07:24:04 Progress: Adding LEDR [altera_avalon_pio 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module LEDR
-Info (12250): 2013.10.03.07:24:04 Progress: Adding keys [altera_avalon_pio 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module keys
-Info (12250): 2013.10.03.07:24:04 Progress: Adding HEX0 [altera_avalon_pio 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module HEX0
-Info (12250): 2013.10.03.07:24:04 Progress: Adding HEX1 [altera_avalon_pio 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module HEX1
-Info (12250): 2013.10.03.07:24:04 Progress: Adding HEX2 [altera_avalon_pio 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module HEX2
-Info (12250): 2013.10.03.07:24:04 Progress: Adding HEX3 [altera_avalon_pio 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module HEX3
-Info (12250): 2013.10.03.07:24:04 Progress: Adding HEX4 [altera_avalon_pio 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module HEX4
-Info (12250): 2013.10.03.07:24:04 Progress: Adding HEX5 [altera_avalon_pio 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module HEX5
-Info (12250): 2013.10.03.07:24:04 Progress: Adding HEX6 [altera_avalon_pio 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module HEX6
-Info (12250): 2013.10.03.07:24:04 Progress: Adding HEX7 [altera_avalon_pio 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module HEX7
-Info (12250): 2013.10.03.07:24:04 Progress: Adding lcd [altera_up_avalon_character_lcd 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module lcd
-Info (12250): 2013.10.03.07:24:04 Progress: Adding char_buffer [altera_up_avalon_video_character_buffer_with_dma 12.0]
-Info (12250): 2013.10.03.07:24:04 Progress: Parameterizing module char_buffer
-Info (12250): 2013.10.03.07:24:04 Progress: Adding pixel_buffer [altera_up_avalon_video_pixel_buffer_dma 12.0]
-Info (12250): 2013.10.03.07:24:05 Progress: Parameterizing module pixel_buffer
-Info (12250): 2013.10.03.07:24:05 Progress: Adding rgb_resampler [altera_up_avalon_video_rgb_resampler 12.0]
-Info (12250): 2013.10.03.07:24:05 Progress: Parameterizing module rgb_resampler
-Info (12250): 2013.10.03.07:24:05 Progress: Adding video_scaler [altera_up_avalon_video_scaler 12.0]
-Info (12250): 2013.10.03.07:24:05 Progress: Parameterizing module video_scaler
-Info (12250): 2013.10.03.07:24:05 Progress: Adding alpha_blender [altera_up_avalon_video_alpha_blender 12.0]
-Info (12250): 2013.10.03.07:24:05 Progress: Parameterizing module alpha_blender
-Info (12250): 2013.10.03.07:24:05 Progress: Adding video_dc_buffer [altera_up_avalon_video_dual_clock_buffer 12.0]
-Info (12250): 2013.10.03.07:24:05 Progress: Parameterizing module video_dc_buffer
-Info (12250): 2013.10.03.07:24:05 Progress: Adding vga_controller [altera_up_avalon_video_vga_controller 12.0]
-Info (12250): 2013.10.03.07:24:05 Progress: Parameterizing module vga_controller
-Info (12250): 2013.10.03.07:24:05 Progress: Adding SD_card [Altera_UP_SD_Card_Avalon_Interface 1.0]
-Info (12250): 2013.10.03.07:24:10 Progress: Parameterizing module SD_card
-Info (12250): 2013.10.03.07:24:10 Progress: Adding clk_27 [clock_source 12.0]
-Info (12250): 2013.10.03.07:24:10 Progress: Parameterizing module clk_27
-Info (12250): 2013.10.03.07:24:10 Progress: Adding sys_timer [altera_avalon_timer 12.0]
-Info (12250): 2013.10.03.07:24:10 Progress: Parameterizing module sys_timer
-Info (12250): 2013.10.03.07:24:10 Progress: Adding timestamp_timer [altera_avalon_timer 12.0]
-Info (12250): 2013.10.03.07:24:10 Progress: Parameterizing module timestamp_timer
-Info (12250): 2013.10.03.07:24:10 Progress: Adding ps2 [altera_up_avalon_ps2 12.0]
-Info (12250): 2013.10.03.07:24:10 Progress: Parameterizing module ps2
-Info (12250): 2013.10.03.07:24:10 Progress: Building connections
-Info (12250): 2013.10.03.07:24:10 Progress: Parameterizing connections
-Info (12250): 2013.10.03.07:24:10 Progress: Validating
-Info (12250): 2013.10.03.07:24:11 Progress: Done reading input file
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module nios2_processor
+Info (12250): 2013.10.06.20:12:48 Progress: Adding clocks [altera_up_clocks 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module clocks
+Info (12250): 2013.10.06.20:12:48 Progress: Adding sdram [altera_avalon_new_sdram_controller 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module sdram
+Info (12250): 2013.10.06.20:12:48 Progress: Adding sdram_clk_out [altera_clock_bridge 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module sdram_clk_out
+Info (12250): 2013.10.06.20:12:48 Progress: Adding sram [altera_up_avalon_sram 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module sram
+Info (12250): 2013.10.06.20:12:48 Progress: Adding jtag_uart [altera_avalon_jtag_uart 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module jtag_uart
+Info (12250): 2013.10.06.20:12:48 Progress: Adding switches [altera_avalon_pio 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module switches
+Info (12250): 2013.10.06.20:12:48 Progress: Adding LEDG [altera_avalon_pio 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module LEDG
+Info (12250): 2013.10.06.20:12:48 Progress: Adding LEDR [altera_avalon_pio 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module LEDR
+Info (12250): 2013.10.06.20:12:48 Progress: Adding keys [altera_avalon_pio 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module keys
+Info (12250): 2013.10.06.20:12:48 Progress: Adding HEX0 [altera_avalon_pio 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module HEX0
+Info (12250): 2013.10.06.20:12:48 Progress: Adding HEX1 [altera_avalon_pio 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module HEX1
+Info (12250): 2013.10.06.20:12:48 Progress: Adding HEX2 [altera_avalon_pio 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module HEX2
+Info (12250): 2013.10.06.20:12:48 Progress: Adding HEX3 [altera_avalon_pio 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module HEX3
+Info (12250): 2013.10.06.20:12:48 Progress: Adding HEX4 [altera_avalon_pio 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module HEX4
+Info (12250): 2013.10.06.20:12:48 Progress: Adding HEX5 [altera_avalon_pio 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module HEX5
+Info (12250): 2013.10.06.20:12:48 Progress: Adding HEX6 [altera_avalon_pio 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module HEX6
+Info (12250): 2013.10.06.20:12:48 Progress: Adding HEX7 [altera_avalon_pio 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module HEX7
+Info (12250): 2013.10.06.20:12:48 Progress: Adding lcd [altera_up_avalon_character_lcd 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module lcd
+Info (12250): 2013.10.06.20:12:48 Progress: Adding char_buffer [altera_up_avalon_video_character_buffer_with_dma 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module char_buffer
+Info (12250): 2013.10.06.20:12:48 Progress: Adding pixel_buffer [altera_up_avalon_video_pixel_buffer_dma 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module pixel_buffer
+Info (12250): 2013.10.06.20:12:48 Progress: Adding rgb_resampler [altera_up_avalon_video_rgb_resampler 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module rgb_resampler
+Info (12250): 2013.10.06.20:12:48 Progress: Adding video_scaler [altera_up_avalon_video_scaler 12.0]
+Info (12250): 2013.10.06.20:12:48 Progress: Parameterizing module video_scaler
+Info (12250): 2013.10.06.20:12:49 Progress: Adding alpha_blender [altera_up_avalon_video_alpha_blender 12.0]
+Info (12250): 2013.10.06.20:12:49 Progress: Parameterizing module alpha_blender
+Info (12250): 2013.10.06.20:12:49 Progress: Adding video_dc_buffer [altera_up_avalon_video_dual_clock_buffer 12.0]
+Info (12250): 2013.10.06.20:12:49 Progress: Parameterizing module video_dc_buffer
+Info (12250): 2013.10.06.20:12:49 Progress: Adding vga_controller [altera_up_avalon_video_vga_controller 12.0]
+Info (12250): 2013.10.06.20:12:49 Progress: Parameterizing module vga_controller
+Info (12250): 2013.10.06.20:12:49 Progress: Adding SD_card [Altera_UP_SD_Card_Avalon_Interface 1.0]
+Info (12250): 2013.10.06.20:12:53 Progress: Parameterizing module SD_card
+Info (12250): 2013.10.06.20:12:53 Progress: Adding clk_27 [clock_source 12.0]
+Info (12250): 2013.10.06.20:12:53 Progress: Parameterizing module clk_27
+Info (12250): 2013.10.06.20:12:53 Progress: Adding sys_timer [altera_avalon_timer 12.0]
+Info (12250): 2013.10.06.20:12:53 Progress: Parameterizing module sys_timer
+Info (12250): 2013.10.06.20:12:53 Progress: Adding timestamp_timer [altera_avalon_timer 12.0]
+Info (12250): 2013.10.06.20:12:53 Progress: Parameterizing module timestamp_timer
+Info (12250): 2013.10.06.20:12:53 Progress: Adding ps2 [altera_up_avalon_ps2 12.0]
+Info (12250): 2013.10.06.20:12:53 Progress: Parameterizing module ps2
+Info (12250): 2013.10.06.20:12:53 Progress: Building connections
+Info (12250): 2013.10.06.20:12:53 Progress: Parameterizing connections
+Info (12250): 2013.10.06.20:12:53 Progress: Validating
+Info (12250): 2013.10.06.20:12:54 Progress: Done reading input file
 Info (12250): Nios_system.switches: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info (12250): Nios_system.keys: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info (12250): Nios_system.char_buffer: Character Resolution: 80 x 60
@@ -14075,117 +14075,117 @@ Info (12250): Limiter_update_transform: After transform: 222 modules, 766 connec
 Info (12250): Merlin_interrupt_mapper_transform: After transform: 223 modules, 769 connections
 Info (12250): Merlin_interrupt_sync_transform: After transform: 225 modules, 779 connections
 Info (12250): Nios2_processor: Starting RTL generation for module 'nios_system_nios2_processor'
-Info (12250): Nios2_processor:   Generation command is [exec C:/altera/12.0sp2/quartus/../ip/altera/nios2_ip/altera_nios2/eperl.exe -I C:/altera/12.0sp2/quartus/common/ip/altera/common/perl/5.8.3 -I C:/altera/12.0sp2/quartus/sopc_builder/bin/europa -I C:/altera/12.0sp2/quartus/sopc_builder/bin/perl_lib -I C:/altera/12.0sp2/quartus/sopc_builder/bin -I C:/altera/12.0sp2/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/altera/12.0sp2/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/altera/12.0sp2/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/altera/12.0sp2/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/altera/12.0sp2/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=nios_system_nios2_processor --dir=C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0003_nios2_processor_gen/ --quartus_dir=C:/altera/12.0sp2/quartus --verilog --config=C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0003_nios2_processor_gen//nios_system_nios2_processor_processor_configuration.pl  --do_build_sim=0    --bogus  ]
-Info (12250): Nios2_processor: # 2013.10.03 07:24:19 (*) Starting Nios II generation
-Info (12250): Nios2_processor: # 2013.10.03 07:24:19 (*)   Checking for encrypted license (non-evaluation).
-Info (12250): Nios2_processor: # 2013.10.03 07:24:20 (*)   Couldn't query license setup in Quartus directory C:/altera/12.0sp2/quartus
-Info (12250): Nios2_processor: # 2013.10.03 07:24:20 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info (12250): Nios2_processor: # 2013.10.03 07:24:20 (*)   LM_LICENSE_FILE environment variable is empty
-Info (12250): Nios2_processor: # 2013.10.03 07:24:20 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
-Info (12250): Nios2_processor: # 2013.10.03 07:24:20 (*)   Elaborating CPU configuration settings
-Info (12250): Nios2_processor: # 2013.10.03 07:24:20 (*)   Creating all objects for CPU
-Info (12250): Nios2_processor: # 2013.10.03 07:24:20 (*)     Testbench
-Info (12250): Nios2_processor: # 2013.10.03 07:24:20 (*)     Instruction decoding
-Info (12250): Nios2_processor: # 2013.10.03 07:24:20 (*)       Instruction fields
-Info (12250): Nios2_processor: # 2013.10.03 07:24:20 (*)       Instruction decodes
-Info (12250): Nios2_processor: # 2013.10.03 07:24:21 (*)       Signals for RTL simulation waveforms
-Info (12250): Nios2_processor: # 2013.10.03 07:24:21 (*)       Instruction controls
-Info (12250): Nios2_processor: # 2013.10.03 07:24:21 (*)     Pipeline frontend
-Info (12250): Nios2_processor: # 2013.10.03 07:24:21 (*)     Pipeline backend
-Info (12250): Nios2_processor: # 2013.10.03 07:24:24 (*)   Generating RTL from CPU objects
-Info (12250): Nios2_processor: # 2013.10.03 07:24:27 (*)   Creating encrypted RTL
-Info (12250): Nios2_processor: # 2013.10.03 07:24:28 (*) Done Nios II generation
+Info (12250): Nios2_processor:   Generation command is [exec C:/altera/12.0sp2/quartus/../ip/altera/nios2_ip/altera_nios2/eperl.exe -I C:/altera/12.0sp2/quartus/common/ip/altera/common/perl/5.8.3 -I C:/altera/12.0sp2/quartus/sopc_builder/bin/europa -I C:/altera/12.0sp2/quartus/sopc_builder/bin/perl_lib -I C:/altera/12.0sp2/quartus/sopc_builder/bin -I C:/altera/12.0sp2/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/altera/12.0sp2/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/altera/12.0sp2/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/altera/12.0sp2/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/altera/12.0sp2/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=nios_system_nios2_processor --dir=C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0003_nios2_processor_gen/ --quartus_dir=C:/altera/12.0sp2/quartus --verilog --config=C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0003_nios2_processor_gen//nios_system_nios2_processor_processor_configuration.pl  --do_build_sim=0    --bogus  ]
+Info (12250): Nios2_processor: # 2013.10.06 20:13:01 (*) Starting Nios II generation
+Info (12250): Nios2_processor: # 2013.10.06 20:13:01 (*)   Checking for encrypted license (non-evaluation).
+Info (12250): Nios2_processor: # 2013.10.06 20:13:01 (*)   Couldn't query license setup in Quartus directory C:/altera/12.0sp2/quartus
+Info (12250): Nios2_processor: # 2013.10.06 20:13:01 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info (12250): Nios2_processor: # 2013.10.06 20:13:01 (*)   LM_LICENSE_FILE environment variable is empty
+Info (12250): Nios2_processor: # 2013.10.06 20:13:01 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
+Info (12250): Nios2_processor: # 2013.10.06 20:13:01 (*)   Elaborating CPU configuration settings
+Info (12250): Nios2_processor: # 2013.10.06 20:13:01 (*)   Creating all objects for CPU
+Info (12250): Nios2_processor: # 2013.10.06 20:13:01 (*)     Testbench
+Info (12250): Nios2_processor: # 2013.10.06 20:13:01 (*)     Instruction decoding
+Info (12250): Nios2_processor: # 2013.10.06 20:13:01 (*)       Instruction fields
+Info (12250): Nios2_processor: # 2013.10.06 20:13:01 (*)       Instruction decodes
+Info (12250): Nios2_processor: # 2013.10.06 20:13:02 (*)       Signals for RTL simulation waveforms
+Info (12250): Nios2_processor: # 2013.10.06 20:13:02 (*)       Instruction controls
+Info (12250): Nios2_processor: # 2013.10.06 20:13:02 (*)     Pipeline frontend
+Info (12250): Nios2_processor: # 2013.10.06 20:13:02 (*)     Pipeline backend
+Info (12250): Nios2_processor: # 2013.10.06 20:13:06 (*)   Generating RTL from CPU objects
+Info (12250): Nios2_processor: # 2013.10.06 20:13:08 (*)   Creating encrypted RTL
+Info (12250): Nios2_processor: # 2013.10.06 20:13:10 (*) Done Nios II generation
 Info (12250): Nios2_processor: Done RTL generation for module 'nios_system_nios2_processor'
 Info (12250): Nios2_processor: "nios_system" instantiated altera_nios2_qsys "nios2_processor"
 Info (12250): Clocks: Starting Generation of Required Clocks for DE-Series Boards
 Info (12250): Clocks: "nios_system" instantiated altera_up_clocks "clocks"
 Info (12250): Starting classic module elaboration.
-Info (12250): 2013.10.03.07:24:33 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:24:34 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0005_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0005_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:13:14 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:13:14 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0005_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0005_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
 Info (12250): Finished elaborating classic module.
-Info (12250): 2013.10.03.07:24:36 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0005_sopclgen/yysystem.ptf
+Info (12250): 2013.10.06.20:13:16 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0005_sopclgen/yysystem.ptf
 Info (12250): Running sopc_builder...
-Info (12250): 2013.10.03.07:24:39 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:24:40 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0005_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0005_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
-Info (12250): 2013.10.03.07:24:41 No .sopc_builder configuration file(!)
-Info (12250): 2013.10.03.07:24:42 .
-Info (12250): 2013.10.03.07:24:43 .
-Info (12250): 2013.10.03.07:24:43 # 2013.10.03 07:24:43 (*) Running Test Generator Program for nios_system_sdram
-Info (12250): 2013.10.03.07:24:44 # 2013.10.03 07:24:44 (*) Success: sopc_builder finished.
+Info (12250): 2013.10.06.20:13:19 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:13:19 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0005_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0005_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:13:21 No .sopc_builder configuration file(!)
+Info (12250): 2013.10.06.20:13:21 .
+Info (12250): 2013.10.06.20:13:22 .
+Info (12250): 2013.10.06.20:13:22 # 2013.10.06 20:13:22 (*) Running Test Generator Program for nios_system_sdram
+Info (12250): 2013.10.06.20:13:23 # 2013.10.06 20:13:23 (*) Success: sopc_builder finished.
 Info (12250): Sdram: "nios_system" instantiated altera_avalon_new_sdram_controller "sdram"
 Info (12250): Sram: Starting Generation of SRAM or SSRAM Controller
 Info (12250): Sram: "nios_system" instantiated altera_up_avalon_sram "sram"
 Info (12250): Starting classic module elaboration.
-Info (12250): 2013.10.03.07:24:49 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:24:49 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0007_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0007_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:13:26 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:13:27 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0007_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0007_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
 Info (12250): Finished elaborating classic module.
-Info (12250): 2013.10.03.07:24:51 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0007_sopclgen/yysystem.ptf
+Info (12250): 2013.10.06.20:13:28 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0007_sopclgen/yysystem.ptf
 Info (12250): Running sopc_builder...
-Info (12250): 2013.10.03.07:24:54 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:24:55 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0007_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0007_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
-Info (12250): 2013.10.03.07:24:57 No .sopc_builder configuration file(!)
-Info (12250): 2013.10.03.07:24:57 .
-Info (12250): 2013.10.03.07:24:58 # 2013.10.03 07:24:58 (*) Success: sopc_builder finished.
+Info (12250): 2013.10.06.20:13:31 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:13:32 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0007_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0007_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:13:33 No .sopc_builder configuration file(!)
+Info (12250): 2013.10.06.20:13:34 .
+Info (12250): 2013.10.06.20:13:35 # 2013.10.06 20:13:35 (*) Success: sopc_builder finished.
 Info (12250): Jtag_uart: "nios_system" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info (12250): Starting classic module elaboration.
-Info (12250): 2013.10.03.07:25:03 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:25:03 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0008_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0008_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:13:38 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:13:39 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0008_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0008_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
 Info (12250): Finished elaborating classic module.
-Info (12250): 2013.10.03.07:25:05 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0008_sopclgen/yysystem.ptf
+Info (12250): 2013.10.06.20:13:40 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0008_sopclgen/yysystem.ptf
 Info (12250): Running sopc_builder...
-Info (12250): 2013.10.03.07:25:08 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:25:08 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0008_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0008_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
-Info (12250): 2013.10.03.07:25:10 No .sopc_builder configuration file(!)
-Info (12250): 2013.10.03.07:25:10 .
-Info (12250): 2013.10.03.07:25:11 # 2013.10.03 07:25:11 (*) Success: sopc_builder finished.
+Info (12250): 2013.10.06.20:13:43 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:13:43 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0008_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0008_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:13:45 No .sopc_builder configuration file(!)
+Info (12250): 2013.10.06.20:13:45 .
+Info (12250): 2013.10.06.20:13:46 # 2013.10.06 20:13:46 (*) Success: sopc_builder finished.
 Info (12250): Switches: "nios_system" instantiated altera_avalon_pio "switches"
 Info (12250): Starting classic module elaboration.
-Info (12250): 2013.10.03.07:25:15 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:25:16 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0009_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0009_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:13:50 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:13:50 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0009_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0009_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
 Info (12250): Finished elaborating classic module.
-Info (12250): 2013.10.03.07:25:17 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0009_sopclgen/yysystem.ptf
+Info (12250): 2013.10.06.20:13:52 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0009_sopclgen/yysystem.ptf
 Info (12250): Running sopc_builder...
-Info (12250): 2013.10.03.07:25:21 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:25:21 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0009_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0009_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
-Info (12250): 2013.10.03.07:25:23 No .sopc_builder configuration file(!)
-Info (12250): 2013.10.03.07:25:23 .
-Info (12250): 2013.10.03.07:25:24 # 2013.10.03 07:25:24 (*) Success: sopc_builder finished.
+Info (12250): 2013.10.06.20:13:55 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:13:56 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0009_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0009_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:13:57 No .sopc_builder configuration file(!)
+Info (12250): 2013.10.06.20:13:57 .
+Info (12250): 2013.10.06.20:13:58 # 2013.10.06 20:13:58 (*) Success: sopc_builder finished.
 Info (12250): LEDG: "nios_system" instantiated altera_avalon_pio "LEDG"
 Info (12250): Starting classic module elaboration.
-Info (12250): 2013.10.03.07:25:29 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:25:29 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0010_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0010_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:14:01 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:14:02 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0010_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0010_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
 Info (12250): Finished elaborating classic module.
-Info (12250): 2013.10.03.07:25:31 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0010_sopclgen/yysystem.ptf
+Info (12250): 2013.10.06.20:14:04 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0010_sopclgen/yysystem.ptf
 Info (12250): Running sopc_builder...
-Info (12250): 2013.10.03.07:25:34 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:25:35 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0010_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0010_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
-Info (12250): 2013.10.03.07:25:36 No .sopc_builder configuration file(!)
-Info (12250): 2013.10.03.07:25:36 .
-Info (12250): 2013.10.03.07:25:37 # 2013.10.03 07:25:37 (*) Success: sopc_builder finished.
+Info (12250): 2013.10.06.20:14:06 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:14:07 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0010_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0010_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:14:09 No .sopc_builder configuration file(!)
+Info (12250): 2013.10.06.20:14:09 .
+Info (12250): 2013.10.06.20:14:10 # 2013.10.06 20:14:10 (*) Success: sopc_builder finished.
 Info (12250): LEDR: "nios_system" instantiated altera_avalon_pio "LEDR"
 Info (12250): Starting classic module elaboration.
-Info (12250): 2013.10.03.07:25:41 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:25:42 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0011_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0011_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:14:13 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:14:14 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0011_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0011_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
 Info (12250): Finished elaborating classic module.
-Info (12250): 2013.10.03.07:25:43 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0011_sopclgen/yysystem.ptf
+Info (12250): 2013.10.06.20:14:16 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0011_sopclgen/yysystem.ptf
 Info (12250): Running sopc_builder...
-Info (12250): 2013.10.03.07:25:46 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:25:47 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0011_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0011_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
-Info (12250): 2013.10.03.07:25:48 No .sopc_builder configuration file(!)
-Info (12250): 2013.10.03.07:25:49 .
-Info (12250): 2013.10.03.07:25:50 # 2013.10.03 07:25:49 (*) Success: sopc_builder finished.
+Info (12250): 2013.10.06.20:14:18 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:14:19 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0011_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0011_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:14:21 No .sopc_builder configuration file(!)
+Info (12250): 2013.10.06.20:14:21 .
+Info (12250): 2013.10.06.20:14:22 # 2013.10.06 20:14:22 (*) Success: sopc_builder finished.
 Info (12250): Keys: "nios_system" instantiated altera_avalon_pio "keys"
 Info (12250): Starting classic module elaboration.
-Info (12250): 2013.10.03.07:25:53 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:25:54 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0012_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0012_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:14:26 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:14:26 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0012_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0012_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
 Info (12250): Finished elaborating classic module.
-Info (12250): 2013.10.03.07:25:55 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0012_sopclgen/yysystem.ptf
+Info (12250): 2013.10.06.20:14:28 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0012_sopclgen/yysystem.ptf
 Info (12250): Running sopc_builder...
-Info (12250): 2013.10.03.07:25:59 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:25:59 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0012_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0012_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
-Info (12250): 2013.10.03.07:26:01 No .sopc_builder configuration file(!)
-Info (12250): 2013.10.03.07:26:01 .
-Info (12250): 2013.10.03.07:26:02 # 2013.10.03 07:26:02 (*) Success: sopc_builder finished.
+Info (12250): 2013.10.06.20:14:31 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:14:31 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0012_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0012_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:14:33 No .sopc_builder configuration file(!)
+Info (12250): 2013.10.06.20:14:33 .
+Info (12250): 2013.10.06.20:14:34 # 2013.10.06 20:14:34 (*) Success: sopc_builder finished.
 Info (12250): HEX0: "nios_system" instantiated altera_avalon_pio "HEX0"
 Info (12250): Lcd: Starting Generation of Character LCD
 Info (12250): Lcd: "nios_system" instantiated altera_up_avalon_character_lcd "lcd"
@@ -14205,16 +14205,16 @@ Info (12250): Vga_controller: Starting Generation of VGA Controller
 Info (12250): Vga_controller: "nios_system" instantiated altera_up_avalon_video_vga_controller "vga_controller"
 Info (12250): SD_card: "nios_system" instantiated Altera_UP_SD_Card_Avalon_Interface "SD_card"
 Info (12250): Starting classic module elaboration.
-Info (12250): 2013.10.03.07:26:08 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:26:08 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0021_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0021_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:14:39 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:14:39 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0021_sopclgen  --no_splash --refresh C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0021_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
 Info (12250): Finished elaborating classic module.
-Info (12250): 2013.10.03.07:26:10 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0021_sopclgen/yysystem.ptf
+Info (12250): 2013.10.06.20:14:41 Executing: C:/altera/12.0sp2/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0021_sopclgen/yysystem.ptf
 Info (12250): Running sopc_builder...
-Info (12250): 2013.10.03.07:26:13 Qt: Untested Windows version 6.2 detected!
-Info (12250): 2013.10.03.07:26:14 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0021_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5981_1177545646328872434.dir/0021_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
-Info (12250): 2013.10.03.07:26:16 No .sopc_builder configuration file(!)
-Info (12250): 2013.10.03.07:26:16 .
-Info (12250): 2013.10.03.07:26:17 # 2013.10.03 07:26:17 (*) Success: sopc_builder finished.
+Info (12250): 2013.10.06.20:14:44 Qt: Untested Windows version 6.2 detected!
+Info (12250): 2013.10.06.20:14:44 "c:/altera/12.0sp2/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.0sp2/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.0sp2/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0021_sopclgen  --generate C:/Users/Keith/AppData/Local/Temp/alt5985_407654118601530065.dir/0021_sopclgen/yysystem.v --quartus_dir="c:/altera/12.0sp2/quartus" --sopc_perl="c:/altera/12.0sp2/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.0sp2/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.0sp2/quartus/../ip/altera/nios2_ip"
+Info (12250): 2013.10.06.20:14:46 No .sopc_builder configuration file(!)
+Info (12250): 2013.10.06.20:14:46 .
+Info (12250): 2013.10.06.20:14:47 # 2013.10.06 20:14:47 (*) Success: sopc_builder finished.
 Info (12250): Sys_timer: "nios_system" instantiated altera_avalon_timer "sys_timer"
 Info (12250): Ps2: Starting Generation of PS2 Controller
 Info (12250): Ps2: "nios_system" instantiated altera_up_avalon_ps2 "ps2"
@@ -15278,9 +15278,9 @@ Info (21057): Implemented 10924 device resources after synthesis - the final res
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 10 DSP elements
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 97 warnings
-    Info: Peak virtual memory: 522 megabytes
-    Info: Processing ended: Thu Oct 03 07:27:35 2013
-    Info: Elapsed time: 00:03:38
-    Info: Total CPU time (on all processors): 00:02:41
+    Info: Peak virtual memory: 519 megabytes
+    Info: Processing ended: Sun Oct 06 20:16:05 2013
+    Info: Elapsed time: 00:03:23
+    Info: Total CPU time (on all processors): 00:02:45
 
 
