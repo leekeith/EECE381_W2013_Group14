@@ -17,4 +17,5 @@
  <library expandedCategories="Project,Library" />
  <window width="1936" height="1066" x="1" y="0" />
  <hdlexample language="VHDL" />
+ <generation path="_PROJECT_NAME_" />
 </preferences>
