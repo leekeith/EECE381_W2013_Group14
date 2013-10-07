@@ -1,26 +1,27 @@
 obj/default/sdcard.o: sdcard.c sdcard.h \
-  ../sdcard_migrated_bsp//drivers/inc/altera_up_sd_card_avalon_interface.h \
-  ../sdcard_migrated_bsp//HAL/inc/alt_types.h \
-  ../sdcard_migrated_bsp//HAL/inc/sys/alt_dev.h \
-  ../sdcard_migrated_bsp/system.h ../sdcard_migrated_bsp/linker.h \
-  ../sdcard_migrated_bsp//HAL/inc/sys/alt_llist.h \
-  ../sdcard_migrated_bsp//HAL/inc/priv/alt_dev_llist.h \
-  ../sdcard_migrated_bsp//HAL/inc/sys/alt_llist.h
+  ../../../../workspace2/NewBSP/drivers/inc/altera_up_sd_card_avalon_interface.h \
+  ../../../../workspace2/NewBSP/HAL/inc/alt_types.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_dev.h \
+  ../../../../workspace2/NewBSP/system.h \
+  ../../../../workspace2/NewBSP/linker.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
+  ../../../../workspace2/NewBSP/HAL/inc/priv/alt_dev_llist.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h
 
 sdcard.h:
 
-../sdcard_migrated_bsp//drivers/inc/altera_up_sd_card_avalon_interface.h:
+../../../../workspace2/NewBSP/drivers/inc/altera_up_sd_card_avalon_interface.h:
 
-../sdcard_migrated_bsp//HAL/inc/alt_types.h:
+../../../../workspace2/NewBSP/HAL/inc/alt_types.h:
 
-../sdcard_migrated_bsp//HAL/inc/sys/alt_dev.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_dev.h:
 
-../sdcard_migrated_bsp/system.h:
+../../../../workspace2/NewBSP/system.h:
 
-../sdcard_migrated_bsp/linker.h:
+../../../../workspace2/NewBSP/linker.h:
 
-../sdcard_migrated_bsp//HAL/inc/sys/alt_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
 
-../sdcard_migrated_bsp//HAL/inc/priv/alt_dev_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/priv/alt_dev_llist.h:
 
-../sdcard_migrated_bsp//HAL/inc/sys/alt_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:

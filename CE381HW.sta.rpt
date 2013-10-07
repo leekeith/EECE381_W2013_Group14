@@ -1,5 +1,9 @@
 TimeQuest Timing Analyzer report for CE381HW
+<<<<<<< HEAD
 Mon Oct 07 15:23:55 2013
+=======
+Sun Oct 06 20:17:16 2013
+>>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
 Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
 
 
@@ -290,7 +294,11 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
     Info: Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
+<<<<<<< HEAD
     Info: Processing started: Mon Oct 07 15:23:44 2013
+=======
+    Info: Processing started: Sun Oct 06 20:17:10 2013
+>>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
 Info: Command: quartus_sta CE381HW -c CE381HW
 Info: qsta_default_script.tcl version: #2
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -515,9 +523,16 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 12 warnings
+<<<<<<< HEAD
     Info: Peak virtual memory: 371 megabytes
     Info: Processing ended: Mon Oct 07 15:23:55 2013
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:07
+=======
+    Info: Peak virtual memory: 366 megabytes
+    Info: Processing ended: Sun Oct 06 20:17:16 2013
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
+>>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
 
 

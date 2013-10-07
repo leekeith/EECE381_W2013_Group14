@@ -1,5 +1,9 @@
 Fitter report for CE381HW
+<<<<<<< HEAD
 Mon Oct 07 15:23:37 2013
+=======
+Sun Oct 06 20:17:03 2013
+>>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
 Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
 
 
@@ -69,7 +73,11 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                     ;
 +------------------------------------+-----------------------------------------------+
+<<<<<<< HEAD
 ; Fitter Status                      ; Successful - Mon Oct 07 15:23:37 2013         ;
+=======
+; Fitter Status                      ; Successful - Sun Oct 06 20:17:03 2013         ;
+>>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
 ; Quartus II 32-bit Version          ; 12.0 Build 263 08/02/2012 SP 2 SJ Web Edition ;
 ; Revision Name                      ; CE381HW                                       ;
 ; Top-level Entity Name              ; CE381HW                                       ;
@@ -4224,7 +4232,11 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Fitter
     Info: Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
+<<<<<<< HEAD
     Info: Processing started: Mon Oct 07 15:22:01 2013
+=======
+    Info: Processing started: Sun Oct 06 20:16:08 2013
+>>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off CE381HW -c CE381HW
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (119006): Selected device EP2C35F672C6 for design "CE381HW"
@@ -4701,9 +4713,15 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "TD_VS" is assigned to location or region, but does not exist in design
     Warning (15706): Node "UART_RXD" is assigned to location or region, but does not exist in design
     Warning (15706): Node "UART_TXD" is assigned to location or region, but does not exist in design
+<<<<<<< HEAD
 Info (171121): Fitter preparation operations ending: elapsed time is 00:00:24
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:04
+=======
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:13
+Info (170189): Fitter placement preparation operations beginning
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
+>>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:15
@@ -4941,9 +4959,16 @@ Warning (169064): Following 2 pins have no output enable or a GND or VCC output 
     Info (169065): Pin SD_DAT3 has a permanently disabled output enable
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Quartus II 32-bit Fitter was successful. 0 errors, 201 warnings
+<<<<<<< HEAD
     Info: Peak virtual memory: 527 megabytes
     Info: Processing ended: Mon Oct 07 15:23:43 2013
     Info: Elapsed time: 00:01:42
     Info: Total CPU time (on all processors): 00:01:35
+=======
+    Info: Peak virtual memory: 530 megabytes
+    Info: Processing ended: Sun Oct 06 20:17:07 2013
+    Info: Elapsed time: 00:00:59
+    Info: Total CPU time (on all processors): 00:00:54
+>>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
 
 

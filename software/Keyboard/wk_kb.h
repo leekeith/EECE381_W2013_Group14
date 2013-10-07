@@ -23,7 +23,7 @@ typedef struct kb_t{	alt_up_ps2_dev* dev;
 
 kb_t* initKb(void* ISR);
 
-key_s getchKb(kb_t* kb);
+void getchKb(kb_t* kb,key_s* retVal);
 
 void readFromKb(kb_t* kb);
 

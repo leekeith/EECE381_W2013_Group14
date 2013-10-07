@@ -41,30 +41,31 @@ kb_t* initKb(void* ISR)
 		printf("Keyboard Connected\n");
 
 	alt_up_ps2_enable_read_interrupt((the_kb->dev));
-	set_keyboard_rate((the_kb->dev),60);
+	set_keyboard_rate((the_kb->dev),100);
 	alt_irq_register(the_kb->dev->irq_id,NULL,ISR);
 
 	return the_kb;
 }
 
-key_s getchKb(kb_t* kb)
+void getchKb(kb_t* kb, key_s* retVal)
 {
-	key_s retVal;
-	retVal.type=(KB_CODE_TYPE*)malloc(sizeof(KB_CODE_TYPE));
-	retVal.val=(char*)malloc(sizeof(char));
-	retVal.buf=(alt_u8*)malloc(sizeof(alt_u8));
-	*retVal.type=KB_INVALID_CODE;
-	*retVal.type=*kb->buffer[kb->top].type;
-	*retVal.val=*kb->buffer[kb->top].val;
-	*retVal.buf=*kb->buffer[kb->top].buf;
+	*retVal->type=*kb->buffer[kb->top].type;
+	*retVal->val=*kb->buffer[kb->top].val;
+	*retVal->buf=*kb->buffer[kb->top].buf;
 	kb->top=(kb->top+1)%8;
-	return retVal;
 }
 
 void readFromKb(kb_t* kb)
 {
 		decode_scancode(kb->dev,kb->buffer[kb->bottom].type, kb->buffer[kb->bottom].buf, kb->buffer[kb->bottom].val);
-		if((kb->bottom+1)%8!=kb->top)
-			kb->bottom=(kb->bottom+1)%8;
 
+		if(*kb->buffer[kb->bottom].type<KB_BREAK_CODE)
+		{
+			kb->bottom=(kb->bottom+1)%8;
+		}
+		else if (*kb->buffer[kb->bottom].type==KB_BREAK_CODE)
+		{
+			printf(" ");
+		}
+		return;
 }
