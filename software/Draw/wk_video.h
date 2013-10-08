@@ -11,6 +11,7 @@
 #include <system.h>
 #include <drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h>
 #include <drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h>
+#include <string.h>
 
 #define VRAM_ADDR 		SRAM_BASE
 #define CHARBUFF_NAME 	"/dev/char_buffer"
@@ -39,6 +40,8 @@ inline void drawPoly(pixel_buffer_t* screen, coord_t* points, int pt_count, int 
 inline void swapBuffer(pixel_buffer_t* screen);
 
 inline short mkColor(char R, char G, char B);
+
+inline void showHealth(int health);
 //////////////////////////////
 //Char Functions
 //////////////////////////////
