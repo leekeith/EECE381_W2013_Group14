@@ -21,6 +21,7 @@ void kb_ISR(void* context, alt_u32 id)
 }
 int main(int argc, char** argv)
 {
+	char* p;
 	key_s* nextKey;
 	nextKey->type=(KB_CODE_TYPE*)malloc(sizeof(KB_CODE_TYPE));
 	nextKey->val=(char*)malloc(sizeof(char));
@@ -34,12 +35,23 @@ int main(int argc, char** argv)
 	}
 	while(1)
 	{
+
 		if(kb->top!=kb->bottom)
 		{
 			getchKb(kb, nextKey);
-			if(*nextKey->type==KB_ASCII_MAKE_CODE)
+			if(*nextKey->type==KB_ASCII_MAKE_CODE||*nextKey->type==KB_BINARY_MAKE_CODE)
 				printf("%c",*nextKey->val);
+			/*
+			else if(*nextKey->type==KB_BINARY_MAKE_CODE || *nextKey->type==KB_LONG_BINARY_MAKE_CODE)
+			{
+				translate_make_code(*nextKey->type,*nextKey->buf,p);
+				printf("BINARY MAKE CODE: %s\n",p);
+			}
+			else if(*nextKey->type==KB_BREAK_CODE || *nextKey->type==KB_LONG_BREAK_CODE || *nextKey->type==KB_INVALID_CODE)
+				printf("BREAK : %x\n",*nextKey->buf);
+		*/
 		}
+
 	}
 
 	return 0;

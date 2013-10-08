@@ -31,17 +31,20 @@ kb_t* initKb(void* ISR)
 	reset_keyboard(the_kb->dev);
 	alt_up_ps2_clear_fifo(the_kb->dev);
 	}while(0);	//while(the_kb->dev->device_type==PS2_UNKNOWN);
-	if(0)//the_kb->dev->device_type!=PS2_KEYBOARD)
+	if(the_kb->dev->device_type==PS2_MOUSE)
 	{
-		printf("No Keyboard Found\n%d\n",the_kb->dev->device_type);
+		printf("Mouse found; terminating initialization.\n");
 		free(the_kb);
 		return 0;
 	}
 	else
 		printf("Keyboard Connected\n");
-
+		if(the_kb->dev->device_type==PS2_UNKNOWN)
+		{
+			printf("HACK: Recognized as PS2_UNKNOWN: Forcing KB operation.\n");
+		}
 	alt_up_ps2_enable_read_interrupt((the_kb->dev));
-	set_keyboard_rate((the_kb->dev),100);
+	set_keyboard_rate((the_kb->dev),10);
 	alt_irq_register(the_kb->dev->irq_id,NULL,ISR);
 
 	return the_kb;
@@ -49,23 +52,17 @@ kb_t* initKb(void* ISR)
 
 void getchKb(kb_t* kb, key_s* retVal)
 {
+	kb->top=(kb->top+1)%8;
 	*retVal->type=*kb->buffer[kb->top].type;
 	*retVal->val=*kb->buffer[kb->top].val;
 	*retVal->buf=*kb->buffer[kb->top].buf;
-	kb->top=(kb->top+1)%8;
+
 }
 
 void readFromKb(kb_t* kb)
 {
-		decode_scancode(kb->dev,kb->buffer[kb->bottom].type, kb->buffer[kb->bottom].buf, kb->buffer[kb->bottom].val);
+	if(*kb->buffer[kb->bottom].type!=KB_BREAK_CODE&&*kb->buffer[kb->bottom].type!=KB_LONG_BREAK_CODE&&*kb->buffer[kb->bottom].type!=KB_INVALID_CODE)
+		kb->bottom=(kb->bottom+1)%8;
+	decode_scancode(kb->dev,kb->buffer[kb->bottom].type, kb->buffer[kb->bottom].buf, kb->buffer[kb->bottom].val);
 
-		if(*kb->buffer[kb->bottom].type<KB_BREAK_CODE)
-		{
-			kb->bottom=(kb->bottom+1)%8;
-		}
-		else if (*kb->buffer[kb->bottom].type==KB_BREAK_CODE)
-		{
-			printf(" ");
-		}
-		return;
 }
