@@ -147,6 +147,7 @@ C_SRCS += wk_io.c
 C_SRCS += wk_lcd.c
 C_SRCS += wk_video.c
 C_SRCS += DrawMain.c
+C_SRCS += wk_kb.c
 CXX_SRCS :=
 ASM_SRCS :=
 
@@ -181,7 +182,7 @@ CRT0 :=
 SYS_LIB :=
 
 # Define path to the root of the BSP.
-BSP_ROOT_DIR := ../../../../../Desktop/310project
+BSP_ROOT_DIR := ../../../../workspace2/NewBSP
 
 # List of application specific include directories, library directories and library names
 APP_INCLUDE_DIRS :=
