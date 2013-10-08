@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 start_full_compilation:s:00:06:56
 start_analysis_synthesis:s:00:05:00-start_full_compilation
 start_analysis_elaboration:s-start_full_compilation
@@ -13,3 +14,11 @@ start_fitter:s:00:01:01-start_full_compilation
 start_assembler:s:00:00:07-start_full_compilation
 start_timing_analyzer:s:00:00:03-start_full_compilation
 >>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
+=======
+start_full_compilation:s:00:06:01
+start_analysis_synthesis:s:00:04:16-start_full_compilation
+start_analysis_elaboration:s-start_full_compilation
+start_fitter:s:00:01:34-start_full_compilation
+start_assembler:s:00:00:07-start_full_compilation
+start_timing_analyzer:s:00:00:04-start_full_compilation
+>>>>>>> origin/health

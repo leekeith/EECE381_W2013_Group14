@@ -9,6 +9,8 @@
 #include"game.h"
 #include"stdlib.h"
 #include<system.h>
+#include<stdbool.h>
+#include<string.h>
 extern int scrollRate;
 void drawBg(pixel_buffer_t* screen)
 {
@@ -26,7 +28,7 @@ void drawSprite(pixel_buffer_t* screen, sprite* the_sprite)
 	short rad;
 	if(the_sprite->type!=null)
 	{
-		hue=mkColor(128-(32*(int)the_sprite->type),32,32);
+		hue=mkColor(255-(32*(int)the_sprite->type),(255- 32*(int)the_sprite->type),64);
 		switch(the_sprite->type)
 		{
 		case player:
@@ -34,6 +36,9 @@ void drawSprite(pixel_buffer_t* screen, sprite* the_sprite)
 			break;
 		case enemy1:
 			rad=3;
+			break;
+		case enemy2:
+			rad=8;
 			break;
 		default:
 			break;
@@ -56,12 +61,25 @@ void makeNPC(sprite* npcs)
 		i++;
 	if(i==MAX_NPC)
 		return;
-	npcs[i].type=enemy1;
-	npcs[i].health=100;
 
-	do{
-		npcs[i].loc.x=rand()%VRAM_W;
-	}while(npcs[i].loc.x>(VRAM_W/4)-3 && npcs[i].loc.x<((3*VRAM_W)/4)+3);
+	if(i%2 == 0)
+	{
+		npcs[i].type=enemy1;
+		npcs[i].health=100;
+
+		do{
+			npcs[i].loc.x=rand()%VRAM_W;
+		}while(npcs[i].loc.x>(VRAM_W/4)-3 && npcs[i].loc.x<((3*VRAM_W)/4)+3);
+	}
+	else
+	{
+		npcs[i].type=enemy2;
+		npcs[i].health=100;
+
+		do{
+			npcs[i].loc.x=rand()%VRAM_W;
+		}while(npcs[i].loc.x<(VRAM_W/4)+8 || npcs[i].loc.x>((3*VRAM_W)/4)-8);
+	}
 
 	//npcs[i].loc.x=PLAYER_LB-10;
 	npcs[i].loc.y=0;

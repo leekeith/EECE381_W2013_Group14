@@ -1,9 +1,13 @@
 Flow report for CE381HW
 <<<<<<< HEAD
+<<<<<<< HEAD
 Mon Oct 07 15:23:55 2013
 =======
 Sun Oct 06 20:17:16 2013
 >>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
+=======
+Tue Oct 08 12:51:04 2013
+>>>>>>> origin/health
 Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
 
 
@@ -43,10 +47,14 @@ applicable agreement for further details.
 ; Flow Summary                                                                       ;
 +------------------------------------+-----------------------------------------------+
 <<<<<<< HEAD
+<<<<<<< HEAD
 ; Flow Status                        ; Successful - Mon Oct 07 15:23:53 2013         ;
 =======
 ; Flow Status                        ; Successful - Sun Oct 06 20:17:15 2013         ;
 >>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
+=======
+; Flow Status                        ; Successful - Tue Oct 08 12:51:02 2013         ;
+>>>>>>> origin/health
 ; Quartus II 32-bit Version          ; 12.0 Build 263 08/02/2012 SP 2 SJ Web Edition ;
 ; Revision Name                      ; CE381HW                                       ;
 ; Top-level Entity Name              ; CE381HW                                       ;
@@ -71,28 +79,40 @@ applicable agreement for further details.
 ; Option            ; Setting             ;
 +-------------------+---------------------+
 <<<<<<< HEAD
+<<<<<<< HEAD
 ; Start date & time ; 10/07/2013 15:17:05 ;
 =======
 ; Start date & time ; 10/06/2013 20:12:44 ;
 >>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
+=======
+; Start date & time ; 10/08/2013 12:45:08 ;
+>>>>>>> origin/health
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CE381HW             ;
 +-------------------+---------------------+
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/health
 +---------------------------------------------------------------------------------------------------------------+
 ; Flow Non-Default Global Settings                                                                              ;
 +-------------------------------------+------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                        ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+------------------------------+---------------+-------------+------------+
+<<<<<<< HEAD
 ; COMPILER_SIGNATURE_ID               ; 130601444445.138118422306320 ; --            ; --          ; --         ;
+=======
+; COMPILER_SIGNATURE_ID               ; 158211270956.138126150701348 ; --            ; --          ; --         ;
+>>>>>>> origin/health
 ; MAX_CORE_JUNCTION_TEMP              ; 85                           ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                            ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                     ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING        ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; SOURCE                       ; --            ; --          ; Top        ;
 +-------------------------------------+------------------------------+---------------+-------------+------------+
+<<<<<<< HEAD
 =======
 +------------------------------------------------------------------------------------------------------------------+
 ; Flow Non-Default Global Settings                                                                                 ;
@@ -107,6 +127,8 @@ applicable agreement for further details.
 ; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top        ;
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
 >>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
+=======
+>>>>>>> origin/health
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -114,6 +136,7 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+<<<<<<< HEAD
 <<<<<<< HEAD
 ; Analysis & Synthesis      ; 00:04:48     ; 1.0                     ; 517 MB              ; 00:03:50                           ;
 ; Fitter                    ; 00:01:36     ; 1.0                     ; 527 MB              ; 00:01:30                           ;
@@ -127,6 +150,13 @@ applicable agreement for further details.
 ; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 366 MB              ; 00:00:05                           ;
 ; Total                     ; 00:04:23     ; --                      ; --                  ; 00:03:39                           ;
 >>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
+=======
+; Analysis & Synthesis      ; 00:04:06     ; 1.0                     ; 514 MB              ; 00:03:29                           ;
+; Fitter                    ; 00:01:27     ; 1.0                     ; 529 MB              ; 00:01:21                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 353 MB              ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:08     ; 1.0                     ; 374 MB              ; 00:00:06                           ;
+; Total                     ; 00:05:46     ; --                      ; --                  ; 00:05:01                           ;
+>>>>>>> origin/health
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -135,10 +165,17 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
+<<<<<<< HEAD
 ; Analysis & Synthesis      ; Mehdi            ; Windows 7 ; 6.2        ; x86_64         ;
 ; Fitter                    ; Mehdi            ; Windows 7 ; 6.2        ; x86_64         ;
 ; Assembler                 ; Mehdi            ; Windows 7 ; 6.2        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; Mehdi            ; Windows 7 ; 6.2        ; x86_64         ;
+=======
+; Analysis & Synthesis      ; Jon-PC           ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; Jon-PC           ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; Jon-PC           ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Jon-PC           ; Windows 7 ; 6.1        ; x86_64         ;
+>>>>>>> origin/health
 +---------------------------+------------------+-----------+------------+----------------+
 
 
