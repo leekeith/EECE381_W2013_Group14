@@ -69,7 +69,7 @@ void makeNPC(sprite* npcs)
 
 		do{
 			npcs[i].loc.x=rand()%VRAM_W;
-		}while(npcs[i].loc.x>(VRAM_W/4)-3 && npcs[i].loc.x<((3*VRAM_W)/4)+3);
+		}while(npcs[i].loc.x>(VRAM_W/4)-5 && npcs[i].loc.x<((3*VRAM_W)/4)+5);
 	}
 	else
 	{
