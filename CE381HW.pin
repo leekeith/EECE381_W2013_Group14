@@ -70,8 +70,8 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 -------------------------------------------------------------------------------------------------------------
 GND                          : A2        : gnd    :                   :         :           :                
 VCCIO3                       : A3        : power  :                   : 3.3V    : 3         :                
-GND*                         : A4        :        :                   :         : 3         :                
-GND*                         : A5        :        :                   :         : 3         :                
+AUD_DACDAT                   : A4        : output : 3.3-V LVTTL       :         : 3         : Y              
+AUD_XCK                      : A5        : output : 3.3-V LVTTL       :         : 3         : Y              
 I2C_SCLK                     : A6        : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_HS                       : A7        : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_R[5]                     : A8        : output : 3.3-V LVTTL       :         : 3         : Y              
@@ -249,8 +249,8 @@ GND                          : AF25      : gnd    :                   :         
 GND                          : B1        : gnd    :                   :         :           :                
 GND*                         : B2        :        :                   :         : 2         :                
 GND*                         : B3        :        :                   :         : 2         :                
-GND*                         : B4        :        :                   :         : 3         :                
-GND*                         : B5        :        :                   :         : 3         :                
+AUD_BCLK                     : B4        : input  : 3.3-V LVTTL       :         : 3         : Y              
+AUD_ADCDAT                   : B5        : input  : 3.3-V LVTTL       :         : 3         : Y              
 I2C_SDAT                     : B6        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 VGA_SYNC                     : B7        : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_CLK                      : B8        : output : 3.3-V LVTTL       :         : 3         : Y              
@@ -276,8 +276,8 @@ VCCIO2                       : C1        : power  :                   : 3.3V    
 GND*                         : C2        :        :                   :         : 2         :                
 GND*                         : C3        :        :                   :         : 2         :                
 GND*                         : C4        :        :                   :         : 3         :                
-GND*                         : C5        :        :                   :         : 3         :                
-GND*                         : C6        :        :                   :         : 3         :                
+AUD_ADCLRCK                  : C5        : input  : 3.3-V LVTTL       :         : 3         : Y              
+AUD_DACLRCK                  : C6        : input  : 3.3-V LVTTL       :         : 3         : Y              
 GND*                         : C7        :        :                   :         : 3         :                
 VGA_R[0]                     : C8        : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_R[4]                     : C9        : output : 3.3-V LVTTL       :         : 3         : Y              

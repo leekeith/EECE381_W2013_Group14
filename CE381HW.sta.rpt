@@ -1,4 +1,5 @@
 TimeQuest Timing Analyzer report for CE381HW
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 Mon Oct 07 15:23:55 2013
@@ -8,6 +9,9 @@ Sun Oct 06 20:17:16 2013
 =======
 Tue Oct 08 12:51:05 2013
 >>>>>>> origin/health
+=======
+Tue Oct 08 18:28:48 2013
+>>>>>>> Stashed changes
 Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
 
 
@@ -151,6 +155,7 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
+; CLOCK_27   ; AUD_XCK     ; 2.917 ;       ;       ; 2.917 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.868 ;       ;       ; 0.868 ;
 ; CLOCK_50   ; VGA_CLK     ;       ; 2.939 ; 2.939 ;       ;
 +------------+-------------+-------+-------+-------+-------+
@@ -161,6 +166,7 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
+; CLOCK_27   ; AUD_XCK     ; 2.917 ;       ;       ; 2.917 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.868 ;       ;       ; 0.868 ;
 ; CLOCK_50   ; VGA_CLK     ;       ; 2.939 ; 2.939 ;       ;
 +------------+-------------+-------+-------+-------+-------+
@@ -213,6 +219,7 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
+; CLOCK_27   ; AUD_XCK     ; 1.463 ;       ;       ; 1.463 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.154 ;       ;       ; 0.154 ;
 ; CLOCK_50   ; VGA_CLK     ;       ; 1.474 ; 1.474 ;       ;
 +------------+-------------+-------+-------+-------+-------+
@@ -223,6 +230,7 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
+; CLOCK_27   ; AUD_XCK     ; 1.463 ;       ;       ; 1.463 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.154 ;       ;       ; 0.154 ;
 ; CLOCK_50   ; VGA_CLK     ;       ; 1.474 ; 1.474 ;       ;
 +------------+-------------+-------+-------+-------+-------+
@@ -245,6 +253,7 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
+; CLOCK_27   ; AUD_XCK     ; 2.917 ;       ;       ; 2.917 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.868 ;       ;       ; 0.868 ;
 ; CLOCK_50   ; VGA_CLK     ;       ; 2.939 ; 2.939 ;       ;
 +------------+-------------+-------+-------+-------+-------+
@@ -255,6 +264,7 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
+; CLOCK_27   ; AUD_XCK     ; 1.463 ;       ;       ; 1.463 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.154 ;       ;       ; 0.154 ;
 ; CLOCK_50   ; VGA_CLK     ;       ; 1.474 ; 1.474 ;       ;
 +------------+-------------+-------+-------+-------+-------+
@@ -285,10 +295,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 1     ; 1    ;
-; Unconstrained Input Ports       ; 67    ; 67   ;
-; Unconstrained Input Port Paths  ; 230   ; 230  ;
-; Unconstrained Output Ports      ; 210   ; 210  ;
-; Unconstrained Output Port Paths ; 290   ; 290  ;
+; Unconstrained Input Ports       ; 71    ; 71   ;
+; Unconstrained Input Port Paths  ; 234   ; 234  ;
+; Unconstrained Output Ports      ; 214   ; 214  ;
+; Unconstrained Output Port Paths ; 299   ; 299  ;
 +---------------------------------+-------+------+
 
 
@@ -298,6 +308,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
     Info: Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
     Info: Processing started: Mon Oct 07 15:23:44 2013
@@ -307,6 +318,9 @@ Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
 =======
     Info: Processing started: Tue Oct 08 12:50:56 2013
 >>>>>>> origin/health
+=======
+    Info: Processing started: Tue Oct 08 18:28:40 2013
+>>>>>>> Stashed changes
 Info: Command: quartus_sta CE381HW -c CE381HW
 Info: qsta_default_script.tcl version: #2
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -485,6 +499,8 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
         Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
         Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
+        Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
+        Info (332166): set_false_path -from [get_registers *altera_avalon_st_clock_crosser:*|in_data_buffer*] -to [get_registers *altera_avalon_st_clock_crosser:*|out_data_buffer*]
     Info (332165): Entity altera_std_synchronizer
         Info (332166): set_false_path -to [get_keepers {*altera_std_synchronizer:*|din_s1}]
     Info (332165): Entity dcfifo_5oj1
@@ -501,6 +517,7 @@ Warning (332056): PLL cross checking found inconsistent PLL clock settings:
     Warning (332056): Node: NiosII|clocks|DE_Clock_Generator_System|pll|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
     Warning (332056): Node: NiosII|clocks|DE_Clock_Generator_System|pll|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
     Warning (332056): Node: NiosII|clocks|DE_Clock_Generator_System|pll|clk[2] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
+    Warning (332056): Node: NiosII|clocks|DE_Clock_Generator_Audio|pll|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 37.037
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Info (332140): No fmax paths to report
@@ -519,6 +536,7 @@ Warning (332056): PLL cross checking found inconsistent PLL clock settings:
     Warning (332056): Node: NiosII|clocks|DE_Clock_Generator_System|pll|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
     Warning (332056): Node: NiosII|clocks|DE_Clock_Generator_System|pll|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
     Warning (332056): Node: NiosII|clocks|DE_Clock_Generator_System|pll|clk[2] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
+    Warning (332056): Node: NiosII|clocks|DE_Clock_Generator_Audio|pll|clk[1] was found missing 1 generated clock that corresponds to a base clock with a period of: 37.037
 Info (332140): No Setup paths to report
 Info (332140): No Hold paths to report
 Info (332140): No Recovery paths to report
@@ -530,6 +548,7 @@ Info (332146): Worst-case minimum pulse width slack is 97.778
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
+<<<<<<< Updated upstream
 Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 12 warnings
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -549,5 +568,12 @@ Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 12 w
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:07
 >>>>>>> origin/health
+=======
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 386 megabytes
+    Info: Processing ended: Tue Oct 08 18:28:48 2013
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
+>>>>>>> Stashed changes
 
 

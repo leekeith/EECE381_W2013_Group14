@@ -67,6 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
     <td class="l">2013.10.07.15:19:45</td>
@@ -76,6 +77,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
 =======
     <td class="l">2013.10.08.12:47:24</td>
 >>>>>>> origin/health
+=======
+    <td class="l">2013.10.08.18:25:39</td>
+>>>>>>> Stashed changes
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -230,7 +234,13 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </a> altera_avalon_timer 12.0
      <br/>&#160;&#160;
      <a href="#module_ps2"><b>ps2</b>
-     </a> altera_up_avalon_ps2 12.0</span>
+     </a> altera_up_avalon_ps2 12.0
+     <br/>&#160;&#160;
+     <a href="#module_av_config"><b>av_config</b>
+     </a> altera_up_avalon_audio_and_video_config 12.0
+     <br/>&#160;&#160;
+     <a href="#module_audio"><b>audio</b>
+     </a> altera_up_avalon_audio 12.0</span>
    </div>
   </div>
   <div style="width:100% ;  height:10px"> </div>
@@ -308,7 +318,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">avalon_jtag_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>00003510</td>
+    <td class="addr"><span style="color:#989898">0x</span>00003530</td>
     <td class="empty"></td>
     <td class="empty"></td>
    </tr>
@@ -503,7 +513,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">avalon_lcd_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>00003528</td>
+    <td class="addr"><span style="color:#989898">0x</span>00003548</td>
     <td class="empty"></td>
     <td class="empty"></td>
    </tr>
@@ -518,7 +528,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavem">avalon_char_control_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>00003518</td>
+    <td class="addr"><span style="color:#989898">0x</span>00003538</td>
     <td class="empty"></td>
     <td class="empty"></td>
    </tr>
@@ -599,6 +609,36 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">avalon_ps2_slave&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>00003540</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_av_config"><b>av_config</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_av_config_slave&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>00003510</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_audio"><b>audio</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_audio_slave&#160;</td>
     <td class="addr"><span style="color:#989898">0x</span>00003520</td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -663,7 +703,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_clocks">clocks</a>
       </td>
       <td class="from">sys_clk&#160;&#160;</td>
-      <td class="main" rowspan="148">nios2_processor</td>
+      <td class="main" rowspan="160">nios2_processor</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -1425,6 +1465,68 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td class="to">&#160;&#160;interrupt</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">jtag_debug_module_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_av_config">av_config</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_av_config_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">jtag_debug_module_reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_audio">audio</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_audio_slave</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">d_irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;interrupt</td>
+     </tr>
     </table>
    </div>
    <br/>
@@ -1804,7 +1906,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">dataSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='char_buffer.avalon_char_buffer_slave' start='0x0' end='0x2000' /&gt;&lt;slave name='nios2_processor.jtag_debug_module' start='0x2800' end='0x3000' /&gt;&lt;slave name='SD_card.avalon_sdcard_slave' start='0x3000' end='0x3400' /&gt;&lt;slave name='sys_timer.s1' start='0x3400' end='0x3420' /&gt;&lt;slave name='timestamp_timer.s1' start='0x3420' end='0x3440' /&gt;&lt;slave name='switches.s1' start='0x3440' end='0x3450' /&gt;&lt;slave name='LEDG.s1' start='0x3450' end='0x3460' /&gt;&lt;slave name='LEDR.s1' start='0x3460' end='0x3470' /&gt;&lt;slave name='keys.s1' start='0x3470' end='0x3480' /&gt;&lt;slave name='HEX0.s1' start='0x3480' end='0x3490' /&gt;&lt;slave name='HEX1.s1' start='0x3490' end='0x34A0' /&gt;&lt;slave name='HEX2.s1' start='0x34A0' end='0x34B0' /&gt;&lt;slave name='HEX3.s1' start='0x34B0' end='0x34C0' /&gt;&lt;slave name='HEX4.s1' start='0x34C0' end='0x34D0' /&gt;&lt;slave name='HEX5.s1' start='0x34D0' end='0x34E0' /&gt;&lt;slave name='HEX6.s1' start='0x34E0' end='0x34F0' /&gt;&lt;slave name='HEX7.s1' start='0x34F0' end='0x3500' /&gt;&lt;slave name='pixel_buffer.avalon_control_slave' start='0x3500' end='0x3510' /&gt;&lt;slave name='jtag_uart.avalon_jtag_slave' start='0x3510' end='0x3518' /&gt;&lt;slave name='char_buffer.avalon_char_control_slave' start='0x3518' end='0x3520' /&gt;&lt;slave name='ps2.avalon_ps2_slave' start='0x3520' end='0x3528' /&gt;&lt;slave name='lcd.avalon_lcd_slave' start='0x3528' end='0x352A' /&gt;&lt;slave name='sram.avalon_sram_slave' start='0x100000' end='0x180000' /&gt;&lt;slave name='sdram.s1' start='0x1000000' end='0x1800000' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='char_buffer.avalon_char_buffer_slave' start='0x0' end='0x2000' /&gt;&lt;slave name='nios2_processor.jtag_debug_module' start='0x2800' end='0x3000' /&gt;&lt;slave name='SD_card.avalon_sdcard_slave' start='0x3000' end='0x3400' /&gt;&lt;slave name='sys_timer.s1' start='0x3400' end='0x3420' /&gt;&lt;slave name='timestamp_timer.s1' start='0x3420' end='0x3440' /&gt;&lt;slave name='switches.s1' start='0x3440' end='0x3450' /&gt;&lt;slave name='LEDG.s1' start='0x3450' end='0x3460' /&gt;&lt;slave name='LEDR.s1' start='0x3460' end='0x3470' /&gt;&lt;slave name='keys.s1' start='0x3470' end='0x3480' /&gt;&lt;slave name='HEX0.s1' start='0x3480' end='0x3490' /&gt;&lt;slave name='HEX1.s1' start='0x3490' end='0x34A0' /&gt;&lt;slave name='HEX2.s1' start='0x34A0' end='0x34B0' /&gt;&lt;slave name='HEX3.s1' start='0x34B0' end='0x34C0' /&gt;&lt;slave name='HEX4.s1' start='0x34C0' end='0x34D0' /&gt;&lt;slave name='HEX5.s1' start='0x34D0' end='0x34E0' /&gt;&lt;slave name='HEX6.s1' start='0x34E0' end='0x34F0' /&gt;&lt;slave name='HEX7.s1' start='0x34F0' end='0x3500' /&gt;&lt;slave name='pixel_buffer.avalon_control_slave' start='0x3500' end='0x3510' /&gt;&lt;slave name='av_config.avalon_av_config_slave' start='0x3510' end='0x3520' /&gt;&lt;slave name='audio.avalon_audio_slave' start='0x3520' end='0x3530' /&gt;&lt;slave name='jtag_uart.avalon_jtag_slave' start='0x3530' end='0x3538' /&gt;&lt;slave name='char_buffer.avalon_char_control_slave' start='0x3538' end='0x3540' /&gt;&lt;slave name='ps2.avalon_ps2_slave' start='0x3540' end='0x3548' /&gt;&lt;slave name='lcd.avalon_lcd_slave' start='0x3548' end='0x354A' /&gt;&lt;slave name='sram.avalon_sram_slave' start='0x100000' end='0x180000' /&gt;&lt;slave name='sdram.s1' start='0x1000000' end='0x1800000' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">clockFrequency</td>
@@ -1816,7 +1918,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">internalIrqMaskSystemInfo</td>
-        <td class="parametervalue">47</td>
+        <td class="parametervalue">63</td>
        </tr>
        <tr>
         <td class="parametername">customInstSlavesSystemInfo</td>
@@ -1992,7 +2094,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_clk_50">clk_50</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="92">clocks</td>
+      <td class="main" rowspan="98">clocks</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk_in_primary</td>
@@ -2465,6 +2567,38 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_av_config">av_config</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_audio">audio</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
      </tr>
     </table>
    </div>
@@ -6774,8 +6908,261 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
+  <a name="module_av_config"> </a>
+  <div>
+   <hr/>
+   <h2>av_config</h2>altera_up_avalon_audio_and_video_config v12.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clocks">clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="main" rowspan="10">av_config</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_50">clk_50</a>
+      </td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_nios2_processor">nios2_processor</a>
+      </td>
+      <td class="from">jtag_debug_module_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset_reset</td>
+     </tr>
+     <tr>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_av_config_slave</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">device</td>
+        <td class="parametervalue">On-Board Peripherals</td>
+       </tr>
+       <tr>
+        <td class="parametername">board</td>
+        <td class="parametervalue">DE2</td>
+       </tr>
+       <tr>
+        <td class="parametername">eai</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">audio_in</td>
+        <td class="parametervalue">Microphone to ADC</td>
+       </tr>
+       <tr>
+        <td class="parametername">dac_enable</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">mic_bypass</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">line_in_bypass</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">mic_attenuation</td>
+        <td class="parametervalue">-6dB</td>
+       </tr>
+       <tr>
+        <td class="parametername">data_format</td>
+        <td class="parametervalue">Left Justified</td>
+       </tr>
+       <tr>
+        <td class="parametername">bit_length</td>
+        <td class="parametervalue">16</td>
+       </tr>
+       <tr>
+        <td class="parametername">sampling_rate</td>
+        <td class="parametervalue">32 kHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">bosr</td>
+        <td class="parametervalue">250fs/256fs</td>
+       </tr>
+       <tr>
+        <td class="parametername">sr_register</td>
+        <td class="parametervalue">6</td>
+       </tr>
+       <tr>
+        <td class="parametername">video_format</td>
+        <td class="parametervalue">NTSC</td>
+       </tr>
+       <tr>
+        <td class="parametername">d5m_resolution</td>
+        <td class="parametervalue">2592 x 1944</td>
+       </tr>
+       <tr>
+        <td class="parametername">exposure</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">CYCLONEII</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_audio"> </a>
+  <div>
+   <hr/>
+   <h2>audio</h2>altera_up_avalon_audio v12.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clocks">clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="main" rowspan="12">audio</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_50">clk_50</a>
+      </td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_nios2_processor">nios2_processor</a>
+      </td>
+      <td class="from">jtag_debug_module_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset_reset</td>
+     </tr>
+     <tr>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_audio_slave</td>
+     </tr>
+     <tr>
+      <td class="from">d_irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;interrupt</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">avalon_bus_type</td>
+        <td class="parametervalue">Memory Mapped</td>
+       </tr>
+       <tr>
+        <td class="parametername">audio_in</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">audio_out</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">dw</td>
+        <td class="parametervalue">16</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">CYCLONEII</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
   <table class="blueBar">
    <tr>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     <td class="l">generation took 0.03 seconds</td>
     <td class="r">rendering took 0.56 seconds</td>
@@ -6787,6 +7174,10 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
 =======
     <td class="r">rendering took 0.52 seconds</td>
 >>>>>>> origin/health
+=======
+    <td class="l">generation took 0.03 seconds</td>
+    <td class="r">rendering took 0.37 seconds</td>
+>>>>>>> Stashed changes
    </tr>
   </table>
  </body>

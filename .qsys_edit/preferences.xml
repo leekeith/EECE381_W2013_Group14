@@ -14,7 +14,8 @@
    <frequency preferredWidth="528" />
   </columns>
  </clocktable>
- <library expandedCategories="Project,Library" />
+ <library
+   expandedCategories="Project,Library/University Program/Audio &amp; Video,Library/University Program,Library" />
  <window width="1936" height="1066" x="1" y="0" />
  <hdlexample language="VHDL" />
  <generation path="_PROJECT_NAME_" />

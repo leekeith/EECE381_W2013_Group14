@@ -1,4 +1,5 @@
 Flow report for CE381HW
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 Mon Oct 07 15:23:55 2013
@@ -8,6 +9,9 @@ Sun Oct 06 20:17:16 2013
 =======
 Tue Oct 08 12:51:04 2013
 >>>>>>> origin/health
+=======
+Tue Oct 08 18:28:48 2013
+>>>>>>> Stashed changes
 Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
 
 
@@ -46,6 +50,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Flow Summary                                                                       ;
 +------------------------------------+-----------------------------------------------+
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 ; Flow Status                        ; Successful - Mon Oct 07 15:23:53 2013         ;
@@ -55,21 +60,24 @@ applicable agreement for further details.
 =======
 ; Flow Status                        ; Successful - Tue Oct 08 12:51:02 2013         ;
 >>>>>>> origin/health
+=======
+; Flow Status                        ; Successful - Tue Oct 08 18:28:46 2013         ;
+>>>>>>> Stashed changes
 ; Quartus II 32-bit Version          ; 12.0 Build 263 08/02/2012 SP 2 SJ Web Edition ;
 ; Revision Name                      ; CE381HW                                       ;
 ; Top-level Entity Name              ; CE381HW                                       ;
 ; Family                             ; Cyclone II                                    ;
 ; Device                             ; EP2C35F672C6                                  ;
 ; Timing Models                      ; Final                                         ;
-; Total logic elements               ; 8,949 / 33,216 ( 27 % )                       ;
-;     Total combinational functions  ; 7,754 / 33,216 ( 23 % )                       ;
-;     Dedicated logic registers      ; 5,914 / 33,216 ( 18 % )                       ;
-; Total registers                    ; 5982                                          ;
-; Total pins                         ; 239 / 475 ( 50 % )                            ;
+; Total logic elements               ; 9,594 / 33,216 ( 29 % )                       ;
+;     Total combinational functions  ; 8,395 / 33,216 ( 25 % )                       ;
+;     Dedicated logic registers      ; 6,310 / 33,216 ( 19 % )                       ;
+; Total registers                    ; 6378                                          ;
+; Total pins                         ; 245 / 475 ( 52 % )                            ;
 ; Total virtual pins                 ; 0                                             ;
-; Total memory bits                  ; 157,696 / 483,840 ( 33 % )                    ;
+; Total memory bits                  ; 165,888 / 483,840 ( 34 % )                    ;
 ; Embedded Multiplier 9-bit elements ; 10 / 70 ( 14 % )                              ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                                ;
+; Total PLLs                         ; 2 / 4 ( 50 % )                                ;
 +------------------------------------+-----------------------------------------------+
 
 
@@ -78,6 +86,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 ; Start date & time ; 10/07/2013 15:17:05 ;
@@ -87,11 +96,15 @@ applicable agreement for further details.
 =======
 ; Start date & time ; 10/08/2013 12:45:08 ;
 >>>>>>> origin/health
+=======
+; Start date & time ; 10/08/2013 18:23:54 ;
+>>>>>>> Stashed changes
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CE381HW             ;
 +-------------------+---------------------+
 
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -129,6 +142,20 @@ applicable agreement for further details.
 >>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
 =======
 >>>>>>> origin/health
+=======
++-----------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                ;
++-------------------------------------+--------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+--------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 48658624820823.138128183039148 ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; --          ; Top        ;
++-------------------------------------+--------------------------------+---------------+-------------+------------+
+>>>>>>> Stashed changes
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -136,6 +163,7 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 ; Analysis & Synthesis      ; 00:04:48     ; 1.0                     ; 517 MB              ; 00:03:50                           ;
@@ -157,6 +185,13 @@ applicable agreement for further details.
 ; TimeQuest Timing Analyzer ; 00:00:08     ; 1.0                     ; 374 MB              ; 00:00:06                           ;
 ; Total                     ; 00:05:46     ; --                      ; --                  ; 00:05:01                           ;
 >>>>>>> origin/health
+=======
+; Analysis & Synthesis      ; 00:03:29     ; 1.0                     ; 525 MB              ; 00:02:52                           ;
+; Fitter                    ; 00:01:07     ; 1.0                     ; 531 MB              ; 00:01:06                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 347 MB              ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:08     ; 1.0                     ; 386 MB              ; 00:00:06                           ;
+; Total                     ; 00:04:50     ; --                      ; --                  ; 00:04:09                           ;
+>>>>>>> Stashed changes
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -165,6 +200,7 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 ; Analysis & Synthesis      ; Mehdi            ; Windows 7 ; 6.2        ; x86_64         ;
 ; Fitter                    ; Mehdi            ; Windows 7 ; 6.2        ; x86_64         ;
@@ -176,6 +212,12 @@ applicable agreement for further details.
 ; Assembler                 ; Jon-PC           ; Windows 7 ; 6.1        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; Jon-PC           ; Windows 7 ; 6.1        ; x86_64         ;
 >>>>>>> origin/health
+=======
+; Analysis & Synthesis      ; Owner-HP         ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; Owner-HP         ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; Owner-HP         ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Owner-HP         ; Windows 7 ; 6.1        ; x86_64         ;
+>>>>>>> Stashed changes
 +---------------------------+------------------+-----------+------------+----------------+
 
 

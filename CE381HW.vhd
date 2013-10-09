@@ -61,8 +61,14 @@ ENTITY CE381HW IS
 		SD_CMD : inout std_logic;
 		SD_CLK : out std_logic;
 		
-
+		AUD_ADCDAT : in std_logic;
+		AUD_ADCLRCK : in std_logic;
+		AUD_BCLK : in std_logic;
+		AUD_DACDAT : out std_logic;
+		AUD_DACLRCK : in std_logic;
 		
+		AUD_XCK : out std_logic;
+				
 		I2C_SCLK : out std_logic;
 		I2C_SDAT : inout std_logic;
 		
@@ -135,6 +141,15 @@ ARCHITECTURE CE381HW_rtl OF CE381HW IS
 			
 			signal clk_27_clk : in std_logic;
 			
+			signal audio_clk_clk : out std_logic;
+			
+			signal audio_BCLK		: in std_logic;
+			signal audio_DACDAT	: out std_logic;
+			signal audio_DACLRCK	: in std_logic;
+			
+			signal av_config_SDAT	: inout std_logic;
+			signal av_config_SCLK	: out std_logic;
+			
 			signal ps2_CLK : inout std_logic;
 			signal ps2_DAT : inout std_logic
 			
@@ -203,6 +218,14 @@ ARCHITECTURE CE381HW_rtl OF CE381HW IS
 			sd_card_o_SD_clock    => SD_CLK,     --                  .o_SD_clock
 			
 			clk_27_clk 		=> CLOCK_27,
+			audio_BCLK 		=> AUD_BCLK,
+			audio_DACDAT	=> AUD_DACDAT,
+			audio_DACLRCK	=> AUD_DACLRCK,
+			
+			audio_clk_clk	=> AUD_XCK,
+			
+			av_config_SDAT => I2C_SDAT,
+			av_config_SCLK => I2C_SCLK,
 			
 			ps2_CLK 			=> PS2_CLK,
 			ps2_DAT			=>	PS2_DAT

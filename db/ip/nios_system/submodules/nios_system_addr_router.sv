@@ -35,7 +35,7 @@ module nios_system_addr_router_default_decode
                DEFAULT_DESTID = 1 
    )
   (output [96 - 92 : 0] default_destination_id,
-   output [24-1 : 0] default_src_channel
+   output [26-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
@@ -44,7 +44,7 @@ module nios_system_addr_router_default_decode
     if (DEFAULT_CHANNEL == -1)
       assign default_src_channel = '0;
     else
-      assign default_src_channel = 24'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 26'b1 << DEFAULT_CHANNEL;
   end endgenerate
 
 endmodule
@@ -72,7 +72,7 @@ module nios_system_addr_router
     // -------------------
     output                          src_valid,
     output reg [107-1    : 0] src_data,
-    output reg [24-1 : 0] src_channel,
+    output reg [26-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -86,7 +86,7 @@ module nios_system_addr_router
     localparam PKT_DEST_ID_H = 96;
     localparam PKT_DEST_ID_L = 92;
     localparam ST_DATA_W = 107;
-    localparam ST_CHANNEL_W = 24;
+    localparam ST_CHANNEL_W = 26;
     localparam DECODER_TYPE = 0;
 
     localparam PKT_TRANS_WRITE = 70;
@@ -129,7 +129,7 @@ module nios_system_addr_router
     assign src_endofpacket   = sink_endofpacket;
 
     wire [PKT_DEST_ID_W-1:0] default_destid;
-    wire [24-1 : 0] default_src_channel;
+    wire [26-1 : 0] default_src_channel;
 
 
 
@@ -151,13 +151,13 @@ module nios_system_addr_router
 
         // ( 0x2800 .. 0x3000 )
         if ( {address[RG:PAD0],{PAD0{1'b0}}} == 'h2800 ) begin
-            src_channel = 24'b01;
+            src_channel = 26'b01;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
         end
 
         // ( 0x1000000 .. 0x1800000 )
         if ( {address[RG:PAD1],{PAD1{1'b0}}} == 'h1000000 ) begin
-            src_channel = 24'b10;
+            src_channel = 26'b10;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
         end
     end
