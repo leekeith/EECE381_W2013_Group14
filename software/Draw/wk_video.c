@@ -7,6 +7,7 @@
 
 
 #include"wk_video.h"
+//#define SCR_NOWAIT
 #define VRAM_W 320
 #define VRAM_H 240
 #define VRAM_D 2
@@ -87,7 +88,9 @@ inline void drawPoly(pixel_buffer_t* screen, coord_t* points, int pt_count, int 
 inline void swapBuffer(pixel_buffer_t* screen)
 {
 	alt_up_pixel_buffer_dma_swap_buffers(screen);
+#ifndef SCR_NOWAIT
 	while(alt_up_pixel_buffer_dma_check_swap_buffers_status(screen));
+#endif
 }
 
 inline short mkColor(char R, char G, char B)

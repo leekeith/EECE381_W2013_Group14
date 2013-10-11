@@ -1,33 +1,37 @@
 obj/default/drawBg.o: drawBg.c wk_video.h \
-  ../../../../../Desktop/310project/system.h \
-  ../../../../../Desktop/310project/linker.h \
-  ../../../../../Desktop/310project/drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h \
-  ../../../../../Desktop/310project/HAL/inc/alt_types.h \
-  ../../../../../Desktop/310project/HAL/inc/sys/alt_dev.h \
-  ../../../../../Desktop/310project/HAL/inc/sys/alt_llist.h \
-  ../../../../../Desktop/310project/HAL/inc/priv/alt_dev_llist.h \
-  ../../../../../Desktop/310project/HAL/inc/sys/alt_llist.h \
-  ../../../../../Desktop/310project/drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h \
-  game.h
+  ../../../../workspace2/NewBSP/system.h \
+  ../../../../workspace2/NewBSP/linker.h \
+  ../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h \
+  ../../../../workspace2/NewBSP/HAL/inc/alt_types.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_dev.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
+  ../../../../workspace2/NewBSP/HAL/inc/priv/alt_dev_llist.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
+  ../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h \
+  game.h bitmap.h sdcard.h
 
 wk_video.h:
 
-../../../../../Desktop/310project/system.h:
+../../../../workspace2/NewBSP/system.h:
 
-../../../../../Desktop/310project/linker.h:
+../../../../workspace2/NewBSP/linker.h:
 
-../../../../../Desktop/310project/drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h:
+../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h:
 
-../../../../../Desktop/310project/HAL/inc/alt_types.h:
+../../../../workspace2/NewBSP/HAL/inc/alt_types.h:
 
-../../../../../Desktop/310project/HAL/inc/sys/alt_dev.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_dev.h:
 
-../../../../../Desktop/310project/HAL/inc/sys/alt_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
 
-../../../../../Desktop/310project/HAL/inc/priv/alt_dev_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/priv/alt_dev_llist.h:
 
-../../../../../Desktop/310project/HAL/inc/sys/alt_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
 
-../../../../../Desktop/310project/drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h:
+../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h:
 
 game.h:
+
+bitmap.h:
+
+sdcard.h:

@@ -148,6 +148,8 @@ C_SRCS += wk_lcd.c
 C_SRCS += wk_video.c
 C_SRCS += DrawMain.c
 C_SRCS += wk_kb.c
+C_SRCS += sdcard.c
+C_SRCS += bitmap.c
 CXX_SRCS :=
 ASM_SRCS :=
 

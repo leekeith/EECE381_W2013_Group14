@@ -4,7 +4,9 @@
  *  Created on: 2013-09-30
  *      Author: Keith
  */
+
 #include"wkAll.h"
+
 #include"game.h"
 #include"system.h"
 #include"nios2.h"
@@ -13,10 +15,14 @@
 #include "altera_avalon_pio_regs.h"
 #include "alt_types.h"
 #include "sdcard.h"
+#include"bitmap.h"
 #include<stdbool.h>
 #include<string.h>
 #include<stdlib.h>
 #include <stdio.h>
+#define BITMAPS
+//#define BMP_BKGND
+#define E_TYPE_CNT 2
 
 volatile char movchar;
 
@@ -28,6 +34,7 @@ void drawBg(pixel_buffer_t* screen);
 void drawSprite(pixel_buffer_t* screen, sprite* the_sprite);
 
 void makeNPC(sprite* npcs);
+void drawNPCs(pixel_buffer_t* screen, sprite* npcs);
 
 
 alt_u32 draw(void* screen)
@@ -100,6 +107,7 @@ void display_score(char_buffer_t* text)
 
 int main(int argc, char** argv)
 {
+	int i;
 	sdcard_init();
 	sdcard_present();
 	sdcard_FAT16();
@@ -109,12 +117,33 @@ int main(int argc, char** argv)
 	sprite Character;
 	sprite npcs[MAX_NPC];
 
+#ifdef BITMAPS
+	bitmap_t* player_bmp;
+	bitmap_t** enemy_bmps;
+	player_bmp=bitmap_getBmp("Ship1.bmp");
+	enemy_bmps=(bitmap_t**)malloc(E_TYPE_CNT*sizeof(bitmap_t*));
+	enemy_bmps[0]=bitmap_getBmp("Enemy1.bmp");
+	enemy_bmps[1]=bitmap_getBmp("Obst1.bmp");
+
+	bitmap_to16bit(player_bmp);
+	for(i=0;i<E_TYPE_CNT;i++)
+		bitmap_to16bit(enemy_bmps[i]);
+
+#endif
+#ifdef BMP_BKGND
+	bitmap_t* temp;
+	scrolling_bmp_t* bg_bmp;
+	temp=bitmap_getBmp("Bkgnd.bmp");
+	bitmap_to16bit(temp);
+	bg_bmp=bitmap_makeScrolling(temp);
+#endif
+
 //TODO Add Altera Avalon Timer
 	alt_alarm* alarm;
 	pixel_buffer_t* screen;
 	char_buffer_t* text;
 
-	int nticks,i,spawnCtr;
+	int nticks,spawnCtr;
 	int minSpawnRate=5;
 
 
@@ -251,9 +280,19 @@ int main(int argc, char** argv)
 				drawString(text, healthStr1, 2, 2);
 				drawString(text, scoreStr1, 2,4);
 			}
+#ifdef BMP_BKGND
+			scrolling_bgDrawToScr(bg_bmp,scrollRate,screen);
+#else
 			drawBg(screen);
-			drawSprite(screen,&Character);
+#endif
+#ifdef BITMAPS
+			bitmap_drawNPCs(enemy_bmps,screen,npcs);
+			bitmap_drawToScr(player_bmp,screen,Character.loc.x,Character.loc.y);
+#else
 			drawNPCs(screen,npcs);
+			drawSprite(screen,&Character);
+#endif
+
 			movchar=1;
 			swapBuffer(screen);
 			movchar=1;

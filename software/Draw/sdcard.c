@@ -127,7 +127,7 @@ short int sdcard_readbyte(short int file_handle)
  */
 int sdcard_filesize(short int file_handle)
 {
-
+	short i;
 	int count = 0;
 	while(sdcard_readbyte(file_handle) >= 0)
 	{

@@ -144,7 +144,7 @@
    {
       datum baseAddress
       {
-         value = "0";
+         value = "262144";
          type = "long";
       }
    }
@@ -305,59 +305,6 @@
          type = "int";
       }
    }
-   element sys_timer.s1
-   {
-      datum _tags
-      {
-         value = "";
-         type = "String";
-      }
-      datum baseAddress
-      {
-         value = "13312";
-         type = "long";
-      }
-   }
-   element HEX1.s1
-   {
-      datum baseAddress
-      {
-         value = "13456";
-         type = "long";
-      }
-   }
-   element LEDR.s1
-   {
-      datum baseAddress
-      {
-         value = "13408";
-         type = "long";
-      }
-   }
-   element HEX2.s1
-   {
-      datum baseAddress
-      {
-         value = "13472";
-         type = "long";
-      }
-   }
-   element HEX5.s1
-   {
-      datum baseAddress
-      {
-         value = "13520";
-         type = "long";
-      }
-   }
-   element timestamp_timer.s1
-   {
-      datum baseAddress
-      {
-         value = "13344";
-         type = "long";
-      }
-   }
    element HEX4.s1
    {
       datum baseAddress
@@ -366,19 +313,11 @@
          type = "long";
       }
    }
-   element switches.s1
+   element keys.s1
    {
       datum baseAddress
       {
-         value = "13376";
-         type = "long";
-      }
-   }
-   element HEX0.s1
-   {
-      datum baseAddress
-      {
-         value = "13440";
+         value = "13424";
          type = "long";
       }
    }
@@ -395,11 +334,56 @@
          type = "long";
       }
    }
-   element HEX6.s1
+   element sys_timer.s1
+   {
+      datum _tags
+      {
+         value = "";
+         type = "String";
+      }
+      datum baseAddress
+      {
+         value = "13312";
+         type = "long";
+      }
+   }
+   element HEX3.s1
    {
       datum baseAddress
       {
-         value = "13536";
+         value = "13488";
+         type = "long";
+      }
+   }
+   element LEDR.s1
+   {
+      datum baseAddress
+      {
+         value = "13408";
+         type = "long";
+      }
+   }
+   element HEX5.s1
+   {
+      datum baseAddress
+      {
+         value = "13520";
+         type = "long";
+      }
+   }
+   element HEX0.s1
+   {
+      datum baseAddress
+      {
+         value = "13440";
+         type = "long";
+      }
+   }
+   element HEX2.s1
+   {
+      datum baseAddress
+      {
+         value = "13472";
          type = "long";
       }
    }
@@ -411,11 +395,27 @@
          type = "long";
       }
    }
-   element keys.s1
+   element HEX6.s1
    {
       datum baseAddress
       {
-         value = "13424";
+         value = "13536";
+         type = "long";
+      }
+   }
+   element switches.s1
+   {
+      datum baseAddress
+      {
+         value = "13376";
+         type = "long";
+      }
+   }
+   element HEX1.s1
+   {
+      datum baseAddress
+      {
+         value = "13456";
          type = "long";
       }
    }
@@ -427,11 +427,11 @@
          type = "long";
       }
    }
-   element HEX3.s1
+   element timestamp_timer.s1
    {
       datum baseAddress
       {
-         value = "13488";
+         value = "13344";
          type = "long";
       }
    }
@@ -527,7 +527,7 @@
  <parameter name="projectName" value="CE381HW.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1381183760888" />
+ <parameter name="timeStamp" value="1381510029572" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_50.clk_in" type="clock" dir="end" />
@@ -726,7 +726,7 @@
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='nios2_processor.jtag_debug_module' start='0x2800' end='0x3000' /><slave name='sdram.s1' start='0x1000000' end='0x1800000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='char_buffer.avalon_char_buffer_slave' start='0x0' end='0x2000' /><slave name='nios2_processor.jtag_debug_module' start='0x2800' end='0x3000' /><slave name='SD_card.avalon_sdcard_slave' start='0x3000' end='0x3400' /><slave name='sys_timer.s1' start='0x3400' end='0x3420' /><slave name='timestamp_timer.s1' start='0x3420' end='0x3440' /><slave name='switches.s1' start='0x3440' end='0x3450' /><slave name='LEDG.s1' start='0x3450' end='0x3460' /><slave name='LEDR.s1' start='0x3460' end='0x3470' /><slave name='keys.s1' start='0x3470' end='0x3480' /><slave name='HEX0.s1' start='0x3480' end='0x3490' /><slave name='HEX1.s1' start='0x3490' end='0x34A0' /><slave name='HEX2.s1' start='0x34A0' end='0x34B0' /><slave name='HEX3.s1' start='0x34B0' end='0x34C0' /><slave name='HEX4.s1' start='0x34C0' end='0x34D0' /><slave name='HEX5.s1' start='0x34D0' end='0x34E0' /><slave name='HEX6.s1' start='0x34E0' end='0x34F0' /><slave name='HEX7.s1' start='0x34F0' end='0x3500' /><slave name='pixel_buffer.avalon_control_slave' start='0x3500' end='0x3510' /><slave name='av_config.avalon_av_config_slave' start='0x3510' end='0x3520' /><slave name='audio.avalon_audio_slave' start='0x3520' end='0x3530' /><slave name='jtag_uart.avalon_jtag_slave' start='0x3530' end='0x3538' /><slave name='char_buffer.avalon_char_control_slave' start='0x3538' end='0x3540' /><slave name='ps2.avalon_ps2_slave' start='0x3540' end='0x3548' /><slave name='lcd.avalon_lcd_slave' start='0x3548' end='0x354A' /><slave name='sram.avalon_sram_slave' start='0x100000' end='0x180000' /><slave name='sdram.s1' start='0x1000000' end='0x1800000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='nios2_processor.jtag_debug_module' start='0x2800' end='0x3000' /><slave name='SD_card.avalon_sdcard_slave' start='0x3000' end='0x3400' /><slave name='sys_timer.s1' start='0x3400' end='0x3420' /><slave name='timestamp_timer.s1' start='0x3420' end='0x3440' /><slave name='switches.s1' start='0x3440' end='0x3450' /><slave name='LEDG.s1' start='0x3450' end='0x3460' /><slave name='LEDR.s1' start='0x3460' end='0x3470' /><slave name='keys.s1' start='0x3470' end='0x3480' /><slave name='HEX0.s1' start='0x3480' end='0x3490' /><slave name='HEX1.s1' start='0x3490' end='0x34A0' /><slave name='HEX2.s1' start='0x34A0' end='0x34B0' /><slave name='HEX3.s1' start='0x34B0' end='0x34C0' /><slave name='HEX4.s1' start='0x34C0' end='0x34D0' /><slave name='HEX5.s1' start='0x34D0' end='0x34E0' /><slave name='HEX6.s1' start='0x34E0' end='0x34F0' /><slave name='HEX7.s1' start='0x34F0' end='0x3500' /><slave name='pixel_buffer.avalon_control_slave' start='0x3500' end='0x3510' /><slave name='av_config.avalon_av_config_slave' start='0x3510' end='0x3520' /><slave name='audio.avalon_audio_slave' start='0x3520' end='0x3530' /><slave name='jtag_uart.avalon_jtag_slave' start='0x3530' end='0x3538' /><slave name='char_buffer.avalon_char_control_slave' start='0x3538' end='0x3540' /><slave name='ps2.avalon_ps2_slave' start='0x3540' end='0x3548' /><slave name='lcd.avalon_lcd_slave' start='0x3548' end='0x354A' /><slave name='char_buffer.avalon_char_buffer_slave' start='0x40000' end='0x42000' /><slave name='sram.avalon_sram_slave' start='0x100000' end='0x180000' /><slave name='sdram.s1' start='0x1000000' end='0x1800000' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="deviceFamilyName" value="Cyclone II" />
   <parameter name="internalIrqMaskSystemInfo" value="63" />
@@ -1465,7 +1465,7 @@
    start="nios2_processor.data_master"
    end="char_buffer.avalon_char_buffer_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="baseAddress" value="0x00040000" />
  </connection>
  <connection
    kind="avalon"

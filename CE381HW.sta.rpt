@@ -1,17 +1,5 @@
 TimeQuest Timing Analyzer report for CE381HW
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< HEAD
-Mon Oct 07 15:23:55 2013
-=======
-Sun Oct 06 20:17:16 2013
->>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
-=======
-Tue Oct 08 12:51:05 2013
->>>>>>> origin/health
-=======
-Tue Oct 08 18:28:48 2013
->>>>>>> Stashed changes
+Fri Oct 11 09:54:39 2013
 Quartus II 32-bit Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
 
 
@@ -88,7 +76,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 2      ;
+; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -308,19 +296,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
     Info: Version 12.0 Build 263 08/02/2012 Service Pack 2 SJ Web Edition
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< HEAD
-    Info: Processing started: Mon Oct 07 15:23:44 2013
-=======
-    Info: Processing started: Sun Oct 06 20:17:10 2013
->>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
-=======
-    Info: Processing started: Tue Oct 08 12:50:56 2013
->>>>>>> origin/health
-=======
-    Info: Processing started: Tue Oct 08 18:28:40 2013
->>>>>>> Stashed changes
+    Info: Processing started: Fri Oct 11 09:54:35 2013
 Info: Command: quartus_sta CE381HW -c CE381HW
 Info: qsta_default_script.tcl version: #2
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -548,32 +524,10 @@ Info (332146): Worst-case minimum pulse width slack is 97.778
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-<<<<<<< Updated upstream
-Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 12 warnings
-<<<<<<< HEAD
-<<<<<<< HEAD
-    Info: Peak virtual memory: 371 megabytes
-    Info: Processing ended: Mon Oct 07 15:23:55 2013
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:07
-=======
-    Info: Peak virtual memory: 366 megabytes
-    Info: Processing ended: Sun Oct 06 20:17:16 2013
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:05
->>>>>>> b1da12a3a7b191c092898b0f63d5407f6491702f
-=======
-    Info: Peak virtual memory: 374 megabytes
-    Info: Processing ended: Tue Oct 08 12:51:05 2013
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:07
->>>>>>> origin/health
-=======
 Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 14 warnings
     Info: Peak virtual memory: 386 megabytes
-    Info: Processing ended: Tue Oct 08 18:28:48 2013
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:07
->>>>>>> Stashed changes
+    Info: Processing ended: Fri Oct 11 09:54:39 2013
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 

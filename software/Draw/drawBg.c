@@ -8,9 +8,11 @@
 #include"wk_video.h"
 #include"game.h"
 #include"stdlib.h"
+#include"bitmap.h"
 #include<system.h>
 #include<stdbool.h>
 #include<string.h>
+
 extern int scrollRate;
 void drawBg(pixel_buffer_t* screen)
 {
@@ -84,7 +86,31 @@ void makeNPC(sprite* npcs)
 	//npcs[i].loc.x=PLAYER_LB-10;
 	npcs[i].loc.y=0;
 }
+void bitmap_drawNPCs(bitmap_t** enemy_bmps, pixel_buffer_t* screen, sprite* npcs, int eTypeCnt)
+{
+	int i;
+	for(i=0;i<MAX_NPC;i++)
+	{
+		if(npcs[i].type!=null)
+		{
+			switch(npcs[i].type)
+			{
+			case enemy1:
+				bitmap_drawToScr(enemy_bmps[0],screen,npcs[i].loc.x,npcs[i].loc.y);
+				break;
+			case enemy2:
+				bitmap_drawToScr(enemy_bmps[1],screen,npcs[i].loc.x,npcs[i].loc.y);
+				break;
+			default:
+				break;
+			}
 
+			npcs[i].loc.y+=scrollRate;
+			if(npcs[i].loc.y>=VRAM_H+3)
+				npcs[i].type=null;
+		}
+	}
+}
 void drawNPCs(pixel_buffer_t* screen, sprite* npcs)
 {
 	int i;
@@ -92,7 +118,9 @@ void drawNPCs(pixel_buffer_t* screen, sprite* npcs)
 	{
 		if(npcs[i].type!=null)
 		{
+
 			drawSprite(screen, &(npcs[i]));
+
 			npcs[i].loc.y+=scrollRate;
 			if(npcs[i].loc.y>=VRAM_H+3)
 				npcs[i].type=null;
