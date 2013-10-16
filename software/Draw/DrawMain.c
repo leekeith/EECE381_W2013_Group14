@@ -75,7 +75,7 @@ void save_score(char player_name[10], char final_score[5])
 	final_score[count+1] = 0;
 
 	strcat(player_name, final_score);
-	strcat(read_data, player_name);
+	//strcat(read_data, player_name);
 
 	sdcard_writefile(player_name, score.file_handle);
 	sdcard_fclose(score.file_handle);
