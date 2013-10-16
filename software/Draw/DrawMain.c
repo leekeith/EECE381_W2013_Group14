@@ -52,15 +52,40 @@ void key_hit(void* context, alt_u32 id)
 
 }
 
+void save_score(char player_name[10], char final_score[5])
+{
+	char read_data [100] = {0};
+
+	File score;
+	score.file_name = "score.txt";
+	score.file_handle = sdcard_fopen(score.file_name,false);
+
+	sdcard_readfile(read_data , score.file_handle);
+
+	int count;
+	count = 0;
+	while(player_name[count] != 0)
+			count++;
+	player_name[count] = ' ';
+
+	count = 0;
+	while(final_score[count] != 0)
+		count++;
+	final_score[count] = ';';
+	final_score[count+1] = 0;
+
+	strcat(player_name, final_score);
+	strcat(read_data, player_name);
+
+	sdcard_writefile(player_name, score.file_handle);
+	sdcard_fclose(score.file_handle);
+
+}
+
 void display_score(char_buffer_t* text)
 {
-	char read_data [30] = {0};
-	char sc1 [4] = {0};
-	char sc2 [4] = {0};
-	char sc3 [4] = {0};
-	char sc4 [4] = {0};
-	char sc5 [4] = {0};
-	char leaderboards[24] = "Leader Boards:";
+	char read_data [100] = {0};
+	char leaderboards[24] = "Leader Board:";
 
 	File score;
 	score.file_name = "score.txt";
@@ -69,38 +94,30 @@ void display_score(char_buffer_t* text)
 
 	sdcard_fclose(score.file_handle);
 
+	int pos_y = 10;
+	drawString(text, leaderboards, 2, pos_y);
+	pos_y = pos_y + 4;
 
-	sc1[0]=read_data[0];
-	sc1[1]=read_data[1];
-	sc1[2]=read_data[2];
+	int start;
+	start = 0;
+	while(read_data[start] != 0)
+	{
+		int j;
+		j = start;
+		int i;
+		i = 0;
+		char buffer [15] = {0};
+		while(read_data[j] != ';')
+		{
+			buffer[i] = read_data[j];
+			i++;
+			j++;
 
-	sc2[0]=read_data[4];
-	sc2[1]=read_data[5];
-	sc2[2]=read_data[6];
-
-	sc3[0]=read_data[8];
-	sc3[1]=read_data[9];
-	sc3[2]=read_data[10];
-
-	sc4[0]=read_data[12];
-	sc4[1]=read_data[13];
-	sc4[2]=read_data[14];
-
-	sc4[0]=read_data[16];
-	sc4[1]=read_data[17];
-	sc4[2]=read_data[18];
-
-
-
-//	text = charInit();
-
-
-	drawString(text, leaderboards, 2, 10);
-	drawString(text, sc1, 2, 12);
-	drawString(text, sc2, 2, 14);
-	drawString(text, sc3, 2, 16);
-	drawString(text, sc4, 2, 18);
-	drawString(text, sc5, 2, 20);
+		}
+		drawString(text, buffer, 2, pos_y);
+		pos_y = pos_y + 2;
+		start = j+1;
+	}
 
 }
 
@@ -195,6 +212,8 @@ int main(int argc, char** argv)
 		if (Character.health <= 0 || Character.loc.y >= PLAYER_BB+3)
 		{
 			Character.health = 99;
+			char final_score[5] = {0};
+			sprintf(final_score, "%d", score);
 			score=0;
 			Character.loc.x=VRAM_W/2;
 			Character.loc.y=VRAM_H/2;
@@ -203,6 +222,8 @@ int main(int argc, char** argv)
 			clearChars(text);
 			drawString(text, healthStr1, 2, 2);
 			drawString(text, scoreStr1, 2, 4);
+			char player_name[10] = "Player";
+			save_score(player_name,final_score); //Replace player_name with actual name entered at start
 		}
 
 		for(i=0;i<MAX_NPC;i++)

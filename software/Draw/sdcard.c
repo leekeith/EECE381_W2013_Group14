@@ -177,7 +177,7 @@ void sdcard_printarray(char a[])
 void sdcard_writefile(char write_data [], short int file_handle)
 {
 	int h = 0;
-	while(write_data[h] != '/')
+	while(write_data[h] != 0)
 	{
 		alt_up_sd_card_write(file_handle, write_data[h]);
 		h++;
