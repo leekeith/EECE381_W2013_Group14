@@ -35,6 +35,7 @@ void drawSprite(pixel_buffer_t* screen, sprite* the_sprite);
 
 void makeNPC(sprite* npcs);
 void drawNPCs(pixel_buffer_t* screen, sprite* npcs);
+void draw_health(pixel_buffer_t* screen, sprite* c);
 
 
 alt_u32 draw(void* screen)
@@ -165,7 +166,7 @@ int main(int argc, char** argv)
 
 
 	Character.type=player;
-	Character.health=99;
+	Character.health=100;
 	Character.loc.x=VRAM_W/2;
 	Character.loc.y=VRAM_H/2;
 
@@ -178,6 +179,7 @@ int main(int argc, char** argv)
 		npcs[i].type=null;
 		npcs[i].health=100;
 	}
+	alarm=(alt_alarm*)malloc(sizeof(alt_alarm));
 	spawnCtr=0;
 	scrollRate=1;
 	srand(0x1234567);
@@ -188,16 +190,17 @@ int main(int argc, char** argv)
 	clearChars(text)
 	movchar=0;
 
-
-
 	kb=initKb((void*)key_hit);
+
+
 	if(alt_alarm_start(alarm,nticks/30,draw,(void*)screen)<0)printf("\nNo timer\n");
+
 	int score = 0;
 	char scoreStr1[24] = "Score: 0";
 	char scoreStr2[24];
 	char healthStr1[24] = "Health: ";
 	char healthStr2[24];
-	char healthStr3[24] = " / 99";
+	char healthStr3[24] = " / 100";
     sprintf(healthStr2, "%d", Character.health);
     strcat(healthStr1, healthStr2);
     strcat(healthStr1, healthStr3);
@@ -211,13 +214,13 @@ int main(int argc, char** argv)
 
 		if (Character.health <= 0 || Character.loc.y >= PLAYER_BB+3)
 		{
-			Character.health = 99;
+			Character.health = 100;
 			char final_score[5] = {0};
 			sprintf(final_score, "%d", score);
 			score=0;
 			Character.loc.x=VRAM_W/2;
 			Character.loc.y=VRAM_H/2;
-			strcpy(healthStr1, "Health: 99 / 99");
+			strcpy(healthStr1, "Health: 100 / 100   ");
 			strcpy(scoreStr1, "Score: 0");
 			clearChars(text);
 			drawString(text, healthStr1, 2, 2);
@@ -230,22 +233,26 @@ int main(int argc, char** argv)
 		{
 		bool locx = false;
 		bool locy = false;
-		if (Character.loc.x <= (npcs[i].loc.x + 14) && Character.loc.x >=( npcs[i].loc.x - 14))
-			locx = true;
-		if (Character.loc.y <= (npcs[i].loc.y + 14) && Character.loc.y >= (npcs[i].loc.y - 14))
-			locy = true;
-		if (locx == true && locy == true)
-			{
-				Character.health = Character.health - scrollRate;
-				Character.loc.y = Character.loc.y + scrollRate;
+		if(npcs[i].type!=null)
+		{
+			if (Character.loc.x <= (npcs[i].loc.x + 14) && Character.loc.x >=( npcs[i].loc.x - 14))
+				locx = true;
+			if (Character.loc.y <= (npcs[i].loc.y + 14) && Character.loc.y >= (npcs[i].loc.y - 14))
+				locy = true;
+			if (locx == true && locy == true)
+				{
+					Character.health = Character.health - scrollRate;
+					Character.loc.y = Character.loc.y + scrollRate;
 
-				strcpy(healthStr1, "Health: ");
-			    sprintf(healthStr2, "%d", Character.health);
-			    strcat(healthStr1, healthStr2);
-			    strcat(healthStr1, healthStr3);
-				//clearChars(text);
-				drawString(text, healthStr1, 2, 2);
-				drawString(text, scoreStr1, 2,4);
+					strcpy(healthStr1, "Health: ");
+					sprintf(healthStr2, "%d", Character.health);
+					strcat(healthStr1, healthStr2);
+					strcat(healthStr1, healthStr3);
+					strcat(healthStr1, "    ");
+					//clearChars(text);
+					drawString(text, healthStr1, 2, 2);
+					//drawString(text, scoreStr1, 2,4);
+				}
 			}
 		}
 
@@ -314,7 +321,7 @@ int main(int argc, char** argv)
 			drawSprite(screen,&Character);
 #endif
 
-			movchar=1;
+			draw_health(screen,&Character);
 			swapBuffer(screen);
 			movchar=1;
 		}

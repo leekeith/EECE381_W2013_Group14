@@ -127,3 +127,11 @@ void drawNPCs(pixel_buffer_t* screen, sprite* npcs)
 		}
 	}
 }
+
+void draw_health(pixel_buffer_t* screen, sprite* c)
+{
+	short red=mkColor(0xff,0,0);
+	drawBox(screen,4,4 ,62,20,0,1);
+	drawBox(screen,8,6 ,58,12,red,0);
+	drawBox(screen,8,6, 8+(c->health/2),12,red,1);
+}
