@@ -150,6 +150,7 @@ C_SRCS += DrawMain.c
 C_SRCS += wk_kb.c
 C_SRCS += sdcard.c
 C_SRCS += bitmap.c
+C_SRCS += audio.c
 CXX_SRCS :=
 ASM_SRCS :=
 
