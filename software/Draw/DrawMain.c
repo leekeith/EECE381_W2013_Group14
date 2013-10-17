@@ -355,6 +355,10 @@ int main(int argc, char** argv)
 				*index=0;
 				*menu_sz=0;
 				state=death;
+				for(i=0;i<MAX_NPC;i++)
+				{
+					npcs[i].type=null;
+				}
 			}
 			/*
 			if (Character.health <= 0 || Character.loc.y >= PLAYER_BB+3)
