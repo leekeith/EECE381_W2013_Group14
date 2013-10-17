@@ -127,9 +127,9 @@ short int sdcard_readbyte(short int file_handle)
  */
 int sdcard_filesize(short int file_handle)
 {
-	short i;
+
 	int count = 0;
-	while(sdcard_readbyte(file_handle) >= 0)
+	while(sdcard_readbyte(file_handle) != -1)
 	{
 		count ++;
 	}
@@ -138,6 +138,20 @@ int sdcard_filesize(short int file_handle)
 }
 
 
+int sdcard_audiosize(short int file_handle)
+{
+	int i = 0;
+	int size;
+	void* temp_ptr;
+	unsigned char head[44];
+	for(i=0;i<44;i++)
+			head[i]=(unsigned char)sdcard_readbyte(file_handle);
+	temp_ptr = head + 40;
+	size = *(int*)temp_ptr;
+	return size;
+
+}
+
 /*
  * Reads a file specified by the file handle into a given char array
  */
@@ -145,14 +159,17 @@ void sdcard_readfile(char read_data [], short int file_handle)
 {
 	short int i = 0;
 	int count = 0;
-	while(i >= 0)
+	while(i != -1)
 	{
+
 		i = sdcard_readbyte(file_handle);
-		if ( i >= 0)
+
+		if ( i != -1)
 			read_data[count] = i;
 		count ++;
 	}
-	//read_data[count-1] = '/';
+	printf("Count=%d\n",count);
+	read_data[count-1] = '/';
 }
 
 
@@ -163,9 +180,12 @@ void sdcard_readfile(char read_data [], short int file_handle)
 void sdcard_printarray(char a[])
 {
 	int h = 0;
-	while(a[h] != 0)
+	while(a[h] != '/')
 	{
-		printf("%c \n", a[h] );
+		if ( a[h] > 47 && a[h] < 91 )
+			printf("%c \n", a[h] );
+		else
+			printf("%d \n",a[h]);
 		h++;
 	}
 }
@@ -177,7 +197,7 @@ void sdcard_printarray(char a[])
 void sdcard_writefile(char write_data [], short int file_handle)
 {
 	int h = 0;
-	while(write_data[h] != 0)
+	while(write_data[h] != '/')
 	{
 		alt_up_sd_card_write(file_handle, write_data[h]);
 		h++;
