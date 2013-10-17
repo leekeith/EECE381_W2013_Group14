@@ -550,7 +550,7 @@ Disassembly of section .entry:
  1000010:	00404034 	movhi	at,256
  1000014:	08406114 	ori	at,at,388
  1000018:	0800683a 	jmp	at
- 100001c:	00000000 	call	0 <__reset-0x1000000>
+ 100001c:	00000000 	call	0 <__alt_mem_sdram-0x1000000>
 
 Disassembly of section .exceptions:
 
@@ -2949,12 +2949,12 @@ Disassembly of section .text:
  100243c:	0100249c 	xori	r4,zero,146
  1002440:	0100249c 	xori	r4,zero,146
  1002444:	010031e8 	cmpgeui	r4,zero,199
- 1002448:	01002b00 	call	1002b0 <__reset-0xeffd50>
+ 1002448:	01002b00 	call	1002b0 <__alt_mem_sdram-0xeffd50>
  100244c:	01003160 	cmpeqi	r4,zero,197
  1002450:	01003160 	cmpeqi	r4,zero,197
  1002454:	01003160 	cmpeqi	r4,zero,197
  1002458:	0100314c 	andi	r4,zero,197
- 100245c:	01002b00 	call	1002b0 <__reset-0xeffd50>
+ 100245c:	01002b00 	call	1002b0 <__alt_mem_sdram-0xeffd50>
  1002460:	0100249c 	xori	r4,zero,146
  1002464:	0100249c 	xori	r4,zero,146
  1002468:	010030d4 	movui	r4,195
@@ -2964,9 +2964,9 @@ Disassembly of section .text:
  1002478:	01003104 	movi	r4,196
  100247c:	010030f0 	cmpltui	r4,zero,195
  1002480:	0100249c 	xori	r4,zero,146
- 1002484:	01003380 	call	100338 <__reset-0xeffcc8>
+ 1002484:	01003380 	call	100338 <__alt_mem_sdram-0xeffcc8>
  1002488:	0100249c 	xori	r4,zero,146
- 100248c:	01002c00 	call	1002c0 <__reset-0xeffd40>
+ 100248c:	01002c00 	call	1002c0 <__alt_mem_sdram-0xeffd40>
  1002490:	0100249c 	xori	r4,zero,146
  1002494:	0100249c 	xori	r4,zero,146
  1002498:	01003278 	rdprs	r4,zero,201
@@ -15443,9 +15443,9 @@ Disassembly of section .text:
  100e104:	002af0b0 	cmpltui	zero,zero,43970
  100e108:	003ffd06 	br	100e100 <_exit+0x8>
  100e10c:	00000010 	cmplti	zero,zero,0
- 100e110:	00000000 	call	0 <__reset-0x1000000>
- 100e114:	00527a01 	jmpi	527a0 <__reset-0xfad860>
- 100e118:	011f7c01 	jmpi	11f7c0 <__reset-0xee0840>
+ 100e110:	00000000 	call	0 <__alt_mem_sdram-0x1000000>
+ 100e114:	00527a01 	jmpi	527a0 <__alt_mem_sdram-0xfad860>
+ 100e118:	011f7c01 	jmpi	11f7c0 <__alt_mem_sdram-0xee0840>
  100e11c:	001b0c0b 	ldhu	zero,27696(zero)
  100e120:	00000028 	cmpgeui	zero,zero,0
  100e124:	00000018 	cmpnei	zero,zero,0

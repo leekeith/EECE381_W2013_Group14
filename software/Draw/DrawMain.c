@@ -233,8 +233,9 @@ int main(int argc, char** argv)
 				else if(*nextKey->type==KB_ASCII_MAKE_CODE)
 				{
 					player_name[*index]=*nextKey->val;
+
 					(*index)++;
-					player_name[*index]=0;
+
 				}
 				else if(*nextKey->type==KB_BINARY_MAKE_CODE)
 				{
@@ -244,7 +245,7 @@ int main(int argc, char** argv)
 						if(*index>0)
 						{
 							(*index)--;
-							player_name[*index]=0;
+
 						}
 						break;
 					case 118: //ESC
@@ -252,15 +253,17 @@ int main(int argc, char** argv)
 						*index=10;
 						break;
 					case 90: //ENTER
-						player_name[*index]=0;
+						if(*index>0)
+							player_name[*index]=0;
 						*index=10;
 						break;
 					default:
 						break;
 					}
 				}
-				for(j=*index;j<10;j++)
+				for(j=*index;j<9;j++)
 					player_name[j]=' ';
+				player_name[j]=0;
 			}
 			else if(*nextKey->type==KB_ASCII_MAKE_CODE)
 			{
@@ -490,6 +493,7 @@ int main(int argc, char** argv)
 					draw_health(screen,&Character);
 				}
 				drawMenuBg(screen,menu_sz,40);
+				swapBuffer(screen);
 			}
 			if(*menu_sz>35  && *index<10) printGameOver(text,player_name);
 			if(*index==10)
