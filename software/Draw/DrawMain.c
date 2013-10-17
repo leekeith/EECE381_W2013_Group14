@@ -37,8 +37,9 @@ void makeNPC(sprite* npcs);
 void drawNPCs(pixel_buffer_t* screen, sprite* npcs);
 void draw_health(pixel_buffer_t* screen, sprite* c);
 void drawMenu(pixel_buffer_t* screen, char_buffer_t* text, int* sz, int sel);
-void drawLeaderBg(pixel_buffer_t* screen, int* sz);
+void drawMenuBg(pixel_buffer_t* screen, int* sz, int max);
 void bitmap_drawNPCs(bitmap_t** enemy_bmps, pixel_buffer_t* screen, sprite* npcs, int eTypeCnt);
+void printGameOver(char_buffer_t* text, char* player_name);
 
 
 alt_u32 draw(void* screen)
@@ -66,22 +67,13 @@ void save_score(char player_name[10], char final_score[5])
 
 	sdcard_readfile(read_data , score.file_handle);
 
-	int count;
-	count = 0;
-	while(player_name[count] != 0)
-			count++;
-	player_name[count] = ' ';
-
-	count = 0;
-	while(final_score[count] != 0)
-		count++;
-	final_score[count] = ';';
-	final_score[count+1] = 0;
-
-	strcat(player_name, final_score);
+	sprintf(read_data, player_name);
+	strcat(read_data, " ");
+	strcat(read_data, final_score);
+	strcat(read_data, ";");
 	//strcat(read_data, player_name);
 
-	sdcard_writefile(player_name, score.file_handle);
+	sdcard_writefile(read_data, score.file_handle);
 	sdcard_fclose(score.file_handle);
 
 }
@@ -118,7 +110,7 @@ void display_score(char_buffer_t* text)
 			j++;
 
 		}
-		drawString(text, buffer, 2, pos_y);
+		drawString(text, buffer, 20, pos_y);
 		pos_y = pos_y + 2;
 		start = j+1;
 	}
@@ -128,7 +120,7 @@ void display_score(char_buffer_t* text)
 
 int main(int argc, char** argv)
 {
-	int i;
+	int i,j;
 	game_state_t state;
 	int *menu_sz,menu_sel;
 	sdcard_init();
@@ -136,6 +128,7 @@ int main(int argc, char** argv)
 	sdcard_FAT16();
 
 	key_s* nextKey;
+	char final_score[5] = {0};
 
 	sprite Character;
 	sprite npcs[MAX_NPC];
@@ -166,10 +159,12 @@ int main(int argc, char** argv)
 	pixel_buffer_t* screen;
 	char_buffer_t* text;
 
-	int nticks,spawnCtr;
+	int nticks,spawnCtr,*index;
 	int minSpawnRate=5;
+	char player_name[10] = "Player";
 
 
+	index=(int*)malloc(sizeof(int));
 	Character.type=player;
 	Character.health=100;
 	Character.loc.x=VRAM_W/2;
@@ -228,8 +223,49 @@ int main(int argc, char** argv)
 			}
 
 			getchKb(kb, nextKey);
-			if(*nextKey->type==KB_ASCII_MAKE_CODE)
+			if(state==death && *index<10)
 			{
+				if(*index==9)
+				{
+					player_name[*index]=0;
+					*index=10;
+				}
+				else if(*nextKey->type==KB_ASCII_MAKE_CODE)
+				{
+					player_name[*index]=*nextKey->val;
+					(*index)++;
+					player_name[*index]=0;
+				}
+				else if(*nextKey->type==KB_BINARY_MAKE_CODE)
+				{
+					switch(*nextKey->buf)
+					{
+					case 102: //BKSP
+						if(*index>0)
+						{
+							(*index)--;
+							player_name[*index]=0;
+						}
+						break;
+					case 118: //ESC
+						sprintf(player_name,"Player");
+						*index=10;
+						break;
+					case 90: //ENTER
+						player_name[*index]=0;
+						*index=10;
+						break;
+					default:
+						break;
+					}
+				}
+				for(j=*index;j<10;j++)
+					player_name[j]=' ';
+			}
+			else if(*nextKey->type==KB_ASCII_MAKE_CODE)
+			{
+
+
 				switch(*nextKey->val)
 				{
 				case 'W':
@@ -246,7 +282,7 @@ int main(int argc, char** argv)
 					}
 					break;
 				case'S':
-					if(state==ingame)
+					if(state==ingame && Character.loc.y<PLAYER_BB)
 						Character.loc.y+=2;
 					else if(state==menu)
 					{
@@ -311,6 +347,14 @@ int main(int argc, char** argv)
 		{
 			if (Character.health <= 0 || Character.loc.y >= PLAYER_BB+3)
 			{
+				clearChars(text);
+				*index=0;
+				*menu_sz=0;
+				state=death;
+			}
+			/*
+			if (Character.health <= 0 || Character.loc.y >= PLAYER_BB+3)
+			{
 				Character.health = 100;
 				char final_score[5] = {0};
 				sprintf(final_score, "%d", score);
@@ -322,10 +366,9 @@ int main(int argc, char** argv)
 				clearChars(text);
 				//drawString(text, healthStr1, 2, 2);
 				drawString(text, scoreStr1, 2, 4);
-				char player_name[10] = "Player";
 				save_score(player_name,final_score); //Replace player_name with actual name entered at start
 			}
-
+			*/
 			for(i=0;i<MAX_NPC;i++)
 			{
 			bool locx = false;
@@ -426,12 +469,43 @@ int main(int argc, char** argv)
 				}
 
 				if(*menu_sz>80)	display_score(text);
-				drawLeaderBg(screen,menu_sz);
+				drawMenuBg(screen,menu_sz,90);
 				swapBuffer(screen);
 				movchar=1;
 			}
 		}
+		else if(state==death)
+		{
+			if(movchar==0)
+			{
 
+				if(*menu_sz==0)
+				{
+					drawBg(screen);
+					bitmap_drawToScr(player_bmp,screen,Character.loc.x,Character.loc.y);
+					draw_health(screen,&Character);
+					swapBuffer(screen);
+					drawBg(screen);
+					bitmap_drawToScr(player_bmp,screen,Character.loc.x,Character.loc.y);
+					draw_health(screen,&Character);
+				}
+				drawMenuBg(screen,menu_sz,40);
+			}
+			if(*menu_sz>35  && *index<10) printGameOver(text,player_name);
+			if(*index==10)
+			{
+				Character.health = 100;
+				sprintf(final_score, "%d", score);
+				score=0;
+				Character.loc.x=VRAM_W/2;
+				Character.loc.y=VRAM_H/2;
+				strcpy(scoreStr1, "Score: 0       ");
+				clearChars(text);
+				drawString(text, scoreStr1, 2, 4);
+				save_score(player_name,final_score); //Replace player_name with actual name entered at start
+				state=leader;
+			}
+		}
 
 	}
 	return 0;

@@ -142,6 +142,14 @@ void draw_health(pixel_buffer_t* screen, sprite* c)
 	drawBox(screen,8,6, 8+(c->health/2),12,red,1);
 }
 
+void drawMenuBg(pixel_buffer_t* screen, int* sz, int max)
+{
+	if(*sz<max)
+			*sz=(*sz)+2;
+		drawBox(screen, CENTER_X-*sz,CENTER_Y-*sz, CENTER_X+*sz,CENTER_Y+*sz, 0,1);
+		drawBox(screen, CENTER_X-*sz,CENTER_Y-*sz, CENTER_X+*sz,CENTER_Y+*sz, 0xffff,0);
+}
+
 void drawMenu(pixel_buffer_t* screen, char_buffer_t* text, int* sz, int sel)
 {
 	int sel_line;
@@ -155,10 +163,7 @@ void drawMenu(pixel_buffer_t* screen, char_buffer_t* text, int* sz, int sel)
 		sel_line=TXT_CTR_Y+1;
 		break;
 	}
-	if(*sz<50)
-		*sz=(*sz)+2;
-	drawBox(screen, CENTER_X-*sz,CENTER_Y-*sz, CENTER_X+*sz,CENTER_Y+*sz, 0,1);
-	drawBox(screen, CENTER_X-*sz,CENTER_Y-*sz, CENTER_X+*sz,CENTER_Y+*sz, 0xffff,0);
+	drawMenuBg(screen,sz,50);
 	if(*sz>40)
 	{
 		drawString(text, "->",TXT_CTR_X-((strlen(option1))/2)-3, sel_line);
@@ -167,10 +172,10 @@ void drawMenu(pixel_buffer_t* screen, char_buffer_t* text, int* sz, int sel)
 	}
 }
 
-void drawLeaderBg(pixel_buffer_t* screen, int* sz)
+
+void printGameOver(char_buffer_t* text,char* player_name)
 {
-	if(*sz<90)
-			*sz=(*sz)+2;
-		drawBox(screen, CENTER_X-*sz,CENTER_Y-*sz, CENTER_X+*sz,CENTER_Y+*sz, 0,1);
-		drawBox(screen, CENTER_X-*sz,CENTER_Y-*sz, CENTER_X+*sz,CENTER_Y+*sz, 0xffff,0);
+	drawString(text, "GAME OVER", TXT_CTR_X-4,TXT_CTR_Y-1);
+	drawString(text, "Enter Your Name", TXT_CTR_X-7,TXT_CTR_Y);
+	drawString(text, player_name, TXT_CTR_X-5,TXT_CTR_Y+1);
 }
