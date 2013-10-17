@@ -8,6 +8,9 @@
 #include"wkAll.h"
 #include"sdcard.h"
 #include"bitmap.h"
+#include"nios2.h"
+#include"stdlib.h"
+
 bitmap_t* bitmap_getBmp(char* file_name)
 {
 	int i;

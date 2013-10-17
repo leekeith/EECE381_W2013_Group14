@@ -12,6 +12,10 @@
 #include<system.h>
 #include<stdbool.h>
 #include<string.h>
+#define CENTER_X (VRAM_W/2)
+#define CENTER_Y (VRAM_H/2)
+#define TXT_CTR_X 40
+#define TXT_CTR_Y 30
 
 extern int scrollRate;
 void drawBg(pixel_buffer_t* screen)
@@ -23,7 +27,8 @@ void drawBg(pixel_buffer_t* screen)
 	fillScr(screen, land);
 	drawBox(screen, (VRAM_W/4),0, ((3*VRAM_W)/4),VRAM_H, water,1);
 }
-
+const char* option1="View Leaderboard";
+const char* option2="Return to Game";
 void drawSprite(pixel_buffer_t* screen, sprite* the_sprite)
 {
 	short hue;
@@ -132,6 +137,40 @@ void draw_health(pixel_buffer_t* screen, sprite* c)
 {
 	short red=mkColor(0xff,0,0);
 	drawBox(screen,4,4 ,62,20,0,1);
+	drawBox(screen,3,3 ,63,21,0xffff,0);
 	drawBox(screen,8,6 ,58,12,red,0);
 	drawBox(screen,8,6, 8+(c->health/2),12,red,1);
+}
+
+void drawMenu(pixel_buffer_t* screen, char_buffer_t* text, int* sz, int sel)
+{
+	int sel_line;
+	switch(sel)
+	{
+	case 0:
+		sel_line=TXT_CTR_Y-1;
+		break;
+	case 1:
+	default:
+		sel_line=TXT_CTR_Y+1;
+		break;
+	}
+	if(*sz<50)
+		*sz=(*sz)+2;
+	drawBox(screen, CENTER_X-*sz,CENTER_Y-*sz, CENTER_X+*sz,CENTER_Y+*sz, 0,1);
+	drawBox(screen, CENTER_X-*sz,CENTER_Y-*sz, CENTER_X+*sz,CENTER_Y+*sz, 0xffff,0);
+	if(*sz>40)
+	{
+		drawString(text, "->",TXT_CTR_X-((strlen(option1))/2)-3, sel_line);
+		drawString(text, option1, TXT_CTR_X-(strlen(option1))/2, TXT_CTR_Y-1);
+		drawString(text, option2, TXT_CTR_X-(strlen(option1))/2, TXT_CTR_Y+1);
+	}
+}
+
+void drawLeaderBg(pixel_buffer_t* screen, int* sz)
+{
+	if(*sz<90)
+			*sz=(*sz)+2;
+		drawBox(screen, CENTER_X-*sz,CENTER_Y-*sz, CENTER_X+*sz,CENTER_Y+*sz, 0,1);
+		drawBox(screen, CENTER_X-*sz,CENTER_Y-*sz, CENTER_X+*sz,CENTER_Y+*sz, 0xffff,0);
 }

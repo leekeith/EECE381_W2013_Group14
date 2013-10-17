@@ -22,4 +22,6 @@ typedef struct sprite	{	spriteType 	type;
 							short		health;
 						}sprite;
 
+typedef enum game_state{menu, ingame, death, leader}game_state_t;
+
 #endif /* GAME_H_ */

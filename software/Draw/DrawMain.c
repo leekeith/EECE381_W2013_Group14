@@ -36,6 +36,9 @@ void drawSprite(pixel_buffer_t* screen, sprite* the_sprite);
 void makeNPC(sprite* npcs);
 void drawNPCs(pixel_buffer_t* screen, sprite* npcs);
 void draw_health(pixel_buffer_t* screen, sprite* c);
+void drawMenu(pixel_buffer_t* screen, char_buffer_t* text, int* sz, int sel);
+void drawLeaderBg(pixel_buffer_t* screen, int* sz);
+void bitmap_drawNPCs(bitmap_t** enemy_bmps, pixel_buffer_t* screen, sprite* npcs, int eTypeCnt);
 
 
 alt_u32 draw(void* screen)
@@ -95,8 +98,8 @@ void display_score(char_buffer_t* text)
 
 	sdcard_fclose(score.file_handle);
 
-	int pos_y = 10;
-	drawString(text, leaderboards, 2, pos_y);
+	int pos_y = 15;
+	drawString(text, leaderboards, 20, pos_y);
 	pos_y = pos_y + 4;
 
 	int start;
@@ -126,6 +129,8 @@ void display_score(char_buffer_t* text)
 int main(int argc, char** argv)
 {
 	int i;
+	game_state_t state;
+	int *menu_sz,menu_sel;
 	sdcard_init();
 	sdcard_present();
 	sdcard_FAT16();
@@ -189,7 +194,7 @@ int main(int argc, char** argv)
 	text=charInit();
 	clearChars(text)
 	movchar=0;
-
+	state=ingame;
 	kb=initKb((void*)key_hit);
 
 
@@ -198,89 +203,67 @@ int main(int argc, char** argv)
 	int score = 0;
 	char scoreStr1[24] = "Score: 0";
 	char scoreStr2[24];
-	char healthStr1[24] = "Health: ";
-	char healthStr2[24];
-	char healthStr3[24] = " / 100";
-    sprintf(healthStr2, "%d", Character.health);
-    strcat(healthStr1, healthStr2);
-    strcat(healthStr1, healthStr3);
+	//char healthStr1[24] = "Health: ";
+	//char healthStr2[24];
+	//char healthStr3[24] = " / 100";
+    //sprintf(healthStr2, "%d", Character.health);
+    //strcat(healthStr1, healthStr2);
+    //strcat(healthStr1, healthStr3);
 
-	clearChars(text);
-	drawString(text, healthStr1, 2, 2);
+    menu_sz=(int*)malloc(sizeof(int));
+	//clearChars(text);
+	//drawString(text, healthStr1, 2, 2);
 	drawString(text, scoreStr1, 2, 4);
 
 	while(1)
 	{
-
-		if (Character.health <= 0 || Character.loc.y >= PLAYER_BB+3)
-		{
-			Character.health = 100;
-			char final_score[5] = {0};
-			sprintf(final_score, "%d", score);
-			score=0;
-			Character.loc.x=VRAM_W/2;
-			Character.loc.y=VRAM_H/2;
-			strcpy(healthStr1, "Health: 100 / 100   ");
-			strcpy(scoreStr1, "Score: 0");
-			clearChars(text);
-			drawString(text, healthStr1, 2, 2);
-			drawString(text, scoreStr1, 2, 4);
-			char player_name[10] = "Player";
-			save_score(player_name,final_score); //Replace player_name with actual name entered at start
-		}
-
-		for(i=0;i<MAX_NPC;i++)
-		{
-		bool locx = false;
-		bool locy = false;
-		if(npcs[i].type!=null)
-		{
-			if (Character.loc.x <= (npcs[i].loc.x + 14) && Character.loc.x >=( npcs[i].loc.x - 14))
-				locx = true;
-			if (Character.loc.y <= (npcs[i].loc.y + 14) && Character.loc.y >= (npcs[i].loc.y - 14))
-				locy = true;
-			if (locx == true && locy == true)
-				{
-					Character.health = Character.health - scrollRate;
-					Character.loc.y = Character.loc.y + scrollRate;
-
-					strcpy(healthStr1, "Health: ");
-					sprintf(healthStr2, "%d", Character.health);
-					strcat(healthStr1, healthStr2);
-					strcat(healthStr1, healthStr3);
-					strcat(healthStr1, "    ");
-					//clearChars(text);
-					drawString(text, healthStr1, 2, 2);
-					//drawString(text, scoreStr1, 2,4);
-				}
-			}
-		}
-
-
 		if(kb->top!=kb->bottom)
 		{
+			if(state==leader && *menu_sz>40)
+			{
+				clearChars(text);
+				state=menu;
+				*menu_sz=0;
+				menu_sel=0;
+			}
+
 			getchKb(kb, nextKey);
 			if(*nextKey->type==KB_ASCII_MAKE_CODE)
 			{
 				switch(*nextKey->val)
 				{
 				case 'W':
-					if (Character.loc.y >= PLAYER_UB)
-					Character.loc.y-=2;
+					if(state==ingame)
+					{
+						if (Character.loc.y >= PLAYER_UB)
+							Character.loc.y-=2;
+					}
+					else if(state==menu)
+					{
+						if(menu_sel>0)
+							menu_sel--;
+						clearChars(text);
+					}
 					break;
 				case'S':
-					Character.loc.y+=2;
+					if(state==ingame)
+						Character.loc.y+=2;
+					else if(state==menu)
+					{
+						menu_sel++;
+						clearChars(text);
+					}
 					break;
 				case'A':
-					if (Character.loc.x > PLAYER_LB)
+					if (state==ingame && Character.loc.x > PLAYER_LB)
 					Character.loc.x-=2;
 					break;
 				case'D':
-					if (Character.loc.x < PLAYER_RB)
+					if (state==ingame && Character.loc.x < PLAYER_RB)
 					Character.loc.x+=2;
 					break;
 				case'X':
-					display_score(text);
+					//display_score(text);
 					break;
 				case'L':
 					scrollRate = (scrollRate+1)%10;
@@ -289,42 +272,166 @@ int main(int argc, char** argv)
 					break;
 				}
 			}
-		}
-		if(movchar==0)
-		{
-			spawnCtr++;
-			//SET_LEDG(GET_KEYS);
-			i=rand()%(200-scrollRate*20);
-
-			if(spawnCtr>minSpawnRate&&spawnCtr>i)
+			else if(*nextKey->type==KB_BINARY_MAKE_CODE)
 			{
-				spawnCtr=0;
-				makeNPC(npcs);
-				score = score + 20;
-				//clearChars(text);
-				strcpy(scoreStr1, "Score: ");
-			    sprintf(scoreStr2, "%d", score);
-			    strcat(scoreStr1, scoreStr2);
-				drawString(text, healthStr1, 2, 2);
-				drawString(text, scoreStr1, 2,4);
+				switch(*nextKey->buf)
+				{
+				case 118:
+					if(state==ingame)
+					{
+						clearChars(text);
+						state=menu;
+						*menu_sz=0;
+						menu_sel=0;
+					}
+					break;
+				case 90:
+					if(state==menu && *menu_sz==50)
+					{
+						if(menu_sel==0)
+						{
+							clearChars(text);
+							state=leader;
+							*menu_sz=0;
+						}
+						else
+						{
+							clearChars(text);
+							state=ingame;
+							*menu_sz=0;
+							drawString(text, scoreStr1, 2,4);
+						}
+					}
+				default:
+					break;
+				}
 			}
-#ifdef BMP_BKGND
-			scrolling_bgDrawToScr(bg_bmp,scrollRate,screen);
-#else
-			drawBg(screen);
-#endif
-#ifdef BITMAPS
-			bitmap_drawNPCs(enemy_bmps,screen,npcs);
-			bitmap_drawToScr(player_bmp,screen,Character.loc.x,Character.loc.y);
-#else
-			drawNPCs(screen,npcs);
-			drawSprite(screen,&Character);
-#endif
-
-			draw_health(screen,&Character);
-			swapBuffer(screen);
-			movchar=1;
 		}
+		if(state==ingame)
+		{
+			if (Character.health <= 0 || Character.loc.y >= PLAYER_BB+3)
+			{
+				Character.health = 100;
+				char final_score[5] = {0};
+				sprintf(final_score, "%d", score);
+				score=0;
+				Character.loc.x=VRAM_W/2;
+				Character.loc.y=VRAM_H/2;
+				//strcpy(healthStr1, "Health: 100 / 100   ");
+				strcpy(scoreStr1, "Score: 0");
+				clearChars(text);
+				//drawString(text, healthStr1, 2, 2);
+				drawString(text, scoreStr1, 2, 4);
+				char player_name[10] = "Player";
+				save_score(player_name,final_score); //Replace player_name with actual name entered at start
+			}
+
+			for(i=0;i<MAX_NPC;i++)
+			{
+			bool locx = false;
+			bool locy = false;
+			if(npcs[i].type!=null)
+			{
+				if (Character.loc.x <= (npcs[i].loc.x + 14) && Character.loc.x >=( npcs[i].loc.x - 14))
+					locx = true;
+				if (Character.loc.y <= (npcs[i].loc.y + 14) && Character.loc.y >= (npcs[i].loc.y - 14))
+					locy = true;
+				if (locx == true && locy == true)
+					{
+						Character.health = Character.health - scrollRate;
+						Character.loc.y = Character.loc.y + scrollRate;
+
+						//strcpy(healthStr1, "Health: ");
+						//sprintf(healthStr2, "%d", Character.health);
+						//strcat(healthStr1, healthStr2);
+						//strcat(healthStr1, healthStr3);
+						//strcat(healthStr1, "    ");
+						//clearChars(text);
+						//drawString(text, healthStr1, 2, 2);
+						//drawString(text, scoreStr1, 2,4);
+					}
+				}
+			}
+
+
+
+			if(movchar==0)
+			{
+				spawnCtr++;
+				//SET_LEDG(GET_KEYS);
+				i=rand()%(200-scrollRate*20);
+
+				if(spawnCtr>minSpawnRate&&spawnCtr>i)
+				{
+					spawnCtr=0;
+					makeNPC(npcs);
+					score = score + 20;
+					//clearChars(text);
+					strcpy(scoreStr1, "Score: ");
+					sprintf(scoreStr2, "%d", score);
+					strcat(scoreStr1, scoreStr2);
+					//drawString(text, healthStr1, 2, 2);
+					drawString(text, scoreStr1, 2,4);
+				}
+	#ifdef BMP_BKGND
+				scrolling_bgDrawToScr(bg_bmp,scrollRate,screen);
+	#else
+				drawBg(screen);
+	#endif
+	#ifdef BITMAPS
+				bitmap_drawNPCs(enemy_bmps,screen,npcs,E_TYPE_CNT);
+				bitmap_drawToScr(player_bmp,screen,Character.loc.x,Character.loc.y);
+	#else
+				drawNPCs(screen,npcs);
+				drawSprite(screen,&Character);
+	#endif
+
+				draw_health(screen,&Character);
+				swapBuffer(screen);
+				movchar=1;
+			}
+		}
+		else if(state==menu)
+		{
+			if(movchar==0)
+			{
+				if(*menu_sz==0)
+				{
+					drawBg(screen);
+					bitmap_drawToScr(player_bmp,screen,Character.loc.x,Character.loc.y);
+					draw_health(screen,&Character);
+					swapBuffer(screen);
+					drawBg(screen);
+					bitmap_drawToScr(player_bmp,screen,Character.loc.x,Character.loc.y);
+					draw_health(screen,&Character);
+				}
+				drawMenu(screen,text,menu_sz,menu_sel);
+				swapBuffer(screen);
+				movchar=1;
+			}
+		}
+		else if(state==leader)
+		{
+			if(movchar==0)
+			{
+				if(*menu_sz==0)
+				{
+					drawBg(screen);
+					bitmap_drawToScr(player_bmp,screen,Character.loc.x,Character.loc.y);
+					draw_health(screen,&Character);
+					swapBuffer(screen);
+					drawBg(screen);
+					bitmap_drawToScr(player_bmp,screen,Character.loc.x,Character.loc.y);
+					draw_health(screen,&Character);
+				}
+
+				if(*menu_sz>80)	display_score(text);
+				drawLeaderBg(screen,menu_sz);
+				swapBuffer(screen);
+				movchar=1;
+			}
+		}
+
 
 	}
 	return 0;
