@@ -214,6 +214,7 @@ int main(int argc, char** argv)
 	{
 		if(kb->top!=kb->bottom)
 		{
+			getchKb(kb, nextKey);
 			if(state==leader && *menu_sz>40)
 			{
 				clearChars(text);
@@ -222,8 +223,8 @@ int main(int argc, char** argv)
 				menu_sel=0;
 			}
 
-			getchKb(kb, nextKey);
-			if(state==death && *index<10)
+
+			if(state==death && (*index)<10)
 			{
 				if(*index==9)
 				{
