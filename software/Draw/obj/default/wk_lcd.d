@@ -1,47 +1,47 @@
-obj/default/wk_lcd.o: wk_lcd.c ../../../../workspace2/NewBSP/system.h \
-  ../../../../workspace2/NewBSP/linker.h \
-  ../../../../workspace2/NewBSP/HAL/inc/nios2.h wk_lcd.h \
-  ../../../../workspace2/NewBSP/system.h \
-  ../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_character_lcd.h \
-  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_dev.h \
-  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
-  ../../../../workspace2/NewBSP/HAL/inc/alt_types.h \
-  ../../../../workspace2/NewBSP/HAL/inc/priv/alt_dev_llist.h \
-  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
-  ../../../../workspace2/NewBSP/HAL/inc/alt_types.h \
-  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_alarm.h \
-  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
-  ../../../../workspace2/NewBSP/HAL/inc/priv/alt_alarm.h \
-  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_warning.h
+obj/default/wk_lcd.o: wk_lcd.c ../../../../../Desktop/Workspace/system.h \
+  ../../../../../Desktop/Workspace/linker.h \
+  ../../../../../Desktop/Workspace/HAL/inc/nios2.h wk_lcd.h \
+  ../../../../../Desktop/Workspace/system.h \
+  ../../../../../Desktop/Workspace/drivers/inc/altera_up_avalon_character_lcd.h \
+  ../../../../../Desktop/Workspace/HAL/inc/sys/alt_dev.h \
+  ../../../../../Desktop/Workspace/HAL/inc/sys/alt_llist.h \
+  ../../../../../Desktop/Workspace/HAL/inc/alt_types.h \
+  ../../../../../Desktop/Workspace/HAL/inc/priv/alt_dev_llist.h \
+  ../../../../../Desktop/Workspace/HAL/inc/sys/alt_llist.h \
+  ../../../../../Desktop/Workspace/HAL/inc/alt_types.h \
+  ../../../../../Desktop/Workspace/HAL/inc/sys/alt_alarm.h \
+  ../../../../../Desktop/Workspace/HAL/inc/sys/alt_llist.h \
+  ../../../../../Desktop/Workspace/HAL/inc/priv/alt_alarm.h \
+  ../../../../../Desktop/Workspace/HAL/inc/sys/alt_warning.h
 
-../../../../workspace2/NewBSP/system.h:
+../../../../../Desktop/Workspace/system.h:
 
-../../../../workspace2/NewBSP/linker.h:
+../../../../../Desktop/Workspace/linker.h:
 
-../../../../workspace2/NewBSP/HAL/inc/nios2.h:
+../../../../../Desktop/Workspace/HAL/inc/nios2.h:
 
 wk_lcd.h:
 
-../../../../workspace2/NewBSP/system.h:
+../../../../../Desktop/Workspace/system.h:
 
-../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_character_lcd.h:
+../../../../../Desktop/Workspace/drivers/inc/altera_up_avalon_character_lcd.h:
 
-../../../../workspace2/NewBSP/HAL/inc/sys/alt_dev.h:
+../../../../../Desktop/Workspace/HAL/inc/sys/alt_dev.h:
 
-../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
+../../../../../Desktop/Workspace/HAL/inc/sys/alt_llist.h:
 
-../../../../workspace2/NewBSP/HAL/inc/alt_types.h:
+../../../../../Desktop/Workspace/HAL/inc/alt_types.h:
 
-../../../../workspace2/NewBSP/HAL/inc/priv/alt_dev_llist.h:
+../../../../../Desktop/Workspace/HAL/inc/priv/alt_dev_llist.h:
 
-../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
+../../../../../Desktop/Workspace/HAL/inc/sys/alt_llist.h:
 
-../../../../workspace2/NewBSP/HAL/inc/alt_types.h:
+../../../../../Desktop/Workspace/HAL/inc/alt_types.h:
 
-../../../../workspace2/NewBSP/HAL/inc/sys/alt_alarm.h:
+../../../../../Desktop/Workspace/HAL/inc/sys/alt_alarm.h:
 
-../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
+../../../../../Desktop/Workspace/HAL/inc/sys/alt_llist.h:
 
-../../../../workspace2/NewBSP/HAL/inc/priv/alt_alarm.h:
+../../../../../Desktop/Workspace/HAL/inc/priv/alt_alarm.h:
 
-../../../../workspace2/NewBSP/HAL/inc/sys/alt_warning.h:
+../../../../../Desktop/Workspace/HAL/inc/sys/alt_warning.h:

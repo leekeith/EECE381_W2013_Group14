@@ -40,6 +40,8 @@ void drawMenu(pixel_buffer_t* screen, char_buffer_t* text, int* sz, int sel);
 void drawMenuBg(pixel_buffer_t* screen, int* sz, int max);
 void bitmap_drawNPCs(bitmap_t** enemy_bmps, pixel_buffer_t* screen, sprite* npcs, int eTypeCnt);
 void printGameOver(char_buffer_t* text, char* player_name);
+void npc_shoot(sprite* bullets, sprite* shooter);
+void player_shoot(sprite* bullets, int locx, int locy, short dir);
 
 
 alt_u32 draw(void* screen)
@@ -132,6 +134,7 @@ int main(int argc, char** argv)
 
 	sprite Character;
 	sprite npcs[MAX_NPC];
+	sprite bullets[MAX_NPC];
 
 #ifdef BITMAPS
 	bitmap_t* player_bmp;
@@ -178,6 +181,10 @@ int main(int argc, char** argv)
 	{
 		npcs[i].type=null;
 		npcs[i].health=100;
+	}
+	for(i=0;i<MAX_NPC;i++)
+	{
+		bullets[i].type=null;
 	}
 	alarm=(alt_alarm*)malloc(sizeof(alt_alarm));
 	spawnCtr=0;
@@ -308,6 +315,30 @@ int main(int argc, char** argv)
 				case'L':
 					scrollRate = (scrollRate+1)%10;
 					break;
+				case'1':
+					player_shoot(bullets, Character.loc.x, Character.loc.y, 1);
+					break;
+				case'2':
+					player_shoot(bullets, Character.loc.x, Character.loc.y, 2);
+					break;
+				case'3':
+					player_shoot(bullets, Character.loc.x, Character.loc.y, 3);
+					break;
+				case'4':
+					player_shoot(bullets, Character.loc.x, Character.loc.y, 4);
+					break;
+				case'6':
+					player_shoot(bullets, Character.loc.x, Character.loc.y, 6);
+					break;
+				case'7':
+					player_shoot(bullets, Character.loc.x, Character.loc.y, 7);
+					break;
+				case'8':
+					player_shoot(bullets, Character.loc.x, Character.loc.y, 8);
+					break;
+				case'9':
+					player_shoot(bullets, Character.loc.x, Character.loc.y, 9);
+					break;
 				default:
 					break;
 				}
@@ -379,30 +410,37 @@ int main(int argc, char** argv)
 			*/
 			for(i=0;i<MAX_NPC;i++)
 			{
-			bool locx = false;
-			bool locy = false;
 			if(npcs[i].type!=null)
 			{
-				if (Character.loc.x <= (npcs[i].loc.x + 14) && Character.loc.x >=( npcs[i].loc.x - 14))
-					locx = true;
-				if (Character.loc.y <= (npcs[i].loc.y + 14) && Character.loc.y >= (npcs[i].loc.y - 14))
-					locy = true;
-				if (locx == true && locy == true)
-					{
-						Character.health = Character.health - scrollRate;
-						Character.loc.y = Character.loc.y + scrollRate;
-
-						//strcpy(healthStr1, "Health: ");
-						//sprintf(healthStr2, "%d", Character.health);
-						//strcat(healthStr1, healthStr2);
-						//strcat(healthStr1, healthStr3);
-						//strcat(healthStr1, "    ");
-						//clearChars(text);
-						//drawString(text, healthStr1, 2, 2);
-						//drawString(text, scoreStr1, 2,4);
-					}
+				if(npcs[i].type==enemy1)
+						{
+						for(j=0;j<MAX_NPC;j++)
+							if (bullets[j].type!=null)
+								if(bullets[j].loc.x <= (npcs[i].loc.x + 6) && bullets[j].loc.x >= (npcs[i].loc.x - 6) && bullets[j].loc.y <= (npcs[i].loc.y + 6) && bullets[i].loc.y >= (npcs[i].loc.y - 6))
+								{
+									npcs[i].type = null;
+									bullets[j].type = null;
+								}
+						}
+						else if(npcs[i].type==enemy2)
+						{
+						for(j=0;j<MAX_NPC;j++)
+							if (bullets[j].type!=null)
+								if(bullets[j].loc.x <= (npcs[i].loc.x + 11) && bullets[j].loc.x >= (npcs[i].loc.x - 11) && bullets[j].loc.y <= (npcs[i].loc.y + 11) && bullets[i].loc.y >= (npcs[i].loc.y - 11))
+								{
+									npcs[i].health -= 35;
+									bullets[j].type = null;
+									if (npcs[i].health <= 0)
+										npcs[i].type = null;
+								}
+						if (Character.loc.x <= (npcs[i].loc.x + 18) && Character.loc.x >=( npcs[i].loc.x - 18) && Character.loc.y <= (npcs[i].loc.y + 18) && Character.loc.y >= (npcs[i].loc.y - 18))
+							{
+								Character.health = Character.health - scrollRate;
+								Character.loc.y = Character.loc.y + scrollRate;
+							}
+						}
 				}
-			}
+				}
 
 
 
@@ -432,9 +470,11 @@ int main(int argc, char** argv)
 	#ifdef BITMAPS
 				bitmap_drawNPCs(enemy_bmps,screen,npcs,E_TYPE_CNT);
 				bitmap_drawToScr(player_bmp,screen,Character.loc.x,Character.loc.y);
+				drawNPCs(screen, bullets);
 	#else
 				drawNPCs(screen,npcs);
 				drawSprite(screen,&Character);
+				drawNPCs(screen, bullets);
 	#endif
 
 				draw_health(screen,&Character);

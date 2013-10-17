@@ -47,6 +47,9 @@ void drawSprite(pixel_buffer_t* screen, sprite* the_sprite)
 		case enemy2:
 			rad=8;
 			break;
+		case bullet:
+			rad=1;
+			break;
 		default:
 			break;
 		}
@@ -87,8 +90,6 @@ void makeNPC(sprite* npcs)
 			npcs[i].loc.x=rand()%VRAM_W;
 		}while(npcs[i].loc.x<(VRAM_W/4)+8 || npcs[i].loc.x>((3*VRAM_W)/4)-8);
 	}
-
-	//npcs[i].loc.x=PLAYER_LB-10;
 	npcs[i].loc.y=0;
 }
 void bitmap_drawNPCs(bitmap_t** enemy_bmps, pixel_buffer_t* screen, sprite* npcs, int eTypeCnt)
@@ -106,6 +107,8 @@ void bitmap_drawNPCs(bitmap_t** enemy_bmps, pixel_buffer_t* screen, sprite* npcs
 			case enemy2:
 				bitmap_drawToScr(enemy_bmps[1],screen,npcs[i].loc.x,npcs[i].loc.y);
 				break;
+			case bullet:
+				drawSprite(screen, &npcs[i]);
 			default:
 				break;
 			}
@@ -123,12 +126,42 @@ void drawNPCs(pixel_buffer_t* screen, sprite* npcs)
 	{
 		if(npcs[i].type!=null)
 		{
-
 			drawSprite(screen, &(npcs[i]));
 
-			npcs[i].loc.y+=scrollRate;
-			if(npcs[i].loc.y>=VRAM_H+3)
-				npcs[i].type=null;
+			if (npcs[i].type==bullet)
+			{
+
+				if (npcs[i].dir==1)
+				{
+					npcs[i].loc.x-=2*scrollRate;
+					npcs[i].loc.y+=2*scrollRate;
+				}
+				else if (npcs[i].dir==2)
+					npcs[i].loc.y+=2*scrollRate;
+				else if (npcs[i].dir==3)
+				{
+					npcs[i].loc.x+=2*scrollRate;
+					npcs[i].loc.y+=2*scrollRate;
+				}
+				else if (npcs[i].dir==4)
+					npcs[i].loc.x-=2*scrollRate;
+				else if (npcs[i].dir==6)
+					npcs[i].loc.x+=2*scrollRate;
+				else if (npcs[i].dir==7)
+				{
+					npcs[i].loc.x-=2*scrollRate;
+					npcs[i].loc.y-=2*scrollRate;
+				}
+				else if (npcs[i].dir==8)
+					npcs[i].loc.y-=2*scrollRate;
+				else if (npcs[i].dir==9)
+				{
+					npcs[i].loc.x+=2*scrollRate;
+					npcs[i].loc.y-=2*scrollRate;
+				}
+			if(npcs[i].loc.y>=VRAM_H+3 || npcs[i].loc.y<=3 || npcs[i].loc.x>=VRAM_W-3 || npcs[i].loc.x<=3)
+					npcs[i].type=null;
+			}
 		}
 	}
 }
@@ -171,7 +204,30 @@ void drawMenu(pixel_buffer_t* screen, char_buffer_t* text, int* sz, int sel)
 		drawString(text, option2, TXT_CTR_X-(strlen(option1))/2, TXT_CTR_Y+1);
 	}
 }
-
+void npc_shoot(sprite* bullets, sprite* shooter)
+{
+	int i=0;
+	while(i<MAX_NPC && bullets[i].type!=null)
+		i++;
+	if(i==MAX_NPC)
+		return;
+	bullets[i].type = bullet;
+	bullets[i].health = 5;
+	bullets[i].loc.x = shooter[i].loc.x;
+	bullets[i].loc.y = shooter[i].loc.y;
+}
+void player_shoot(sprite* bullets, int locx, int locy, short dir)
+{
+	int i=0;
+	while(i<MAX_NPC && bullets[i].type!=null)
+		i++;
+	if(i==MAX_NPC)
+		return;
+	bullets[i].type = bullet;
+	bullets[i].loc.x = locx;
+	bullets[i].loc.y = locy-8;
+	bullets[i].dir = dir;
+}
 
 void printGameOver(char_buffer_t* text,char* player_name)
 {
