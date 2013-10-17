@@ -49,10 +49,10 @@ int sdcard_FAT16(void)
 }
 
 /*
- * Looks for the ﬁrst ﬁle in a given directory and stores the file name in the given pointer file_name.
+ * Looks for the ï¬�rst ï¬�le in a given directory and stores the file name in the given pointer file_name.
  * Returns result of the operation. 0 means success, 1 means an invalid directory, 2
  * means no card is present or the card does not contain a FAT16 partition, and -1 mean
- * that the directory has been scanned and no ﬁles were found.
+ * that the directory has been scanned and no ï¬�les were found.
  */
 short int sdcard_get_first_file(char *directory, char *file_name)
 {
@@ -61,12 +61,12 @@ short int sdcard_get_first_file(char *directory, char *file_name)
 }
 
 /*
- * Looks for the next ﬁle in a directory speciﬁed in the last call to the
+ * Looks for the next ï¬�le in a directory speciï¬�ed in the last call to the
  * sdcard_get_first_file subroutine and stores the filename in the given pointer file_name.
  * Returns result of the operation. 0 means success, 1 means an invalid directory,
  * 2 means no card is present or the card does not contain a FAT16 partition, 3 means that
- * ﬁnd_ﬁrst must be called ﬁrst, and -1 means that the directory has been scanned and
- * no ﬁles were found.
+ * ï¬�nd_ï¬�rst must be called ï¬�rst, and -1 means that the directory has been scanned and
+ * no ï¬�les were found.
  */
 short int sdcard_get_next_file(char *file_name)
 {
@@ -97,7 +97,7 @@ void sdcard_list(char *directory)
 
 
 /*
- * Opens a ﬁle for use in your application.
+ * Opens a ï¬�le for use in your application.
  * Inputs:
  *      name - a file name including a directory, relative to the root directory
  *      create - a flag set to true to create a file if it does not already exist
@@ -129,7 +129,7 @@ int sdcard_filesize(short int file_handle)
 {
 
 	int count = 0;
-	while(sdcard_readbyte(file_handle) >= 0)
+	while(sdcard_readbyte(file_handle) != -1)
 	{
 		count ++;
 	}
@@ -138,6 +138,20 @@ int sdcard_filesize(short int file_handle)
 }
 
 
+int sdcard_audiosize(short int file_handle)
+{
+	int i = 0;
+	int size;
+	void* temp_ptr;
+	unsigned char head[44];
+	for(i=0;i<44;i++)
+			head[i]=(unsigned char)sdcard_readbyte(file_handle);
+	temp_ptr = head + 40;
+	size = *(int*)temp_ptr;
+	return size;
+
+}
+
 /*
  * Reads a file specified by the file handle into a given char array
  */
@@ -145,13 +159,16 @@ void sdcard_readfile(char read_data [], short int file_handle)
 {
 	short int i = 0;
 	int count = 0;
-	while(i >= 0)
+	while(i != -1)
 	{
+
 		i = sdcard_readbyte(file_handle);
-		if ( i >= 0)
+
+		if ( i != -1)
 			read_data[count] = i;
 		count ++;
 	}
+	printf("Count=%d\n",count);
 	read_data[count-1] = '/';
 }
 
@@ -165,7 +182,10 @@ void sdcard_printarray(char a[])
 	int h = 0;
 	while(a[h] != '/')
 	{
-		printf("%c \n", a[h] );
+		if ( a[h] > 47 && a[h] < 91 )
+			printf("%c \n", a[h] );
+		else
+			printf("%d \n",a[h]);
 		h++;
 	}
 }
