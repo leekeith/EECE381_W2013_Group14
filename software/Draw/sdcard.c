@@ -49,10 +49,10 @@ int sdcard_FAT16(void)
 }
 
 /*
- * Looks for the ï¬�rst ï¬�le in a given directory and stores the file name in the given pointer file_name.
+ * Looks for the first file in a given directory and stores the file name in the given pointer file_name.
  * Returns result of the operation. 0 means success, 1 means an invalid directory, 2
  * means no card is present or the card does not contain a FAT16 partition, and -1 mean
- * that the directory has been scanned and no ï¬�les were found.
+ * that the directory has been scanned and no files were found.
  */
 short int sdcard_get_first_file(char *directory, char *file_name)
 {
@@ -61,7 +61,7 @@ short int sdcard_get_first_file(char *directory, char *file_name)
 }
 
 /*
- * Looks for the next ï¬�le in a directory speciï¬�ed in the last call to the
+ * Looks for the next file in a directory specified in the last call to the
  * sdcard_get_first_file subroutine and stores the filename in the given pointer file_name.
  * Returns result of the operation. 0 means success, 1 means an invalid directory,
  * 2 means no card is present or the card does not contain a FAT16 partition, 3 means that
@@ -127,7 +127,6 @@ short int sdcard_readbyte(short int file_handle)
  */
 int sdcard_filesize(short int file_handle)
 {
-	short i;
 	int count = 0;
 	while(sdcard_readbyte(file_handle) >= 0)
 	{
@@ -205,3 +204,23 @@ void sdcard_fclose(int short file_handle)
 {
 	alt_up_sd_card_fclose(file_handle);
 }
+
+
+/*
+ *  Kenny's Audio functions:
+ */
+
+int sdcard_audiosize(short int file_handle)
+{
+	int i = 0;
+	int size;
+	void* temp_ptr;
+	unsigned char head[44];
+	for(i=0;i<44;i++)
+			head[i]=(unsigned char)sdcard_readbyte(file_handle);
+	temp_ptr = head + 40;
+	size = *(int*)temp_ptr;
+	return size;
+
+}
+

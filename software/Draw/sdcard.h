@@ -20,6 +20,7 @@ void sdcard_writefile(char write_data [], short int file_handle);
 int sdcard_filesize(short int file_handle);
 void sdcard_list(char *directory);
 void sdcard_printarray(char a[]);
+int sdcard_audiosize(short int file_handle);
 
 short int sdcard_fopen(char *name, bool create);
 void sdcard_fclose(short int file_handle);
