@@ -54,6 +54,10 @@ void drawSprite(pixel_buffer_t* screen, sprite* the_sprite)
 		case bullet_npc:
 			rad = 1;
 			hue = mkColor(200,0,0);
+			break;
+		case health:
+			rad=4;
+			break;
 		default:
 			break;
 		}
@@ -78,18 +82,21 @@ void makeNPC(sprite* npcs)
 
 	if(i%2 == 0)
 	{
-		npcs[i].type=enemy1;
-		npcs[i].health=100;
-
+			npcs[i].type=enemy1;
+			npcs[i].health=100;
 		do{
 			npcs[i].loc.x=rand()%VRAM_W;
 		}while(npcs[i].loc.x>(VRAM_W/4)-5 && npcs[i].loc.x<((3*VRAM_W)/4)+5);
 	}
 	else
 	{
-		npcs[i].type=enemy2;
-		npcs[i].health=100;
-
+		if (rand()%50==45)
+			npcs[i].type=health;
+		else
+		{
+			npcs[i].type=enemy2;
+			npcs[i].health=100;
+		}
 		do{
 			npcs[i].loc.x=rand()%VRAM_W;
 		}while(npcs[i].loc.x<(VRAM_W/4)+8 || npcs[i].loc.x>((3*VRAM_W)/4)-8);
@@ -111,7 +118,7 @@ void bitmap_drawNPCs(bitmap_t** enemy_bmps, pixel_buffer_t* screen, sprite* npcs
 			case enemy2:
 				bitmap_drawToScr(enemy_bmps[1],screen,npcs[i].loc.x,npcs[i].loc.y);
 				break;
-			case bullet:
+			case health:
 				drawSprite(screen, &npcs[i]);
 			default:
 				break;

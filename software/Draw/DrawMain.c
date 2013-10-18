@@ -424,6 +424,16 @@ int main(int argc, char** argv)
 									bullets[j].type = null;
 								}
 						}
+				else if (npcs[i].type==health)
+				{
+					if(Character.loc.x <= (npcs[i].loc.x + 14) && Character.loc.x >= (npcs[i].loc.x - 11) && Character.loc.y <= (npcs[i].loc.y + 11) && Character.loc.y >= (npcs[i].loc.y - 11))
+					{
+						Character.health+=30;
+						npcs[i].type=null;
+						if (Character.health>=100)
+							Character.health = 100;
+					}
+				}
 						else if(npcs[i].type==enemy2)
 						{
 						for(j=0;j<MAX_NPC;j++)
