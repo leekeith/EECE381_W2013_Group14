@@ -22,7 +22,7 @@
 #include <stdio.h>
 #define BITMAPS
 //#define BMP_BKGND
-#define E_TYPE_CNT 2
+#define E_TYPE_CNT 3
 
 volatile char movchar;
 
@@ -92,8 +92,8 @@ void display_score(char_buffer_t* text)
 
 	sdcard_fclose(score.file_handle);
 
-	int pos_y = 15;
-	drawString(text, leaderboards, 20, pos_y);
+	int pos_y = 17;
+	drawString(text, leaderboards, 32, pos_y);
 	pos_y = pos_y + 4;
 
 	int start;
@@ -112,7 +112,7 @@ void display_score(char_buffer_t* text)
 			j++;
 
 		}
-		drawString(text, buffer, 20, pos_y);
+		drawString(text, buffer, 32, pos_y);
 		pos_y = pos_y + 2;
 		start = j+1;
 	}
@@ -138,12 +138,14 @@ int main(int argc, char** argv)
 	sprite npc_bullets[MAX_NPC];
 
 #ifdef BITMAPS
+
 	bitmap_t* player_bmp;
 	bitmap_t** enemy_bmps;
 	player_bmp=bitmap_getBmp("Ship1.bmp");
 	enemy_bmps=(bitmap_t**)malloc(E_TYPE_CNT*sizeof(bitmap_t*));
 	enemy_bmps[0]=bitmap_getBmp("Enemy1.bmp");
 	enemy_bmps[1]=bitmap_getBmp("Obst1.bmp");
+	enemy_bmps[2]=bitmap_getBmp("Health.bmp");
 
 	bitmap_to16bit(player_bmp);
 	for(i=0;i<E_TYPE_CNT;i++)
@@ -551,8 +553,8 @@ int main(int argc, char** argv)
 					draw_health(screen,&Character);
 				}
 
-				if(*menu_sz>80)	display_score(text);
-				drawMenuBg(screen,menu_sz,90);
+				if(*menu_sz>50)	display_score(text);
+				drawMenuBg(screen,menu_sz,60);
 				swapBuffer(screen);
 				movchar=1;
 			}

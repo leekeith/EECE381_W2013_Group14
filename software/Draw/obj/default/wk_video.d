@@ -1,30 +1,30 @@
 obj/default/wk_video.o: wk_video.c wk_video.h \
-  ../../../../../Desktop/Workspace/system.h \
-  ../../../../../Desktop/Workspace/linker.h \
-  ../../../../../Desktop/Workspace/drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h \
-  ../../../../../Desktop/Workspace/HAL/inc/alt_types.h \
-  ../../../../../Desktop/Workspace/HAL/inc/sys/alt_dev.h \
-  ../../../../../Desktop/Workspace/HAL/inc/sys/alt_llist.h \
-  ../../../../../Desktop/Workspace/HAL/inc/priv/alt_dev_llist.h \
-  ../../../../../Desktop/Workspace/HAL/inc/sys/alt_llist.h \
-  ../../../../../Desktop/Workspace/drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h
+  ../../../../workspace2/NewBSP/system.h \
+  ../../../../workspace2/NewBSP/linker.h \
+  ../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h \
+  ../../../../workspace2/NewBSP/HAL/inc/alt_types.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_dev.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
+  ../../../../workspace2/NewBSP/HAL/inc/priv/alt_dev_llist.h \
+  ../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h \
+  ../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h
 
 wk_video.h:
 
-../../../../../Desktop/Workspace/system.h:
+../../../../workspace2/NewBSP/system.h:
 
-../../../../../Desktop/Workspace/linker.h:
+../../../../workspace2/NewBSP/linker.h:
 
-../../../../../Desktop/Workspace/drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h:
+../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_video_character_buffer_with_dma.h:
 
-../../../../../Desktop/Workspace/HAL/inc/alt_types.h:
+../../../../workspace2/NewBSP/HAL/inc/alt_types.h:
 
-../../../../../Desktop/Workspace/HAL/inc/sys/alt_dev.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_dev.h:
 
-../../../../../Desktop/Workspace/HAL/inc/sys/alt_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
 
-../../../../../Desktop/Workspace/HAL/inc/priv/alt_dev_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/priv/alt_dev_llist.h:
 
-../../../../../Desktop/Workspace/HAL/inc/sys/alt_llist.h:
+../../../../workspace2/NewBSP/HAL/inc/sys/alt_llist.h:
 
-../../../../../Desktop/Workspace/drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h:
+../../../../workspace2/NewBSP/drivers/inc/altera_up_avalon_video_pixel_buffer_dma.h:

@@ -119,7 +119,7 @@ void bitmap_drawNPCs(bitmap_t** enemy_bmps, pixel_buffer_t* screen, sprite* npcs
 				bitmap_drawToScr(enemy_bmps[1],screen,npcs[i].loc.x,npcs[i].loc.y);
 				break;
 			case health:
-				drawSprite(screen, &npcs[i]);
+				bitmap_drawToScr(enemy_bmps[2],screen,npcs[i].loc.x,npcs[i].loc.y);
 			default:
 				break;
 			}
