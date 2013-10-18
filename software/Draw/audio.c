@@ -30,17 +30,17 @@ while (!alt_up_av_config_read_ready(av_config)) {
 //play audio buf
 void play_sound(unsigned int buf[],alt_up_audio_dev*audio){
 
-alt_up_audio_write_fifo(audio, buf, 95, ALT_UP_AUDIO_LEFT);
-alt_up_audio_write_fifo(audio, buf, 95, ALT_UP_AUDIO_RIGHT);
+alt_up_audio_write_fifo(audio, buf, 70, ALT_UP_AUDIO_LEFT);
+alt_up_audio_write_fifo(audio, buf, 70, ALT_UP_AUDIO_RIGHT);
 
 }
 
 //audio interrupt
 void audio_isr(void *context, unsigned int irq_id){
 	Audio* x = *(Audio**)context;
-	if((x->arr_index) < (x->size_of_bufarr)){
+	if((x->arr_index) < (x->size_of_bufarr/2)){
 		play_sound(x->buf_arr+x->arr_index,x->audio);
-		(x->arr_index)+=95;}
+		(x->arr_index)+=70;}
 	else{
 		x->arr_index = 0;
 		alt_up_audio_disable_write_interrupt(x->audio);
@@ -66,17 +66,40 @@ the_audio->size_of_bufarr = sdcard_audiosize(file_handle);
 
 int offset = 44;
 
-the_audio -> buf_arr = (unsigned int*)malloc((the_audio -> size_of_bufarr)*sizeof(int));
+the_audio -> buf_arr = (unsigned int*)malloc(((the_audio ->size_of_bufarr/2))*sizeof(int));
 
+char read_data[the_audio->size_of_bufarr];
+int b_ar = 0;
 int i = 0;
+unsigned char firstB;
+unsigned char secondB;
+int completeB;
+
 while(i < 44)
 	{
 		sdcard_readbyte(file_handle);
 		i++;
 	}
 
-	for(i = 44; i < (offset + (the_audio->size_of_bufarr*4)); i++)
-		((char*)the_audio->buf_arr)[i]= sdcard_readbyte(file_handle);
+	for(i = 0; i < (the_audio->size_of_bufarr); i++)
+		read_data[i]= sdcard_readbyte(file_handle);
+
+	i = 0;
+	while(i < (the_audio->size_of_bufarr)){
+		  firstB = read_data[i];
+	  	    i++;
+	      secondB = read_data[i];
+	        i++;
+	     completeB = (secondB << 8) | firstB;
+	     the_audio->buf_arr[b_ar] = completeB;
+	     	 b_ar++;
+		  }
+	  int b_ar_count = 0;
+
+
+
+
+
 	sdcard_fclose(file_handle);
 
 	return the_audio;
