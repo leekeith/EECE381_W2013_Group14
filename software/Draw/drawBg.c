@@ -49,11 +49,11 @@ void drawSprite(pixel_buffer_t* screen, sprite* the_sprite)
 			break;
 		case bullet:
 			rad=1;
-			hue = mkColor(50,50,50);
+			hue = mkColor(0,0,0);
 			break;
 		case bullet_npc:
 			rad = 1;
-			hue = mkColor(200,200,200);
+			hue = mkColor(200,0,0);
 		default:
 			break;
 		}
@@ -132,7 +132,7 @@ void drawNPCs(pixel_buffer_t* screen, sprite* npcs)
 		{
 			drawSprite(screen, &(npcs[i]));
 
-			if (npcs[i].type==bullet)
+			if (npcs[i].type == bullet || npcs[i].type == bullet_npc)
 			{
 
 				if (npcs[i].dir==1)
@@ -227,7 +227,9 @@ void player_shoot(sprite* bullets, int locx, int locy, short dir)
 		i++;
 	if(i==MAX_NPC)
 		return;
-	bullets[i].type = bullet;
+	if (locx >= 3*VRAM_W/4 || locx <= VRAM_W/4)
+		bullets[i].type = bullet_npc;
+	else bullets[i].type = bullet;
 	bullets[i].loc.x = locx;
 	bullets[i].loc.y = locy-8;
 	bullets[i].dir = dir;

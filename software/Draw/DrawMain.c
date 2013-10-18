@@ -394,6 +394,8 @@ int main(int argc, char** argv)
 				for(i=0;i<MAX_NPC;i++)
 				{
 					npcs[i].type=null;
+					npc_bullets[i].type=null;
+					bullets[i].type=null;
 				}
 			}
 
@@ -416,7 +418,7 @@ int main(int argc, char** argv)
 						{
 						for(j=0;j<MAX_NPC;j++)
 							if (bullets[j].type!=null)
-								if(bullets[j].loc.x <= (npcs[i].loc.x + 6) && bullets[j].loc.x >= (npcs[i].loc.x - 6) && bullets[j].loc.y <= (npcs[i].loc.y + 6) && bullets[i].loc.y >= (npcs[i].loc.y - 6))
+								if(bullets[j].loc.x <= (npcs[i].loc.x + 7) && bullets[j].loc.x >= (npcs[i].loc.x - 7) && bullets[j].loc.y <= (npcs[i].loc.y + 7) && bullets[i].loc.y >= (npcs[i].loc.y - 7))
 								{
 									npcs[i].type = null;
 									bullets[j].type = null;
