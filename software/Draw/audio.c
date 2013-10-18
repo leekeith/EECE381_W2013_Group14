@@ -12,6 +12,7 @@
 #include "wk_io.h"
 #include "sdcard.h"
 #include "audio.h"
+#include "stdlib.h"
 
 
 
@@ -36,13 +37,13 @@ alt_up_audio_write_fifo(audio, buf, 95, ALT_UP_AUDIO_RIGHT);
 
 //audio interrupt
 void audio_isr(void *context, unsigned int irq_id){
-	Audio* x = context;
+	Audio* x = *(Audio**)context;
 	if((x->arr_index) < (x->size_of_bufarr)){
 		play_sound(x->buf_arr+x->arr_index,x->audio);
 		(x->arr_index)+=95;}
 	else{
 		x->arr_index = 0;
-		play_sound(x->buf_arr+x->arr_index,x->audio);
+		alt_up_audio_disable_write_interrupt(x->audio);
 	}
 }
 
@@ -54,18 +55,18 @@ void audio_isr(void *context, unsigned int irq_id){
 Audio* read_audio_file(char* file_name, alt_up_audio_dev*audio ){
 
 Audio* the_audio;
-void* tmp_ptr;
 the_audio = (Audio*)malloc(sizeof(Audio));
 
 the_audio-> audio = audio;
 the_audio-> arr_index = 0;
+the_audio-> file_name = file_name;
 
 short int file_handle = sdcard_fopen(file_name,false);
 the_audio->size_of_bufarr = sdcard_audiosize(file_handle);
 
 int offset = 44;
 
-the_audio -> buf_arr = (int*)malloc((the_audio -> size_of_bufarr)*sizeof(int));
+the_audio -> buf_arr = (unsigned int*)malloc((the_audio -> size_of_bufarr)*sizeof(int));
 
 int i = 0;
 while(i < 44)

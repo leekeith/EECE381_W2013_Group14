@@ -5,6 +5,10 @@
  *      Author: Keith
  */
 
+#include "altera_up_avalon_audio_and_video_config.h"
+#include "altera_up_avalon_audio.h"
+#include "audio.h"
+
 #include"wkAll.h"
 
 #include"game.h"
@@ -122,12 +126,28 @@ void display_score(char_buffer_t* text)
 
 int main(int argc, char** argv)
 {
+	int holder;
+
 	int i,j;
 	game_state_t state;
 	int *menu_sz,menu_sel;
 	sdcard_init();
 	sdcard_present();
 	sdcard_FAT16();
+
+
+	av_config_setup();
+
+	alt_up_audio_dev * audio = alt_up_audio_open_dev(AUDIO_NAME);
+	Audio* boing;
+	Audio* over;
+	boing = read_audio_file("boing.wav", audio);
+	over = read_audio_file("dingding.wav", audio);
+	holder = boing;
+	alt_irq_register(AUDIO_IRQ,(void*)&holder, audio_isr);
+	alt_irq_enable(AUDIO_IRQ);
+	alt_up_audio_enable_write_interrupt(audio);
+
 
 	key_s* nextKey;
 	char final_score[5] = {0};
@@ -399,6 +419,8 @@ int main(int argc, char** argv)
 					npc_bullets[i].type=null;
 					bullets[i].type=null;
 				}
+				holder = over;
+				alt_up_audio_enable_write_interrupt(audio);
 			}
 
 			for(i=0;i<MAX_NPC;i++)
