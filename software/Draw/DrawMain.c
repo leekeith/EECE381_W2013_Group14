@@ -135,6 +135,7 @@ int main(int argc, char** argv)
 	sprite Character;
 	sprite npcs[MAX_NPC];
 	sprite bullets[MAX_NPC];
+	sprite npc_bullets[MAX_NPC];
 
 #ifdef BITMAPS
 	bitmap_t* player_bmp;
@@ -185,6 +186,10 @@ int main(int argc, char** argv)
 	for(i=0;i<MAX_NPC;i++)
 	{
 		bullets[i].type=null;
+	}
+	for(i=0;i<MAX_NPC;i++)
+	{
+		npc_bullets[i].type=null;
 	}
 	alarm=(alt_alarm*)malloc(sizeof(alt_alarm));
 	spawnCtr=0;
@@ -391,25 +396,20 @@ int main(int argc, char** argv)
 					npcs[i].type=null;
 				}
 			}
-			/*
-			if (Character.health <= 0 || Character.loc.y >= PLAYER_BB+3)
-			{
-				Character.health = 100;
-				char final_score[5] = {0};
-				sprintf(final_score, "%d", score);
-				score=0;
-				Character.loc.x=VRAM_W/2;
-				Character.loc.y=VRAM_H/2;
-				//strcpy(healthStr1, "Health: 100 / 100   ");
-				strcpy(scoreStr1, "Score: 0");
-				clearChars(text);
-				//drawString(text, healthStr1, 2, 2);
-				drawString(text, scoreStr1, 2, 4);
-				save_score(player_name,final_score); //Replace player_name with actual name entered at start
-			}
-			*/
+
 			for(i=0;i<MAX_NPC;i++)
 			{
+				if (npc_bullets[i].type!=null)
+				{
+					if(npc_bullets[i].loc.x <= (Character.loc.x + 9) && npc_bullets[i].loc.x >= (Character.loc.x - 9) && npc_bullets[i].loc.y <= (Character.loc.y + 9) && npc_bullets[i].loc.y >= (Character.loc.y - 9))
+					{
+						Character.health-=20;
+						npc_bullets[i].type=null;
+						if (Character.health <= 0)
+							Character.health = 0;
+					}
+				}
+
 			if(npcs[i].type!=null)
 			{
 				if(npcs[i].type==enemy1)
@@ -428,11 +428,12 @@ int main(int argc, char** argv)
 							if (bullets[j].type!=null)
 								if(bullets[j].loc.x <= (npcs[i].loc.x + 11) && bullets[j].loc.x >= (npcs[i].loc.x - 11) && bullets[j].loc.y <= (npcs[i].loc.y + 11) && bullets[i].loc.y >= (npcs[i].loc.y - 11))
 								{
-									npcs[i].health -= 35;
+									npcs[i].health -= 25;
 									bullets[j].type = null;
 									if (npcs[i].health <= 0)
 										npcs[i].type = null;
 								}
+
 						if (Character.loc.x <= (npcs[i].loc.x + 18) && Character.loc.x >=( npcs[i].loc.x - 18) && Character.loc.y <= (npcs[i].loc.y + 18) && Character.loc.y >= (npcs[i].loc.y - 18))
 							{
 								Character.health = Character.health - scrollRate;
@@ -453,6 +454,27 @@ int main(int argc, char** argv)
 				if(spawnCtr>minSpawnRate&&spawnCtr>i)
 				{
 					spawnCtr=0;
+				if (score%100==0)
+				{
+					for(i=0;i<MAX_NPC;i++)
+						if(npcs[i].type==enemy1)
+						{
+							if (npcs[i].loc.x > VRAM_W/2)
+							{
+								if(npcs[i].loc.y >= VRAM_H/2)
+									player_shoot(npc_bullets, npcs[i].loc.x, npcs[i].loc.y, 7);
+								else
+									player_shoot(npc_bullets, npcs[i].loc.x, npcs[i].loc.y, 1);
+							}
+							else
+							{
+								if(npcs[i].loc.y >= VRAM_H/2)
+									player_shoot(npc_bullets, npcs[i].loc.x, npcs[i].loc.y, 9);
+								else
+									player_shoot(npc_bullets, npcs[i].loc.x, npcs[i].loc.y, 3);
+							}
+						}
+				}
 					makeNPC(npcs);
 					score = score + 20;
 					//clearChars(text);
@@ -471,6 +493,7 @@ int main(int argc, char** argv)
 				bitmap_drawNPCs(enemy_bmps,screen,npcs,E_TYPE_CNT);
 				bitmap_drawToScr(player_bmp,screen,Character.loc.x,Character.loc.y);
 				drawNPCs(screen, bullets);
+				drawNPCs(screen, npc_bullets);
 	#else
 				drawNPCs(screen,npcs);
 				drawSprite(screen,&Character);

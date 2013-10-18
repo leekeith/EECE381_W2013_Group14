@@ -16,7 +16,7 @@
 #define MAX_NPC 20
 
 typedef struct coord_s{int x,y;}coord_s;
-typedef enum spriteType{null,player,enemy1,enemy2,bullet}spriteType;
+typedef enum spriteType{null,player,enemy1,enemy2,bullet,bullet_npc}spriteType;
 typedef struct sprite	{	spriteType 	type;
 							coord_s 	loc;
 							short		health;

@@ -49,7 +49,11 @@ void drawSprite(pixel_buffer_t* screen, sprite* the_sprite)
 			break;
 		case bullet:
 			rad=1;
+			hue = mkColor(50,50,50);
 			break;
+		case bullet_npc:
+			rad = 1;
+			hue = mkColor(200,200,200);
 		default:
 			break;
 		}
